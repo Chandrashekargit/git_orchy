@@ -8,4 +8,4 @@ print(p)
 
 
 print("these line is added from remote repo")
-print("these is 2nd line added from remote repo)
+print("these is 2nd line added from remote repo")
