@@ -7,3 +7,5 @@ p=pig_latin('apple')
 print(p)
 
 print("these are new lines")
+
+print("Try to commit from pycharm")
