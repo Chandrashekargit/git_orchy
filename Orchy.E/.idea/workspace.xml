@@ -18,6 +18,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1UNTSpUTeAoEeiyaoYfWpCs1raE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -123,9 +124,25 @@
       <option name="presentableId" value="Default" />
       <updated>1575196055410</updated>
     </task>
+    <task id="LOCAL-00001" summary="commiting from pycharm">
+      <created>1584864547351</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584864547351</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commiting from pycharm" />
+    <option name="LAST_COMMIT_MESSAGE" value="commiting from pycharm" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2" timestamp="1584864546333">
+      <screen x="0" y="27" width="1360" height="688" />
+    </state>
+    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2/0.27.1360.688@0.27.1360.688" timestamp="1584864546333" />
     <state x="463" y="128" width="424" height="484" key="FileChooserDialogImpl" timestamp="1584172758059">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
