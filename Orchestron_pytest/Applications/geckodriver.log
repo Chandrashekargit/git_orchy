@@ -1,0 +1,23 @@
+1575880171735	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileDrtwm3"
+1575880172491	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575880172492	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575880172492	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575880172492	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1575880175865	Marionette	INFO	Listening on port 40995
+1575880175956	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://104.248.70.54/static/js/app.eb5a5824614296da818d.js, line 1: TypeError: t.response is undefined
+JavaScript error: http://104.248.70.54/static/js/app.eb5a5824614296da818d.js, line 1: TypeError: t.response is undefined
+JavaScript error: http://104.248.70.54/static/js/app.eb5a5824614296da818d.js, line 1: TypeError: t.response is undefined
+1575880219370	Marionette	INFO	Stopped listening on port 40995
+1578981733250	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilec2Wz5H"
+1578981742227	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1578981742228	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1578981742228	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1578981742228	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1578981753538	Marionette	INFO	Listening on port 34503
+1578981753661	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:32268): dconf-WARNING **: 11:32:40.596: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+JavaScript error: https://staging.orchestron.dev/static/js/app.b155c364058a1063c9ae.js, line 1: TypeError: t.response is undefined
+[Parent 32156, Gecko_IOThread] WARNING: pipe error (96): Connection reset by peer: file /build/firefox-AWfb_V/firefox-71.0+build5/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+1578982017684	Marionette	INFO	Stopped listening on port 34503
