@@ -37,7 +37,7 @@ man_submit = "/html/body/div/div/div[2]/section/div/div[7]/div/div[1]/div/div/fo
 
 # upload results xpath's
 tool = "//div[@class='container-fluid']//input[@placeholder='Select']"
-name = "//div[@class='container-fluid']//input[@class='inline-form-control-count-with-box orchy_font_family orchy_font_lg orchy_font_color form-control is-invalid']"
+name = "//div[@class='container-fluid']//input[@class='inline-form-control-count-with-box orchy_font_family orchy_font_md orchy_font_color form-control is-invalid']"
 file = "//input[@accept='xml,json']"
 upload_results_submit = "//button[contains(text(),'Submit')]"
 

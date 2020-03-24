@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="" />
+    <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_SAST_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_SAST_results_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_SCA_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_SCA_results_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/test_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xpath/Application_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Application_module_xpath.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +21,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1UO3WXREleqqJLA3C0Ha4euSVkX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,7 +33,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/git_orchy/Orchy.E" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -183,6 +195,10 @@
       <screen x="0" y="27" width="1360" height="688" />
     </state>
     <state x="413" y="122" width="524" height="496" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1360.688@0.27.1360.688" timestamp="1583482191959" />
+    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2" timestamp="1585033896113">
+      <screen x="0" y="27" width="1360" height="688" />
+    </state>
+    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2/0.27.1360.688@0.27.1360.688" timestamp="1585033896113" />
     <state x="463" y="128" width="424" height="484" key="FileChooserDialogImpl" timestamp="1584864300743">
       <screen x="0" y="27" width="1360" height="688" />
     </state>

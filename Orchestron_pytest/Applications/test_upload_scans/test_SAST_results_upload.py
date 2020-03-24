@@ -37,33 +37,25 @@ def test_sast_results(driver):
             app = WebDriverWait(driver, 20, poll_frequency=3).until(EC.element_to_be_clickable((By.XPATH, app1)))
             app.click()
             time.sleep(2)
-            action = WebDriverWait(driver, 20, poll_frequency=3).until(EC.element_to_be_clickable(
-                (By.XPATH, action_dropdown)))
+            action = WebDriverWait(driver, 20, poll_frequency=3).until(EC.element_to_be_clickable((By.XPATH, action_dropdown)))
             action.click()
             time.sleep(1)
-            uploadresult = WebDriverWait(driver, 20, poll_frequency=3).until(EC.element_to_be_clickable(
-                (By.XPATH, upload_results)))
+            uploadresult = WebDriverWait(driver, 20, poll_frequency=3).until(EC.element_to_be_clickable((By.XPATH, upload_results)))
             uploadresult.click()
 
-            select_tool = WebDriverWait(driver, 20, poll_frequency=3).until(EC.presence_of_element_located(
-                (By.XPATH, tool)))
+            select_tool = WebDriverWait(driver, 20, poll_frequency=3).until(EC.presence_of_element_located((By.XPATH, tool)))
             select_tool.click()
             select_tool.send_keys(name1)
             select_tool.send_keys(Keys.ARROW_DOWN)
             select_tool.send_keys(Keys.ENTER)
 
-            file_name = WebDriverWait(driver, 20, poll_frequency=3).until(EC.presence_of_element_located(
-                (By.XPATH, name)))
+            file_name = WebDriverWait(driver, 20, poll_frequency=3).until(EC.presence_of_element_located((By.XPATH, name)))
             file_name.send_keys(name1)
 
-            upload_file = WebDriverWait(driver, 20, poll_frequency=3).until(EC.presence_of_element_located(
-                (By.XPATH, file)))
+            upload_file = WebDriverWait(driver, 20, poll_frequency=3).until(EC.presence_of_element_located((By.XPATH, file)))
             upload_file.send_keys(tool1)
 
-            submit1 = WebDriverWait(driver, 20, poll_frequency=3).until(EC.presence_of_element_located(
-                (By.XPATH, upload_results_submit)))
+            submit1 = WebDriverWait(driver, 20, poll_frequency=3).until(EC.presence_of_element_located((By.XPATH, upload_results_submit)))
             submit1.click()
             time.sleep(8)
             driver.refresh()
-
-
