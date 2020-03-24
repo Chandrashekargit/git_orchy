@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_SAST_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_SAST_results_upload.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_SCA_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_SCA_results_upload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/test_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xpath/Application_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Application_module_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
