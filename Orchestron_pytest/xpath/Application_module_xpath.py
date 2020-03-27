@@ -8,7 +8,7 @@ app_url = "//div[2][@class='row my-1']//input"
 app_platform_type = "//input[@class='el-select__input is-large']"
 app_team = "//div[3][@class='row my-1']//input"
 app_submit = "//button[contains(text(),'Submit')]"
-app_pop_up_close_btn = "/html/body/div[1]/div/div[2]/section/div/div[2]/div/div[1]/div/div/header/button"
+app_pop_up_close_btn = "//button[@aria-label='Close']"
 
 
 # Application action dropdown options xpath's

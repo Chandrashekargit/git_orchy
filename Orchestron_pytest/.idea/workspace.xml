@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_correlation/test_correlation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_correlation/test_correlation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_delete_application/test_delete_applications.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_delete_application/test_delete_applications.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_SAST_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_SAST_results_upload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_SCA_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_SCA_results_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_create_apps_feature_boundary_analysis/test_negative_tc_application_boundary_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_apps_feature_boundary_analysis/test_negative_tc_application_boundary_analysis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xpath/Application_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Application_module_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585060659651</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added new function where it checks all the warning messages of &quot;upload results&quot; feature.">
+      <created>1585283438724</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585283438724</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -240,9 +243,9 @@
       <screen x="0" y="27" width="1360" height="688" />
     </state>
     <state x="333" y="27" width="683" height="688" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1360.688@0.27.1360.688" timestamp="1579155252011" />
-    <state x="343" y="36" width="672" height="678" key="search.everywhere.popup" timestamp="1577161761472">
+    <state x="343" y="36" width="672" height="678" key="search.everywhere.popup" timestamp="1585285163552">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
-    <state x="343" y="36" width="672" height="678" key="search.everywhere.popup/0.27.1360.688@0.27.1360.688" timestamp="1577161761472" />
+    <state x="343" y="36" width="672" height="678" key="search.everywhere.popup/0.27.1360.688@0.27.1360.688" timestamp="1585285163552" />
   </component>
 </project>
