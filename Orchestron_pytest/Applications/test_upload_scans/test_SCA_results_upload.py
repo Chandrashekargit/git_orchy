@@ -43,7 +43,7 @@ class UploadScaScansAndCheckAllWarningMessagesTests:
                 uploadresult = wait.until(EC.element_to_be_clickable((By.XPATH, upload_results)))
                 uploadresult.click()
 
-                selectTool = WebDriverWait(driver, 10, poll_frequency=1).until(EC.presence_of_element_located((By.XPATH, tool)))
+                selectTool = WebDriverWait(driver, 10, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, tool)))
                 selectTool.click()
                 selectTool.send_keys(name3)
                 selectTool.send_keys(Keys.ARROW_DOWN)
@@ -96,7 +96,7 @@ class UploadScaScansAndCheckAllWarningMessagesTests:
         warning_msg1 = WebDriverWait(driver, 2, poll_frequency=1).until(
             EC.presence_of_element_located((By.XPATH, "//p[text()=' * Scan name should be unique']"))).text
         print("\n", warning_msg1)
-        assert warning_msg1 == "* Scan name should be unique"
+        assert "* Scan name should be unique" in warning_msg1
         file_name.clear()
         file_name.send_keys("1" * 100)
         warning_msg2 = WebDriverWait(driver, 2, poll_frequency=1).until(

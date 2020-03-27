@@ -26,13 +26,15 @@ delete = "//ul[@class='el-dropdown-menu el-popper']//li[11]"
 
 
 # Manual entry pop up xpath's
-man_scan_name = "//input[@maxlength='255']"
+man_scan_name = "//input[@maxlength='100']"
 man_vul_name = "//div[@class='row my-1'][2]/div[2]/input"
-man_cwe = "//div[@class='container-fluid']//div[@class='row my-1'][3]//div[2]/div"
+man_cwe = "//input[@placeholder='Select CWE']"
 man_owasp = "//div[@class='row my-1'][4]//input"
+next_btn = "//button[contains(text(),'Next')]"
 man_desc = "//div[@class='row my-1'][1]//textarea"
 man_remed = "//div[@class='row my-1'][2]//textarea"
-man_submit = "/html/body/div/div/div[2]/section/div/div[7]/div/div[1]/div/div/footer/div/div/button[2]"
+previous_btn = "//button[contains(text(),'Previous')]"
+man_submit = "//button[@class='btn btn-submit pull-right move_right orchy_font_md orchy_font_family']"
 
 
 # upload results xpath's

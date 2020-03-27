@@ -1,5 +1,6 @@
 import time
 from selenium import webdriver
+from selenium.common.exceptions import *
 from selenium.webdriver.common.keys import Keys
 from pytest import mark
 import pytest
@@ -30,17 +31,20 @@ application1 = ["//label[contains(text(), 'SAST')]"]
 def test_sast_results(driver):
     for app1 in application1:
         for (tool1, name1) in zip(sast_tools, sast_names):
+            wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
+                NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
+
             applicationtab = WebDriverWait(driver, 20, poll_frequency=1).until(EC.element_to_be_clickable(
                 (By.XPATH, application_tab)))
             applicationtab.click()
 
             app = WebDriverWait(driver, 20, poll_frequency=3).until(EC.element_to_be_clickable((By.XPATH, app1)))
             app.click()
-            time.sleep(2)
-            action = WebDriverWait(driver, 20, poll_frequency=3).until(EC.element_to_be_clickable((By.XPATH, action_dropdown)))
+
+            action = wait.until(EC.element_to_be_clickable((By.XPATH, action_dropdown)))
             action.click()
-            time.sleep(1)
-            uploadresult = WebDriverWait(driver, 20, poll_frequency=3).until(EC.element_to_be_clickable((By.XPATH, upload_results)))
+
+            uploadresult = wait.until(EC.element_to_be_clickable((By.XPATH, upload_results)))
             uploadresult.click()
 
             select_tool = WebDriverWait(driver, 20, poll_frequency=3).until(EC.presence_of_element_located((By.XPATH, tool)))

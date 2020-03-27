@@ -1,5 +1,6 @@
 import time
 from selenium import webdriver
+from selenium.common.exceptions import *
 from selenium.webdriver.common.keys import Keys
 from pytest import mark
 import pytest
@@ -27,38 +28,35 @@ application2 = ["//label[contains(text(), 'DAST')]"]
 def test_dast_results(driver):
     for app2 in application2:
         for (tool2, name2) in dast_tools:
+            wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
+                NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
+
             applicationTab = WebDriverWait(driver, 10, poll_frequency=1).until(
-                EC.element_to_be_clickable((By.XPATH, application_tab)))
+                            EC.element_to_be_clickable((By.XPATH, application_tab)))
             applicationTab.click()
 
             app = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, app2)))
             app.click()
 
-            action = WebDriverWait(driver, 10, poll_frequency=3).until(
-                EC.element_to_be_clickable((By.XPATH, action_dropdown)))
+            action = wait.until(EC.element_to_be_clickable((By.XPATH, action_dropdown)))
             action.click()
 
-            upload_result = WebDriverWait(driver, 10, poll_frequency=1).until(
-                EC.element_to_be_clickable((By.XPATH, upload_results)))
+            upload_result = wait.until(EC.element_to_be_clickable((By.XPATH, upload_results)))
             upload_result.click()
 
-            selectTool = WebDriverWait(driver, 10, poll_frequency=1).until(EC.element_to_be_clickable(
-                (By.XPATH, tool)))
+            selectTool = WebDriverWait(driver, 10, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, tool)))
             selectTool.click()
             selectTool.send_keys(name2)
             selectTool.send_keys(Keys.ARROW_DOWN)
             selectTool.send_keys(Keys.ENTER)
 
-            tool_name = WebDriverWait(driver, 10, poll_frequency=1).until(EC.presence_of_element_located(
-                (By.XPATH, name)))
+            tool_name = WebDriverWait(driver, 10, poll_frequency=1).until(EC.presence_of_element_located((By.XPATH, name)))
             tool_name.send_keys(name2)
 
-            uploadFile = WebDriverWait(driver, 10, poll_frequency=1).until(
-                EC.presence_of_element_located((By.XPATH, file)))
+            uploadFile = WebDriverWait(driver, 10, poll_frequency=1).until(EC.presence_of_element_located((By.XPATH, file)))
             uploadFile.send_keys(tool2)
 
-            submit1 = WebDriverWait(driver, 10, poll_frequency=1).until(
-                EC.element_to_be_clickable((By.XPATH, upload_results_submit)))
+            submit1 = WebDriverWait(driver, 10, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, upload_results_submit)))
             submit1.click()
             time.sleep(10)
             driver.refresh()
