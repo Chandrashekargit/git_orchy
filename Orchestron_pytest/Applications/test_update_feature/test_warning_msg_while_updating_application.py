@@ -9,16 +9,17 @@ import pytest
 from selenium.common.exceptions import *
 from selenium.common.exceptions import TimeoutException
 from xpath.Application_module_xpath import *
+from Applications.test_delete_application.test_delete_app import delete_app
 
 
 @mark.update_app_and_check_all_warning_msgs
 def test_warning_messaege_while_updating_application(driver, create_app):
-    wait = WebDriverWait(driver, 10, poll_frequency=1, ignored_exceptions=[ElementClickInterceptedException,
+    wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[ElementClickInterceptedException,
                                                                            ElementNotInteractableException,
                                                                            TimeoutException,
                                                                            ElementNotVisibleException])
 
-    search_tab = wait.until(EC.visibility_of_element_located((By.XPATH, "//input[@placeholder='Search']")))
+    search_tab = wait.until(EC.visibility_of_element_located((By.XPATH, search)))
     search_tab.send_keys("DemoApplication")
 
     select_individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, "//label[text()='DemoApplication']")))
@@ -50,5 +51,9 @@ def test_warning_messaege_while_updating_application(driver, create_app):
     time.sleep(1)
     close_popup = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@class='close']")))
     close_popup.click()
+    driver.refresh()
+    time.sleep(2)
 
+    # Delete the application
+    delete_app(driver, application="//label[contains(text(),'DemoApplication')]")  # calling the function 'delete_app'
 

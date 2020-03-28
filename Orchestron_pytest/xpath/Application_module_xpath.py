@@ -10,6 +10,9 @@ app_team = "//div[3][@class='row my-1']//input"
 app_submit = "//button[contains(text(),'Submit')]"
 app_pop_up_close_btn = "//button[@aria-label='Close']"
 
+# search field xpath
+search = "//input[@placeholder='Search']"
+
 
 # update application pop up
 update_app_name = "//input[@class='inline-form-control-count-with-box orchy_font_family orchy_font_md orchy_font_color form-control is-valid' and @maxlength]"
@@ -30,7 +33,6 @@ copy_webhook = "//ul[@class='el-dropdown-menu el-popper']//li[6]"
 bug_tracker = "//ul[@class='el-dropdown-menu el-popper']//li[8]"
 hard_mark_false_positive = "//ul[@class='el-dropdown-menu el-popper']//li[9]"
 view_report = "//ul[@class='el-dropdown-menu el-popper']//li[10]"
-delete = "//ul[@class='el-dropdown-menu el-popper']//li[11]"
 
 
 # Manual entry pop up xpath's
@@ -51,12 +53,14 @@ name = "//div[@class='container-fluid']//input[@class='inline-form-control-count
 file = "//input[@accept='xml,json']"
 upload_results_submit = "//button[contains(text(),'Submit')]"
 
+
 # heads
 open_vulnerability = "//a[contains(text(),'Opened')]"
 closed_vulnerability = "//a[contains(text(),'Closed')]"
 uncategorized_vulnerability = "//a[contains(text(),'Uncategorized')]"
 false_positive = "//a[contains(text(),'False Positive')]"
 dashboard = "//a[contains(text(),'Dashboard')]"
+
 
 # closed
 close_btn = "//div[contains(text(),'Close')]"
@@ -68,6 +72,7 @@ fix_submit = "//button[contains(text(),'Submit')]"
 reopen_btn = "//button[text()='ReOpen']"
 reopen_submit = "//button[contains(text(),'Submit')]"
 
+
 # PerPage drop-down xpath's
 PerPageDropdown = "//input[@placeholder='Per Page']"
 five = "//ul[@class='el-scrollbar__view el-select-dropdown__list']//li[1]//span[text()='5']"
@@ -76,3 +81,13 @@ twenty_five = "//ul[@class='el-scrollbar__view el-select-dropdown__list']//li[3]
 fifty = "//ul[@class='el-scrollbar__view el-select-dropdown__list']//li[4]//span[text()='50']"
 hundered = "//ul[@class='el-scrollbar__view el-select-dropdown__list']//li[5]//span[text()='100']"
 all = "//ul[@class='el-scrollbar__view el-select-dropdown__list']//li[6]//span[text()='All']"
+
+
+# Delete application
+delete_option = "//ul[@class='el-dropdown-menu el-popper']//li[11]"
+yes = "//button[contains(text(),'Yes')]"
+no = "//button[contains(text(),'No')]"
+enter_delete = "//input[@placeholder='Type DELETE']"
+delete = "//footer[@class='modal-footer']//button[contains(text(),'Delete')]"
+cancel = "//footer[@class='modal-footer']//button[contains(text(),'Cancel')]"
+

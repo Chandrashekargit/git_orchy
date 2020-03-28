@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="">
+    <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="New function added to check all the warning messages while we update an existing application.">
+      <change afterPath="$PROJECT_DIR$/Applications/test_delete_application/test_delete_app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_delete_application/test_delete_applications.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_delete_application/test_delete_applications.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Applications/test_update_feature/test_warning_msg_while_updating_application.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_update_feature/test_warning_msg_while_updating_application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xpath/Application_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Application_module_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -207,23 +208,31 @@
       <option name="project" value="LOCAL" />
       <updated>1585285600092</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="New function added to check all the warning messages while we update an existing application.">
+      <created>1585401043377</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585401043377</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added new function where it checks all the warning messages of &quot;upload results&quot; feature." />
     <MESSAGE value="code clean up" />
-    <option name="LAST_COMMIT_MESSAGE" value="code clean up" />
+    <MESSAGE value="New function added to check all the warning messages while we update an existing application." />
+    <option name="LAST_COMMIT_MESSAGE" value="New function added to check all the warning messages while we update an existing application." />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="122" width="524" height="496" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583482191959">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
     <state x="413" y="122" width="524" height="496" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1360.688@0.27.1360.688" timestamp="1583482191959" />
-    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2" timestamp="1585285599568">
+    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2" timestamp="1585403427094">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
-    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2/0.27.1360.688@0.27.1360.688" timestamp="1585285599568" />
+    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2/0.27.1360.688@0.27.1360.688" timestamp="1585403427094" />
     <state x="463" y="128" width="424" height="484" key="FileChooserDialogImpl" timestamp="1584864300743">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
