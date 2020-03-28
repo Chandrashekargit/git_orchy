@@ -11,6 +11,14 @@ app_submit = "//button[contains(text(),'Submit')]"
 app_pop_up_close_btn = "//button[@aria-label='Close']"
 
 
+# update application pop up
+update_app_name = "//input[@class='inline-form-control-count-with-box orchy_font_family orchy_font_md orchy_font_color form-control is-valid' and @maxlength]"
+update_url = "/html/body/div[2]/div[1]/div/div/div/div/form/div[2]/div[1]/div/input"
+update_name_warning_msg = "//p[text()=' * Ensure this field has no more than 50 characters.']"
+update_url_warning_msg = "//p[text()=' * Enter a valid URL.']"
+update_submit_btn = "//button[contains(text(),'Submit')]"
+
+
 # Application action dropdown options xpath's
 action_dropdown = "//div[contains(text(),'Actions')]"
 update = "//ul[@class='el-dropdown-menu el-popper']//li[1]"
