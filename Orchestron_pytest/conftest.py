@@ -33,24 +33,6 @@ def driver():
 
 
 @pytest.fixture(scope="function")
-def login(username=None, password=None):
-    driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
-    driver.get(url)
-    driver.maximize_window()
-    time.sleep(1)
-    email = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, email_xpath)))
-    email.clear()
-    email.send_keys(username)
-    pw = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, password_xpath)))
-    pw.clear()
-    pw.send_keys(password)
-    login = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, login_xpath)))
-    login.click()
-    time.sleep(2)
-    return driver
-
-
-@pytest.fixture(scope="function")
 def create_app(driver, app='DemoApplication'):
     applicationTab = WebDriverWait(driver, 10, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, application_tab)))
     applicationTab.click()

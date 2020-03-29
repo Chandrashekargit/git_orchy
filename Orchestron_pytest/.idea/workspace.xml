@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_SAST_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_SAST_results_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_SCA_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_SCA_results_upload.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/test_negative_and_positive_login_tc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xpath/login_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/login_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585406048546</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="code clean up">
+      <created>1585459793017</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585459793017</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -235,10 +243,10 @@
       <screen x="0" y="27" width="1360" height="688" />
     </state>
     <state x="413" y="122" width="524" height="496" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1360.688@0.27.1360.688" timestamp="1585459735920" />
-    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2" timestamp="1585459792443">
+    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2" timestamp="1585471756542">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
-    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2/0.27.1360.688@0.27.1360.688" timestamp="1585459792443" />
+    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2/0.27.1360.688@0.27.1360.688" timestamp="1585471756542" />
     <state x="463" y="128" width="424" height="484" key="FileChooserDialogImpl" timestamp="1584864300743">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
