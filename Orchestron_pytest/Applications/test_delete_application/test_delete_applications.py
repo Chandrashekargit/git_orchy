@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import *
 from xpath.Application_module_xpath import *
-from Applications.test_delete_application.test_delete_app import delete_app
+from Applications.test_delete_application.delete_app import delete_app
 
 apps = ["//label[contains(text(), 'DAST')]",
         "//label[contains(text(), 'SAST')]",

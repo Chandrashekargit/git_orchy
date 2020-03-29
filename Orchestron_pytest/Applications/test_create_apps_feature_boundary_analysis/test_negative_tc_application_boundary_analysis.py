@@ -9,6 +9,8 @@ import pytest
 from selenium.common.exceptions import ElementClickInterceptedException
 from selenium.common.exceptions import TimeoutException
 from xpath.Application_module_xpath import *
+from Applications.test_delete_application.delete_app import delete_app
+
 
 '''
 These func lets us check the negative test-cases of create application feature.
@@ -21,7 +23,7 @@ These func lets us check the negative test-cases of create application feature.
 
 @mark.create_app_negative_tc
 class ApplicationNegativeBoundaryValueAnalysisTcTests:
-    def create_app_fill_fields(self, driver, name_value=None, url_value=None):
+    def create_app(self, driver, name_value=None, url_value=None):
         wait = WebDriverWait(driver, 10, poll_frequency=2)
         applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
         applicationTab.click()
@@ -48,7 +50,7 @@ class ApplicationNegativeBoundaryValueAnalysisTcTests:
 
     def test_negative_tc_invalid_url(self, driver):
         wait = WebDriverWait(driver, 10, poll_frequency=2)
-        self.create_app_fill_fields(driver, name_value="!", url_value="http://!.com")
+        self.create_app(driver, name_value="!", url_value="http://!.com")
         try:
             submit_1 = WebDriverWait(driver, 5, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, app_submit)))
             submit_1.click()
@@ -65,7 +67,7 @@ class ApplicationNegativeBoundaryValueAnalysisTcTests:
         close.click()
 
     def test_negative_tc_no_value_in_name_field(self, driver):
-        self.create_app_fill_fields(driver, name_value=" ", url_value="http://demo.com")
+        self.create_app(driver, name_value=" ", url_value="http://demo.com")
         try:
             submit_1 = WebDriverWait(driver, 5, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, app_submit)))
             submit_1.click()
@@ -78,7 +80,7 @@ class ApplicationNegativeBoundaryValueAnalysisTcTests:
         time.sleep(2)
 
     def test_negative_tc_all_valid_inputs(self, driver):
-        self.create_app_fill_fields(driver, name_value="demo application", url_value="http://demo.com")
+        self.create_app(driver, name_value="demo application", url_value="http://demo.com")
         try:
             submit_1 = WebDriverWait(driver, 5, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, app_submit)))
             submit_1.click()
@@ -87,8 +89,7 @@ class ApplicationNegativeBoundaryValueAnalysisTcTests:
 
     def test_negative_tc_existing_app_name(self, driver):
         wait = WebDriverWait(driver, 10, poll_frequency=2)
-        self.create_app_fill_fields(driver, name_value="demo application", url_value="http://demo.com")
-
+        self.create_app(driver, name_value="demo application", url_value="http://demo.com")
         try:
             submit_1 = WebDriverWait(driver, 5, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, app_submit)))
             submit_1.click()
@@ -100,3 +101,6 @@ class ApplicationNegativeBoundaryValueAnalysisTcTests:
             print("\nApplication with these name already existed")
         else:
             print("\nApplication is created")
+
+    def test_delete_app(self, driver):
+        delete_app(driver, application="//label[contains(text(), 'demo application')]")  # calling the function 'delete_app'

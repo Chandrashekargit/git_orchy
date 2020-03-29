@@ -9,7 +9,7 @@ import pytest
 from selenium.common.exceptions import *
 from selenium.common.exceptions import TimeoutException
 from xpath.Application_module_xpath import *
-from Applications.test_delete_application.test_delete_app import delete_app
+from Applications.test_delete_application.delete_app import delete_app
 
 
 @mark.update_app_and_check_all_warning_msgs

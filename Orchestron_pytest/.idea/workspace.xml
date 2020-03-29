@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="">
+    <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="code clean up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_SAST_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_SAST_results_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_create_applications/test_create_application.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_applications/test_create_application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_create_apps_feature_boundary_analysis/test_negative_tc_application_boundary_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_apps_feature_boundary_analysis/test_negative_tc_application_boundary_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_delete_application/test_delete_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_delete_application/delete_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_delete_application/test_delete_applications.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_delete_application/test_delete_applications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_update_feature/test_warning_msg_while_updating_application.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_update_feature/test_warning_msg_while_updating_application.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_SCA_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_SCA_results_upload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

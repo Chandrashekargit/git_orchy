@@ -22,11 +22,11 @@ sca_names = ["OWASP", "snyk", "whitesource", "Retire", "npm", "snyk"]
 @mark.smoke1
 @mark.sca
 class UploadScaScansAndCheckAllWarningMessagesTests:
-    # def test_sca_results(self, driver):
-    #     for (tool3, name3) in zip(sca_tools, sca_names):
-    #         upload_res(driver, application="//label[contains(text(), 'SCA')]", tool_name=name3, file_loc=tool3)
-    #         time.sleep(10)
-    #         driver.refresh()
+    def test_sca_results(self, driver):
+        for (tool3, name3) in zip(sca_tools, sca_names):
+            upload_res(driver, application="//label[contains(text(), 'SCA')]", tool_name=name3, file_loc=tool3)
+            time.sleep(10)
+            driver.refresh()
 
     def test_for_warning_msg_if_we_upload_scans_with_same_name(self, driver):
         upload_res(driver, application="//label[contains(text(), 'SCA')]", tool_name="snyk",
