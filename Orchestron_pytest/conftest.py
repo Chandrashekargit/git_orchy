@@ -33,7 +33,7 @@ def driver():
 
 
 @pytest.fixture(scope="function")
-def login(username, password):
+def login(username=None, password=None):
     driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
     driver.get(url)
     driver.maximize_window()
