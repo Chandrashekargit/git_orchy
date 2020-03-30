@@ -2,6 +2,7 @@ from pytest import mark
 from selenium import webdriver
 import pytest
 import time
+from selenium.common.exceptions import *
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -34,23 +35,27 @@ def driver():
 
 @pytest.fixture(scope="function")
 def create_app(driver, app='DemoApplication'):
-    applicationTab = WebDriverWait(driver, 10, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, application_tab)))
+    wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
+        NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
+    # click on Application section
+    applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
     applicationTab.click()
-    create_btn = WebDriverWait(driver, 10, poll_frequency=3).until(EC.presence_of_element_located((By.XPATH, app_create_button)))
+    # create application by filling all the mandatory fields
+    create_btn = wait.until(EC.presence_of_element_located((By.XPATH, app_create_button)))
     create_btn.click()
-    name = WebDriverWait(driver, 10, poll_frequency=1).until(EC.presence_of_element_located((By.XPATH, app_name)))
+    name = wait.until(EC.presence_of_element_located((By.XPATH, app_name)))
     name.send_keys(app)
-    url = WebDriverWait(driver, 10, poll_frequency=1).until(EC.presence_of_element_located((By.XPATH, app_url)))
+    url = wait.until(EC.presence_of_element_located((By.XPATH, app_url)))
     url.send_keys("http://" + app + ".com")
-    platform_type = WebDriverWait(driver, 10, poll_frequency=1).until(EC.presence_of_element_located((By.XPATH, app_platform_type)))
+    platform_type = wait.until(EC.presence_of_element_located((By.XPATH, app_platform_type)))
     platform_type.send_keys("Python")
     platform_type.send_keys(Keys.ARROW_DOWN)
     platform_type.send_keys(Keys.ENTER)
-    team = WebDriverWait(driver, 10, poll_frequency=1).until(EC.presence_of_element_located((By.XPATH, app_team)))
+    team = wait.until(EC.presence_of_element_located((By.XPATH, app_team)))
     team.click()
     # team.send_keys('Testing')
     # team.send_keys(Keys.ENTER)
-    submit_1 = WebDriverWait(driver, 10, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, app_submit)))
+    submit_1 = wait.until(EC.element_to_be_clickable((By.XPATH, app_submit)))
     submit_1.click()
     time.sleep(2)
 

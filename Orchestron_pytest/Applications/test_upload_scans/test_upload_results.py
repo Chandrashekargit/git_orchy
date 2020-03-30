@@ -41,3 +41,4 @@ def upload_res(driver, application=None, tool_name=None, file_loc=None):
 
     submit1 = WebDriverWait(driver, 10, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, upload_results_submit)))
     submit1.click()
+    time.sleep(2)
