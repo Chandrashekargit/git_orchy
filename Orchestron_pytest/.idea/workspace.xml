@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/login/login.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/test_forgot_pw.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xpath/Application_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Application_module_xpath.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/login.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/test_negative_and_positive_login_tc.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/test_negative_and_positive_login_tc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xpath/login_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/login_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -281,10 +283,10 @@
       <screen x="0" y="27" width="1360" height="688" />
     </state>
     <state width="1340" height="161" key="GridCell.Tab.0.right/0.27.1360.688@0.27.1360.688" timestamp="1585196863782" />
-    <state x="361" y="197" key="com.intellij.ide.util.TipDialog" timestamp="1584354118055">
+    <state x="361" y="197" key="com.intellij.ide.util.TipDialog" timestamp="1585717019451">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
-    <state x="361" y="197" key="com.intellij.ide.util.TipDialog/0.27.1360.688@0.27.1360.688" timestamp="1584354118055" />
+    <state x="361" y="197" key="com.intellij.ide.util.TipDialog/0.27.1360.688@0.27.1360.688" timestamp="1585717019450" />
     <state x="333" y="27" width="683" height="688" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1579155252011">
       <screen x="0" y="27" width="1360" height="688" />
     </state>

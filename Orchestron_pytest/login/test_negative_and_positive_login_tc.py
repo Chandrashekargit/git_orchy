@@ -53,50 +53,50 @@ class LoginNegativeTestCasesTests:
         assert "Unable to log in with provided credentials." in warning_msg1
         driver.quit()
 
-    # @mark.parametrize('username, password', [
-    #     (' ', 'Test@1234'),
-    #     ('chandrashekar@we45.com', ' '),
-    # ])
-    # def test_login_warning_msg_for_empty_fields(self, username, password):
-    #     driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
-    #     driver.get(url)
-    #     driver.maximize_window()
-    #     time.sleep(1)
-    #
-    #     email = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, email_xpath)))
-    #     email.clear()
-    #     email.send_keys(username)
-    #     pw = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, password_xpath)))
-    #     pw.clear()
-    #     pw.send_keys(password)
-    #     login = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, login_xpath)))
-    #     login.click()
-    #     time.sleep(2)
-    #
-    #     WebDriverWait(driver, 10, poll_frequency=1).until(
-    #         EC.presence_of_element_located((By.XPATH, warning_message2))).is_displayed()
-    #     print("\nemail or PW field can't be empty")
-    #     warning_msg2 = WebDriverWait(driver, 10, poll_frequency=1).until(
-    #         EC.presence_of_element_located((By.XPATH, warning_message2))).text
-    #     assert warning_msg2 == "* This field may not be blank."
-    #     driver.quit()
-    #
-    # @mark.parametrize('username, password', [
-    #     ('chandrashekar@we45.com', 'Test@1234')
-    # ])
-    # def test_login_for_valid_credentials(self, username, password):
-    #     driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
-    #     driver.get(url)
-    #     driver.maximize_window()
-    #     time.sleep(1)
-    #
-    #     email = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, email_xpath)))
-    #     email.clear()
-    #     email.send_keys(username)
-    #     pw = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, password_xpath)))
-    #     pw.clear()
-    #     pw.send_keys(password)
-    #     login = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, login_xpath)))
-    #     login.click()
-    #     time.sleep(2)
-    #     assert driver.current_url == url + 'org/dashboard'
+    @mark.parametrize('username, password', [
+        (' ', 'Test@1234'),
+        ('chandrashekar@we45.com', ' '),
+    ])
+    def test_login_warning_msg_for_empty_fields(self, username, password):
+        driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
+        driver.get(url)
+        driver.maximize_window()
+        time.sleep(1)
+
+        email = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, email_xpath)))
+        email.clear()
+        email.send_keys(username)
+        pw = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, password_xpath)))
+        pw.clear()
+        pw.send_keys(password)
+        login = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, login_xpath)))
+        login.click()
+        time.sleep(2)
+
+        WebDriverWait(driver, 10, poll_frequency=1).until(
+            EC.presence_of_element_located((By.XPATH, warning_message2))).is_displayed()
+        print("\nemail or PW field can't be empty")
+        warning_msg2 = WebDriverWait(driver, 10, poll_frequency=1).until(
+            EC.presence_of_element_located((By.XPATH, warning_message2))).text
+        assert warning_msg2 == "* This field may not be blank."
+        driver.quit()
+
+    @mark.parametrize('username, password', [
+        ('chandrashekar@we45.com', 'Test@1234')
+    ])
+    def test_login_for_valid_credentials(self, username, password):
+        driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
+        driver.get(url)
+        driver.maximize_window()
+        time.sleep(1)
+
+        email = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, email_xpath)))
+        email.clear()
+        email.send_keys(username)
+        pw = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, password_xpath)))
+        pw.clear()
+        pw.send_keys(password)
+        login = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, login_xpath)))
+        login.click()
+        time.sleep(2)
+        assert driver.current_url == url + 'org/dashboard'
