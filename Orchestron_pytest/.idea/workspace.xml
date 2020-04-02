@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/login/test_forgot_pw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Profile_Logout/test_logout/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/profile_script.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/test_profile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xpath/profile_module_xpath.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/login.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/test_negative_and_positive_login_tc.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/test_negative_and_positive_login_tc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_create_apps_feature_boundary_analysis/test_negative_tc_application_boundary_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_apps_feature_boundary_analysis/test_negative_tc_application_boundary_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_create_apps_feature_boundary_analysis/test_positive_tc_application_boundary_value_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_apps_feature_boundary_analysis/test_positive_tc_application_boundary_value_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/test_forgot_pw.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/test_forgot_pw.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xpath/login_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/login_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

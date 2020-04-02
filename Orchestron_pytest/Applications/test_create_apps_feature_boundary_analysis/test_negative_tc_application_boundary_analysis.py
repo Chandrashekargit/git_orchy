@@ -12,15 +12,6 @@ from xpath.Application_module_xpath import *
 from Applications.test_delete_application.delete_app import delete_app
 
 
-'''
-These func lets us check the negative test-cases of create application feature.
-> First func checks for invalid url and its error message 
-> second func checks for empty space in name field and its error message
-> Third func checks for 'No value' in name field and its error message
-> fourth function acts as a bait for 5th func to check if existing application is creating or not and if its not creating checks the error message.
-'''
-
-
 @mark.create_app_negative_tc
 class ApplicationNegativeBoundaryValueAnalysisTcTests:
     def create_app(self, driver, name_value=None, url_value=None):

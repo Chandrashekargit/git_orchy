@@ -12,6 +12,9 @@ from xpath.Application_module_xpath import *
 
 @mark.forgot_pw
 def test_for_warning_message_when_invalid_email_entered():
+    """
+    These function lets us check the warning message when we enter the invalid email (not registered with orchy).
+    """
     driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
     driver.get(url)
     driver.maximize_window()

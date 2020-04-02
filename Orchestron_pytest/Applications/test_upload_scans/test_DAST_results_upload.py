@@ -26,6 +26,7 @@ dast_tools = [("/home/junaid/Downloads/results_supported_by_orchy/zap.xml", "zap
 @mark.dast
 def test_dast_results(driver):
     for (tool2, name2) in dast_tools:
+        # calling the function 'upload_res' to upload all the DAST scans.
         upload_res(driver, application="//label[contains(text(), 'DAST')]", tool_name=name2, file_loc=tool2)
         time.sleep(12)
         driver.refresh()
