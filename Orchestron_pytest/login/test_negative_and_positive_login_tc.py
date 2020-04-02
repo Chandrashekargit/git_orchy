@@ -18,11 +18,16 @@ from xpath.Application_module_xpath import *
 @mark.login
 class LoginNegativeTestCasesTests:
     @mark.parametrize('username, password', [
-        ('chandrashekar@we45.com', 'Test@134'),
-        ('chandrasheka@we45.com', 'test@1234'),
-        ('Chandrashekr@we45.com', 'Test@1234')
+        ('chandrashekar@we45.com', 'Test@134'),   # Invalid PW
+        ('chandrashekar@we45.com', 'test@1234'),  # checking case-sensitive for PW field
+        ('chandrashekr@we45.com', 'Test@1234'),   # Invalid UN
+        ('Chandrashekar@we45.com', 'Test@1234'),  # checking case-sensitive for UN
+        ('chandra@we45.com', 'welcome@1234')      # Invalid PW, UN
     ])
     def test_login_warning_msg_for_invalid_credentials(self, username, password):
+        """
+        These function lets us test the warning message if we enter the invalid credentials.
+        """
         driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
         driver.get(url)
         driver.maximize_window()
@@ -54,10 +59,15 @@ class LoginNegativeTestCasesTests:
         driver.quit()
 
     @mark.parametrize('username, password', [
-        (' ', 'Test@1234'),
-        ('chandrashekar@we45.com', ' '),
+        (' ', 'Test@1234'),                 # Email is empty
+        ('chandrashekar@we45.com', ' '),    # Password is empty
+        (' ', ' ')                          # Both are empty.
     ])
     def test_login_warning_msg_for_empty_fields(self, username, password):
+        """
+        These function lets us test the warning message if one of them (username/email and password) or both fields
+        are empty.
+        """
         driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
         driver.get(url)
         driver.maximize_window()
@@ -85,6 +95,9 @@ class LoginNegativeTestCasesTests:
         ('chandrashekar@we45.com', 'Test@1234')
     ])
     def test_login_for_valid_credentials(self, username, password):
+        """
+        These function lets us test with valid credentials and asserts the URL.
+        """
         driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
         driver.get(url)
         driver.maximize_window()

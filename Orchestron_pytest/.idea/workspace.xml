@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Profile_Logout/test_logout/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/profile_script.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/test_profile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xpath/profile_module_xpath.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_create_apps_feature_boundary_analysis/test_negative_tc_application_boundary_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_apps_feature_boundary_analysis/test_negative_tc_application_boundary_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_create_apps_feature_boundary_analysis/test_positive_tc_application_boundary_value_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_apps_feature_boundary_analysis/test_positive_tc_application_boundary_value_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/test_forgot_pw.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/test_forgot_pw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/test_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/test_profile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/test_negative_and_positive_login_tc.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/test_negative_and_positive_login_tc.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,14 +252,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="&quot;added new functions&quot;" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="122" width="524" height="496" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585459735920">
+    <state x="413" y="122" width="524" height="496" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585847276527">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
-    <state x="413" y="122" width="524" height="496" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1360.688@0.27.1360.688" timestamp="1585459735920" />
-    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2" timestamp="1585544861551">
+    <state x="413" y="122" width="524" height="496" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1360.688@0.27.1360.688" timestamp="1585847276527" />
+    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2" timestamp="1585847549715">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
-    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2/0.27.1360.688@0.27.1360.688" timestamp="1585544861551" />
+    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2/0.27.1360.688@0.27.1360.688" timestamp="1585847549715" />
     <state x="463" y="128" width="424" height="484" key="FileChooserDialogImpl" timestamp="1584864300743">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
@@ -296,9 +288,9 @@
       <screen x="0" y="27" width="1360" height="688" />
     </state>
     <state x="333" y="27" width="683" height="688" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1360.688@0.27.1360.688" timestamp="1579155252011" />
-    <state x="343" y="36" width="672" height="678" key="search.everywhere.popup" timestamp="1585285163552">
+    <state x="343" y="36" width="672" height="678" key="search.everywhere.popup" timestamp="1585844632232">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
-    <state x="343" y="36" width="672" height="678" key="search.everywhere.popup/0.27.1360.688@0.27.1360.688" timestamp="1585285163552" />
+    <state x="343" y="36" width="672" height="678" key="search.everywhere.popup/0.27.1360.688@0.27.1360.688" timestamp="1585844632232" />
   </component>
 </project>

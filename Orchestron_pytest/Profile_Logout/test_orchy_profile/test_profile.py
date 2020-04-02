@@ -21,7 +21,7 @@ class ProfileFeatureTests:
         In these function we only handle first name, last name but not email field (just for lucidity)
         """
         for (fn, sn) in zip(first_names1, last_names1):
-            ProfileScript(driver, firstName=fn, secondName=sn)
+            ProfileScript(driver, firstName=fn, secondName=sn)    # calling the function 'profile script'.
             try:
                 submit_btn = WebDriverWait(driver, 3, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, submit)))
                 submit_btn.click()
@@ -38,7 +38,7 @@ class ProfileFeatureTests:
         first_names2 = ["c"*30, " ", "c"*30]
         last_names2 = [" ", "s"*30, "s"*30]
         for (fn, sn) in zip(first_names2, last_names2):
-            ProfileScript(driver, firstName=fn, secondName=sn)
+            ProfileScript(driver, firstName=fn, secondName=sn)   # calling the function 'profile script'.
             wait = WebDriverWait(driver, 3, poll_frequency=1, ignored_exceptions=[
                 NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
             warning_msg = wait.until(EC.element_to_be_clickable((By.XPATH, warning_message1))).text
