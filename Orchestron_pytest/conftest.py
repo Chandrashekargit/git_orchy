@@ -19,6 +19,7 @@ def driver():
     # driver = webdriver.Firefox(executable_path='/home/junaid/PycharmProjects/HelloWorld/venv/bin/geckodriver_linux64/geckodriver')
     driver.get(url)
     driver.maximize_window()
+    time.sleep(1)
     email = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, email_xpath)))
     email.click()
     email.send_keys("chandrashekar@we45.com")

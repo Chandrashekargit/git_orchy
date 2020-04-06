@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/test_change_password.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/test_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/test_profile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/test_negative_and_positive_login_tc.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/test_negative_and_positive_login_tc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xpath/profile_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/profile_module_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585544862737</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="&quot;___&quot;">
+      <created>1585847550615</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585847550615</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -249,7 +258,8 @@
     <MESSAGE value="New function added to check all the warning messages while we update an existing application." />
     <MESSAGE value="code clean up" />
     <MESSAGE value="&quot;added new functions&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;added new functions&quot;" />
+    <MESSAGE value="&quot;___&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;___&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="122" width="524" height="496" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585847276527">
@@ -288,9 +298,9 @@
       <screen x="0" y="27" width="1360" height="688" />
     </state>
     <state x="333" y="27" width="683" height="688" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1360.688@0.27.1360.688" timestamp="1579155252011" />
-    <state x="343" y="36" width="672" height="678" key="search.everywhere.popup" timestamp="1585844632232">
+    <state x="343" y="36" width="672" height="678" key="search.everywhere.popup" timestamp="1585907183006">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
-    <state x="343" y="36" width="672" height="678" key="search.everywhere.popup/0.27.1360.688@0.27.1360.688" timestamp="1585844632232" />
+    <state x="343" y="36" width="672" height="678" key="search.everywhere.popup/0.27.1360.688@0.27.1360.688" timestamp="1585907183006" />
   </component>
 </project>
