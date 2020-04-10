@@ -67,12 +67,15 @@ def test_warning_msgs_of_change_pw(driver):
     for (current_password, new_password, confirm_new_password) in zip(current_passwords, new_passwords, confirm_new_passwords):
         wait = WebDriverWait(driver, 5, poll_frequency=1, ignored_exceptions=[
             NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
+
         # calling the function 'change_pw()'
         change_pw(driver, Current_password=current_password, New_password=new_password,Confirm_new_password=confirm_new_password)
+
         # lets us assert the warning message when user/admin tries to change the pw, which is same as old pw.
         if current_password == "Test@1234" and new_password == "Test@1234":
             warning_msg = wait.until(EC.element_to_be_clickable((By.XPATH, change_pw_warning_msg1))).text
             assert "* Old password cannot be reused!" in warning_msg
+
         # lets us assert the warning message when user/admin tries to change the pw, by entering invalid 'current password'.
         elif current_password == "Test@234":
             warning_msg = wait.until(EC.element_to_be_clickable((By.XPATH, change_pw_warning_msg2))).text
