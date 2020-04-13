@@ -42,7 +42,8 @@ def test_login_warning_msg_for_invalid_credentials():
         login = wait.until(EC.element_to_be_clickable((By.XPATH, login_xpath)))
         login.click()
         time.sleep(2)
-
+        # Invalid pw, check for case sensitive in pw field, invalid un, check for case sensitive in un field,
+        # invalid pw and invalid un.
         if username == 'chandrashekar@we45.com' and password == 'Test@134' or \
            username == 'chandrashekar@we45.com' and password == 'test@134' or \
            username == 'chandrashekr@we45.com' and password == 'Test@1234' or \
@@ -60,7 +61,7 @@ def test_login_warning_msg_for_invalid_credentials():
 
             assert "Unable to log in with provided credentials." in warning_msg1
             driver.quit()
-
+        # check for blank username field, check for blank password field, both fields blank,
         elif username == ' ' and password == 'Test@1234' or username == 'chandrashekar@we45.com' and \
                 password == ' ' or username == ' ' and password == ' ':
             WebDriverWait(driver, 10, poll_frequency=1).until(
@@ -70,6 +71,6 @@ def test_login_warning_msg_for_invalid_credentials():
                 EC.presence_of_element_located((By.XPATH, warning_message2))).text
             assert warning_msg2 == "* This field may not be blank."
             driver.quit()
-
+        # valid cred's
         elif username == 'chandrashekar@we45.com' and password == 'Test@1234':
             assert driver.current_url == url + 'org/dashboard'

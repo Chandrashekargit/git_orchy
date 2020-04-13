@@ -24,14 +24,14 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -161,18 +161,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -287,6 +275,10 @@
       <screen x="0" y="27" width="1360" height="688" />
     </state>
     <state width="1340" height="161" key="GridCell.Tab.0.right/0.27.1360.688@0.27.1360.688" timestamp="1585196863782" />
+    <state x="221" y="27" width="907" height="688" key="SettingsEditor" timestamp="1586616166711">
+      <screen x="0" y="27" width="1360" height="688" />
+    </state>
+    <state x="221" y="27" width="907" height="688" key="SettingsEditor/0.27.1360.688@0.27.1360.688" timestamp="1586616166711" />
     <state x="349" y="197" key="com.intellij.ide.util.TipDialog" timestamp="1586497993095">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
