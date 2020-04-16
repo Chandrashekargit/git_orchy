@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/test_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/test_change_password.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings/test_manageUsersAndTeams/test_domain.py" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/test_manageUsersAndTeams/test_domain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings/test_manageUsersAndTeams/test_users.py" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/test_manageUsersAndTeams/test_users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/test_negative_and_positive_login_tc.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/test_negative_and_positive_login_tc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xpath/settings_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/settings_module_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

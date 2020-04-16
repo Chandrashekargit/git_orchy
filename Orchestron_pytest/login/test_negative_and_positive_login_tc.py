@@ -10,7 +10,6 @@ from xpath.login_xpath import *
 from xpath.Application_module_xpath import *
 
 '''
-> These function lets us check login functionality with positive and negative credentials
 > Note to self: For more info about param's: https://docs.pytest.org/en/latest/parametrize.html.
 '''
 
@@ -23,7 +22,7 @@ passwords = ['Test@134', 'test@134', 'Test@1234', 'Test@1234', 'welcome@1234', '
 @mark.login
 def test_login_warning_msg_for_invalid_credentials():
     """
-    These function lets us test the warning message if we enter the invalid credentials.
+    These function lets us test the warning message if we enter the invalid credentials, if we leave any fields empty.
     """
     for (username, password) in zip(usernames, passwords):
         driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
