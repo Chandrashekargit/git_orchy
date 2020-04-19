@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="">
+    <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="&quot;___&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/test_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Profile_Logout/test_orchy_profile/test_change_password.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_create_applications/test_create_application.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_applications/test_create_application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings/test_manageUsersAndTeams/create_users_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/test_manageUsersAndTeams/create_users_script.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings/test_manageUsersAndTeams/domain_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/test_manageUsersAndTeams/domain_script.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Settings/test_manageUsersAndTeams/test_domain.py" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/test_manageUsersAndTeams/test_domain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Settings/test_manageUsersAndTeams/test_users.py" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/test_manageUsersAndTeams/test_users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/test_negative_and_positive_login_tc.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/test_negative_and_positive_login_tc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings/test_manageUsersAndTeams/test_domain1.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/xpath/settings_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/settings_module_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -255,14 +256,14 @@
       <screen x="0" y="27" width="1360" height="688" />
     </state>
     <state x="413" y="122" width="524" height="496" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1360.688@0.27.1360.688" timestamp="1585847276527" />
-    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2" timestamp="1585847549715">
+    <state x="331" y="27" width="792" height="688" key="CommitChangelistDialog2" timestamp="1587051238699">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
-    <state x="331" y="27" width="688" height="688" key="CommitChangelistDialog2/0.27.1360.688@0.27.1360.688" timestamp="1585847549715" />
-    <state x="463" y="128" width="424" height="484" key="FileChooserDialogImpl" timestamp="1584864300743">
+    <state x="331" y="27" width="792" height="688" key="CommitChangelistDialog2/0.27.1360.688@0.27.1360.688" timestamp="1587051238699" />
+    <state x="463" y="128" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587303535431">
       <screen x="0" y="27" width="1360" height="688" />
     </state>
-    <state x="463" y="128" width="424" height="484" key="FileChooserDialogImpl/0.27.1360.688@0.27.1360.688" timestamp="1584864300743" />
+    <state x="463" y="128" width="424" height="484" key="FileChooserDialogImpl/0.27.1360.688@0.27.1360.688" timestamp="1587303535431" />
     <state width="1340" height="161" key="GridCell.Tab.0.bottom" timestamp="1585196863783">
       <screen x="0" y="27" width="1360" height="688" />
     </state>

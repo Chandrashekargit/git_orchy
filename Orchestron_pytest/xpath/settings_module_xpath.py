@@ -9,8 +9,9 @@ user_name = "//div[@class='row'][2]//input[@maxlength]"
 user_type = "//div[@class='row'][3]//input"
 create_user_submit = "//button[contains(text(),'Submit')]"
 users_section_action_dropdown = "//tr[@class='el-table__row']//td[6]/div//span/div"
-action_dp_delete = "//ul[@x-placement='bottom-end']//li[text()='Delete']"
-delete_confirmation_yes = "//button[contains(text(),'Yes')]"
+action_dp_delete = "//ul[@x-placement='top-end']//li[text()='Delete']"
+# delete_confirmation_yes = "//button[contains(text(),'Yes')]"
+delete_confirmation_yes = "/html/body/div[2]/div[1]/div/div/footer/div/div/button[2]"
 delete_confirmation_no = "//button[contains(text(),'No')]"
 
 # create team xpath's.
@@ -36,12 +37,14 @@ domain_name_submit = "//button[@data-dismiss='createDomainModal']"
 domain_create_popup_close = "//button[text()='Close']"
 doamin_action_dropdown = "//table/tbody/tr[1]/td[2]/div/div/span/div/div[1]"
 domain_actiondp_delete = "//ul[@x-placement='top-end']//li[text()='Delete']"
-domain_delete_yes = "//button[@class='btn btn-submit orchy_font_md' and (text()='Yes')]"
+# domain_delete_yes = "//button[@class='btn btn-submit orchy_font_md' and (text()='Yes')]"
+domain_delete_yes = "/html/body/div[2]/div[1]/div/div/footer/div/div/button[2]"
 domain_delete_no = "//button[@class='btn btn-submit orchy_font_md' and (text()='No')]"
 domain_actiondp_update = "//ul[@x-placement='top-end']//li[text()='Update']"
 domain_search_field = "//div[3]/div/div/div[1]/div[3]/input"
 warning_msg_for_same_domain_name = "//p[contains(text(),' * organization email domain configuration with this domain name already exists.')]"
 warning_msg_for_delete_domain_while_user_exist = "//p[contains(text(),'* User with this domain configuration alredy exists please delete users if want to delete this domain configuration')]"
+warning_msg_if_we_update_domain_name_while_user_exist = "//p[contains(text(),'* User with this domain configuration alredy exists please delete users if want to edit this domain configuration')]"
 
 
 # vul_label_modification_and_notification
