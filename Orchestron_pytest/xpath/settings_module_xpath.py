@@ -10,8 +10,8 @@ user_type = "//div[@class='row'][3]//input"
 create_user_submit = "//button[contains(text(),'Submit')]"
 users_section_action_dropdown = "//tr[@class='el-table__row']//td[6]/div//span/div"
 action_dp_delete = "//ul[@x-placement='top-end']//li[text()='Delete']"
-# delete_confirmation_yes = "//button[contains(text(),'Yes')]"
-delete_confirmation_yes = "/html/body/div[2]/div[1]/div/div/footer/div/div/button[2]"
+delete_confirmation_yes = "//button[contains(text(),'Yes')]"
+# delete_confirmation_yes = "/html/body/div[2]/div[1]/div/div/footer/div/div/button[2]"
 delete_confirmation_no = "//button[contains(text(),'No')]"
 
 # create team xpath's.

@@ -1,11 +1,11 @@
-import time
-import pytest
-from pytest import mark
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from xpath.settings_module_xpath import *
+# import time
+# import pytest
+# from pytest import mark
+# from selenium.webdriver.common.keys import Keys
+# from selenium.webdriver.common.by import By
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
+# from xpath.settings_module_xpath import *
 from selenium.common.exceptions import *
 from Settings.test_manageUsersAndTeams.domain_script import *
 from Settings.test_manageUsersAndTeams.create_users_script import *
@@ -27,7 +27,7 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
                       )
     def test_valid_and_invalid_domain_names(self, driver, domain_names):
         """
-        These function lets us test negative domain names.
+        These function lets us test positive and negative domain names.
         """
         wait = WebDriverWait(driver, 6, poll_frequency=2, ignored_exceptions=[
             NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
@@ -69,6 +69,9 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
         driver.refresh()
 
     def test_if_we_can_delete_domain_while_users_with_that_domain_exist(self, driver):
+        """
+        These function lets us test if we can delete domain while users with that domain name exist.
+        """
         wait = WebDriverWait(driver, 10, poll_frequency=2)
         # calling the function 'create_domain_script'
         create_domain_script(driver, domain_names="demo.com")
@@ -103,7 +106,7 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
         close_popup.click()
         driver.refresh()
 
-        # clear the data
+        # clear the above data entered
         # go back to user section and delete the user
         users_section = wait.until(EC.element_to_be_clickable((By.XPATH, users)))
         users_section.click()
