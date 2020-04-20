@@ -7,8 +7,9 @@
 # from selenium.webdriver.support import expected_conditions as EC
 # from xpath.settings_module_xpath import *
 from selenium.common.exceptions import *
-from Settings.test_manageUsersAndTeams.domain_script import *
-from Settings.test_manageUsersAndTeams.create_users_script import *
+from Settings.test_manageUsersAndTeams.test_domains.domain_script import *
+from Settings.test_manageUsersAndTeams.test_users.create_users_script import *
+from Settings.test_manageUsersAndTeams.test_domains.delete_domain import *
 
 """
 > Tests if we can create new domain
@@ -86,18 +87,7 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
 
         # go back to domain section and try to delete the domain, we should see the warning message and not be able to
         # delete the domain.
-        def delete_domain():
-            wait = WebDriverWait(driver, 10, poll_frequency=2)
-            domain = wait.until(EC.element_to_be_clickable((By.XPATH, domain_section)))
-            domain.click()
-            action_dp = wait.until(EC.element_to_be_clickable((By.XPATH, doamin_action_dropdown)))
-            action_dp.click()
-            time.sleep(1)
-            delete = wait.until(EC.element_to_be_clickable((By.XPATH, domain_actiondp_delete)))
-            delete.click()
-            delete_domain_pop_up = wait.until(EC.element_to_be_clickable((By.XPATH, domain_delete_yes)))
-            delete_domain_pop_up.click()
-        delete_domain()
+        delete_domain(driver, domain_name="demo.com")
 
         warning_msg = wait.until(EC.element_to_be_clickable((By.XPATH, warning_msg_for_delete_domain_while_user_exist))).text
         assert warning_msg == "* User with this domain configuration alredy exists please delete users if want to " \
@@ -119,9 +109,9 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
         time.sleep(2)
 
         # go back to domain section and delete the Domain, recalling the function 'delete_domain'.
-        delete_domain()
+        delete_domain(driver, domain_name="demo.com")
         time.sleep(1)
-        delete_domain()
+        delete_domain(driver, domain_name="demo123.com")
         time.sleep(1)
         driver.refresh()
 

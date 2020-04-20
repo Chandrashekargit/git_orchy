@@ -1,4 +1,4 @@
-url = "https://staging.orchestron.dev/"
+url = "https://demo.orchestron.dev/"
 
 # Application 'create' button xpath's
 application_tab = "//p[contains(text(),'Applications')]"

@@ -1,14 +1,7 @@
-import time
-from pytest import mark
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from xpath.settings_module_xpath import *
-from Settings.test_manageUsersAndTeams.create_users_script import *
-from Applications.test_create_applications.create_app import *
-from Settings.test_manageUsersAndTeams.domain_script import *
-from Settings.test_manageUsersAndTeams.delete_user_script import *
+from Settings.test_manageUsersAndTeams.test_users.create_users_script import *
+from Settings.test_manageUsersAndTeams.test_domains.domain_script import *
+from Settings.test_manageUsersAndTeams.test_domains.delete_domain import *
+from Settings.test_manageUsersAndTeams.test_users.delete_user_script import *
 
 
 firstnames = ['Jose', 'pep', 'James', 'Niki']
@@ -54,19 +47,19 @@ class UsersWarningMessagesAndCreateAndDeleteUsersTests:
     #     close_pop_up = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[text()='×']")))
     #     close_pop_up.click()
 
-    def test_create_users(self, driver):
-        """
-        These function lets us create new users (both admin users and normal users)
-        """
-        # calling the function 'create_domain_script'
-        create_domain_script(driver, domain_names="gmail.com")
-
-        # calling the function 'create_user'
-        create_user(driver, fn="Jose", ln="mourinho", email_id="Josemourinho@gmail.com", un="Jose", privilage="admin")
-        create_user(driver, fn="pep", ln="guardiola", email_id="pepguardiola@gmail.com", un="pep", privilage="admin")
-        create_user(driver, fn="James", ln="hunt", email_id="Jameshunt@gmail.com", un="James", privilage="normal")
-        create_user(driver, fn="Niki", ln="lauda", email_id="Nikilauda@gmail.com", un="Niki", privilage="normal")
-        driver.refresh()
+    # def test_create_users(self, driver):
+    #     """
+    #     These function lets us create new users (both admin users and normal users)
+    #     """
+    #     # calling the function 'create_domain_script'
+    #     create_domain_script(driver, domain_names="gmail.com")
+    #
+    #     # calling the function 'create_user'
+    #     create_user(driver, fn="Jose", ln="mourinho", email_id="Josemourinho@gmail.com", un="Jose", privilage="admin")
+    #     create_user(driver, fn="pep", ln="guardiola", email_id="pepguardiola@gmail.com", un="pep", privilage="admin")
+    #     create_user(driver, fn="James", ln="hunt", email_id="Jameshunt@gmail.com", un="James", privilage="normal")
+    #     create_user(driver, fn="Niki", ln="lauda", email_id="Nikilauda@gmail.com", un="Niki", privilage="normal")
+    #     driver.refresh()
 
     # def test_assign_normal_users_to_team(self, driver, create_team):
     #     """
@@ -154,25 +147,28 @@ class UsersWarningMessagesAndCreateAndDeleteUsersTests:
     #     click_yes.click()
     #     driver.refresh()
 
-    def test_delete_users(self, driver):
-        """
-        These function lets us delete the users.
-        """
-        for i in ["Josemourinho@gmail.com", "pepguardiola@gmail.com", "Jameshunt@gmail.com", "Nikilauda@gmail.com"]:
-            delete_users(driver, user_email=i)
-
-    # def test_forWarningMessageWhenNoNormalUserPresentAndClickOnAddusers(self, driver):
-    #     wait = WebDriverWait(driver, 10, poll_frequency=1)
-    #     settingstab = wait.until(EC.element_to_be_clickable((By.XPATH, settings_tab)))
-    #     driver.execute_script("arguments[0].click();", settingstab)
+    # def test_delete_users_and_respective_domain(self, driver):
+    #     """
+    #     These function lets us delete the users.
+    #     """
+    #     for i in ["Josemourinho@gmail.com", "pepguardiola@gmail.com", "Jameshunt@gmail.com", "Nikilauda@gmail.com"]:
+    #         delete_users(driver, user_email=i)
     #
-    #     teams = wait.until(EC.element_to_be_clickable((By.XPATH, team_section)))
-    #     teams.click()
-    #     driver.execute_script("window.scrollTo(0, 900);")
-    #     action_dp = wait.until(EC.element_to_be_clickable((By.XPATH, teams_section_action_dropdown)))
-    #     action_dp.click()
-    #     addusers = wait.until(EC.element_to_be_clickable((By.XPATH, add_users)))
-    #     addusers.click()
-    #     warning_msg = wait.until(EC.element_to_be_clickable((By.XPATH,
-    #                     "//p[contains(text(), ' * Note: Please create normal user to assign them to a team .')]"))).text
-    #     assert warning_msg == "* Note: Please create normal user to assign them to a team ."
+    # def test_delete_domain(self, driver):
+    #     delete_domain(driver, domain_name="gmail.com")
+
+    def test_forWarningMessageWhenNoNormalUserPresentAndClickOnAddusers(self, driver):
+        wait = WebDriverWait(driver, 10, poll_frequency=1)
+        settingstab = wait.until(EC.element_to_be_clickable((By.XPATH, settings_tab)))
+        driver.execute_script("arguments[0].click();", settingstab)
+
+        teams = wait.until(EC.element_to_be_clickable((By.XPATH, team_section)))
+        teams.click()
+        driver.execute_script("window.scrollTo(0, 900);")
+        action_dp = wait.until(EC.element_to_be_clickable((By.XPATH, teams_section_action_dropdown)))
+        action_dp.click()
+        addusers = wait.until(EC.element_to_be_clickable((By.XPATH, add_users)))
+        addusers.click()
+        warning_msg = wait.until(EC.element_to_be_clickable((By.XPATH,
+                        "//p[contains(text(), ' * Note: Please create normal user to assign them to a team .')]"))).text
+        assert warning_msg == "* Note: Please create normal user to assign them to a team ."
