@@ -19,6 +19,7 @@ def create_domain_script(driver, domain_names=None):
 
     domain = wait.until(EC.element_to_be_clickable((By.XPATH, domain_section)))
     domain.click()
+    time.sleep(2)
     create = wait.until(EC.element_to_be_clickable((By.XPATH, domain_create)))
     create.click()
     domain_name = wait.until(EC.element_to_be_clickable((By.XPATH, domain_name_field)))
