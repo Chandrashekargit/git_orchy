@@ -50,7 +50,7 @@ man_submit = "//button[@class='btn btn-submit pull-right move_right orchy_font_m
 
 # upload results xpath's
 tool = "//div[@class='container-fluid']//input[@placeholder='Select']"
-name = "//input[@class='inline-form-control-count-with-box orchy_font_family orchy_font_lg orchy_font_color form-control is-invalid']"
+name = "//input[@class='inline-form-control-count-with-box orchy_font_family orchy_font_md orchy_font_color form-control is-invalid']"
 file = "//input[@accept='xml,json']"
 upload_results_submit = "//button[contains(text(),'Submit')]"
 

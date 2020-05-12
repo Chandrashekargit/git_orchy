@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
 from Applications.test_create_applications.create_app import create_apps
 
-# apps = ["DAST", "SAST", "SCA"]
+apps = ["DAST", "SAST", "SCA"]
 
 
 @mark.smoke
@@ -17,9 +17,9 @@ class ApplicationCreatingTests:
         """
         These function lets us create new applications called sast, dast, sca with platform type as Python
         """
-        for i in range(1,11):
+        for app in apps:
             # calling the function 'create_apps'
-            create_apps(driver, application_name=i, url="http://demo.com")
+            create_apps(driver, application_name=app, url="http://demo.com")
             time.sleep(2)
 
     # def test_if_applications_created(self, driver):

@@ -30,5 +30,5 @@ sast_tools = ["/home/junaid/Downloads/results_supported_by_orchy/AppScan_SAST.ht
 def test_sast_results(driver):
     for (tool1, name1) in zip(sast_tools, sast_names):
         upload_res(driver, application="//label[contains(text(), 'SAST')]", tool_name=name1, file_loc=tool1)
-        time.sleep(10)
+        time.sleep(12)
         driver.refresh()
