@@ -26,11 +26,11 @@ team_name = "//div[@style='padding: 7px;']/form/div[1]//div[@class='col-sm-10']/
 team_desc = "//div[@style='padding: 7px;']/form/div[2]//div[@class='col-sm-10']/textarea"
 create_team_submit = "//button[contains(text(), 'Submit')]"
 search_field = "/html/body/div/div/div[2]/section/div/div[1]/div/div/div[2]/div/div/div[11]/div[2]/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div[3]/input"
-teams_section_action_dropdown = "//tr[@aria-rowindex='1']//td[@aria-colindex='4' and @data-label=' ']"
+teams_section_action_dropdown = "//span[@class='el-dropdown-link el-dropdown-selfdefine']//div[2]"
 # users_section_action_dropdown = "//div[contains(text(),'Actions')]"
 update = "//ul[@x-placement='top-end']//li[1]"
 delete = "//ul[@x-placement='top-end']//li[2]"
-add_users = "//ul[@x-placement='top-end']//li[3]"
+add_users = "//li[text()='Add Users']"
 select_users_dp = "//div[@class='dropdown v-select searchable']//input"
 select_users_submit = "//button[contains(text(),'Submit')]"
 

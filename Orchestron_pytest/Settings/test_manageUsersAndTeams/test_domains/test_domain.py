@@ -1,11 +1,11 @@
-# import time
-# import pytest
-# from pytest import mark
-# from selenium.webdriver.common.keys import Keys
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
-# from xpath.settings_module_xpath import *
+import time
+import pytest
+from pytest import mark
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from xpath.settings_module_xpath import *
 from selenium.common.exceptions import *
 from Settings.test_manageUsersAndTeams.test_domains.domain_script import *
 from Settings.test_manageUsersAndTeams.test_users.create_users_script import *
@@ -102,8 +102,9 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
         users_section.click()
         users_action_dp = wait.until(EC.element_to_be_clickable((By.XPATH, users_section_action_dropdown)))
         users_action_dp.click()
-        del_user = wait.until(EC.element_to_be_clickable((By.XPATH, action_dp_delete)))
+        del_user = wait.until(EC.element_to_be_clickable((By.XPATH, users_section_action_dropdown_delete)))
         del_user.click()
+        time.sleep(1)
         del_user_yes = wait.until(EC.element_to_be_clickable((By.XPATH, delete_confirmation_yes)))
         del_user_yes.click()
         time.sleep(2)
