@@ -29,7 +29,6 @@ def create_apps(driver, application_name=None, url=None):
     # team.send_keys(Keys.ENTER)
 
     submit_1 = ExplicitWait(value=app_submit).click(driver)
-    # submit_1.click()
     time.sleep(2)
 
 # def create_apps(driver, application_name=None, url=None):
