@@ -26,22 +26,22 @@ class ApplicationCreatingTests:
             create_apps(driver, application_name=app, url="http://demo.com")
             time.sleep(2)
 
-    def test_if_applications_created(self, driver):
-        """
-        These function lets us check if the required applications are created.
-        """
-        application_Tab = WebDriverWait(driver, 10, poll_frequency=1).until(
-            EC.element_to_be_clickable((By.XPATH, "//p[contains(text(),'Applications')]")))
-        application_Tab.click()
-        time.sleep(2)
-        applications = [driver.find_element_by_xpath("//label[contains(text(), 'SCA')]"),
-                        driver.find_element_by_xpath("//label[contains(text(), 'DAST')]"),
-                        driver.find_element_by_xpath("//label[contains(text(), 'SAST')]")]
-        for application in applications:
-            print(application.text)
-            # print(application.tag_name)
-            # print(application.parent)
-            # print(application.location)
-            # print(application.size)
+    # def test_if_applications_created(self, driver):
+    #     """
+    #     These function lets us check if the required applications are created.
+    #     """
+    #     application_Tab = WebDriverWait(driver, 10, poll_frequency=1).until(
+    #         EC.element_to_be_clickable((By.XPATH, "//p[contains(text(),'Applications')]")))
+    #     application_Tab.click()
+    #     time.sleep(2)
+    #     applications = [driver.find_element_by_xpath("//label[contains(text(), 'SCA')]"),
+    #                     driver.find_element_by_xpath("//label[contains(text(), 'DAST')]"),
+    #                     driver.find_element_by_xpath("//label[contains(text(), 'SAST')]")]
+    #     for application in applications:
+    #         print(application.text)
+    #         # print(application.tag_name)
+    #         # print(application.parent)
+    #         # print(application.location)
+    #         # print(application.size)
 
 
