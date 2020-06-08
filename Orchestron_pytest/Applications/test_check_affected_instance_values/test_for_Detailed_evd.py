@@ -5,6 +5,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from pytest import mark
 from xpath.Application_module_xpath import *
 
+# Note: we have redirection error in orchy, when we select the ALL option from perpage dropdown and click on some vul
+#       and get back, "ALL" option is replaced with 10. This script works for 1st 10 vul's. if the redirection is fixed
+#       it works like charm for N number of vul's. [same issue with pagination]
+
 
 @mark.check_for_detailed_evd
 def test_if_evidences_have_detailed_evd(driver):
@@ -18,7 +22,7 @@ def test_if_evidences_have_detailed_evd(driver):
     # search_tab = wait.until(EC.visibility_of_element_located((By.XPATH, "//input[@placeholder='Search']")))
     # search_tab.click()
     # search_tab.send_keys("Enter the app name")
-    select_individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, "//label[contains(text(),'Burp ent test')]")))
+    select_individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, "//label[contains(text(),'Nexus API (json)')]")))
     select_individual_app.click()
 
     # Clicks on Open vulnerability of individual application
@@ -26,17 +30,24 @@ def test_if_evidences_have_detailed_evd(driver):
     open_vul.click()
 
     # Clicks Per-page drop-down and selects 'All'.
-    # perpage_dp = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Per Page']")))
-    # perpage_dp.click()
-    # sel_all_option = wait.until(EC.element_to_be_clickable((By.XPATH, all)))
-    # sel_all_option.click()
+    perpage_dp = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Per Page']")))
+    perpage_dp.click()
+    sel_all_option = wait.until(EC.element_to_be_clickable((By.XPATH, all)))
+    sel_all_option.click()
     time.sleep(2)
 
-    # gives the count of vulnerabilities present under open vul for individual application
+    # gives the total count of vulnerabilities present under open vulnerability for individual application
     vul = wait.until(EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr/td[2]//div[@class='col']/p")))
-    print('Total number of vul: ', len(vul))
+    print('\nTotal number of vul: ', len(vul))
 
     for i in range(1, len(vul)+1):
+        # Clicks Per-page drop-down and selects 'All'
+        perpage = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Per Page']")))
+        perpage.click()
+        time.sleep(1)
+        selectAll = wait.until(EC.element_to_be_clickable((By.XPATH, all)))
+        selectAll.click()
+
         # clicks on individual vul
         click_on_vul = wait.until(EC.presence_of_element_located((By.XPATH, "//tbody/tr["+str(i)+"]/td[2]//div[@class='col']/p")))
         print('vulnerability name: ', click_on_vul.text)
