@@ -12,7 +12,7 @@ class ExplicitWait:
         self.value = value
 
     # property makes the function as variable. so we no need to call the function instead we could just use the func
-    # name like variable where needed. # Brandon blair.
+    # name like variable where needed. #Brandon blair.
     # @property
     def presence1(self, driver):
         element = WebDriverWait(driver, 10, poll_frequency=1, ignored_exceptions = [
@@ -24,3 +24,5 @@ class ExplicitWait:
         element = WebDriverWait(driver, 10, poll_frequency=1, ignored_exceptions=[
             NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException]).until(EC.element_to_be_clickable((By.XPATH, self.value)))
         return element.click()
+
+# Haven't used this file anywhere yet

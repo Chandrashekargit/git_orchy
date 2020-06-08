@@ -25,11 +25,7 @@ def test_login_feature():
         lg.enter_email_or_username(email_id=e)
         lg.enter_password(password=p)
         lg.click_login_btn()
-        if e == 'chandrashekar@we45.com' and p == 'Test@134' or \
-           e == 'chandrashekar@we45.com' and p == 'test@134' or \
-           e == 'chandrashekr@we45.com' and p == 'Test@1234' or \
-           e == 'Chandrashekar@we45.com' and p == 'Test@1234' or \
-           e == 'chandra@we45.com' and p == 'welcome@1234':
+        if (e == 'chandrashekar@we45.com' and p == 'Test@134') or (e == 'chandrashekar@we45.com' and p == 'test@134') or (e == 'chandrashekr@we45.com' and p == 'Test@1234') or (e == 'Chandrashekar@we45.com' and p == 'Test@1234') or (e == 'chandra@we45.com' and p == 'welcome@1234'):
             # Checks if the warning is displayed.
             warning_msg = lg.wait.until(EC.presence_of_element_located((By.XPATH, warning_message1))).is_displayed()
             print(warning_msg)
@@ -43,13 +39,10 @@ def test_login_feature():
             assert "Unable to log in with provided credentials." in warning_msg1
             browser.quit()
         # check for blank username field, check for blank password field, both fields blank,
-        elif e == ' ' and p == 'Test@1234' or e == 'chandrashekar@we45.com' and \
-                p == ' ' or e == ' ' and p == ' ':
-            WebDriverWait(browser, 10, poll_frequency=1).until(
-                EC.presence_of_element_located((By.XPATH, warning_message2))).is_displayed()
+        elif (e == ' ' and p == 'Test@1234') or (e == 'chandrashekar@we45.com' and p == ' ') or (e == ' ' and p == ' '):
+            WebDriverWait(browser, 10, poll_frequency=1).until(EC.presence_of_element_located((By.XPATH, warning_message2))).is_displayed()
             print("\nemail or PW field can't be empty")
-            warning_msg2 = WebDriverWait(browser, 10, poll_frequency=1).until(
-                EC.presence_of_element_located((By.XPATH, warning_message2))).text
+            warning_msg2 = WebDriverWait(browser, 10, poll_frequency=1).until(EC.presence_of_element_located((By.XPATH, warning_message2))).text
             assert warning_msg2 == "* This field may not be blank."
             browser.quit()
         # valid cred's
