@@ -7,11 +7,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
 from Applications.test_create_applications.create_app import create_apps
 
-# apps = ["DAST", "SAST", "SCA"]
-apps = ["ZAP (json,xml)", "Burp (json,xml)", "arachni", "AppScan - DAST", "w3af", "acunetix", "appspider",
-        "AppScan - SAST", "bandit", "brakeman", "checkmarx", "findsecbugs", "gosec",
-        "hp", "nodejs", "veracode", "xanitizer", "OWASP dep", "snyk", "whitesource", "Retire", "npm", "Anchore(json)",
-        "Aquasec (json)", "Nexus API (json)", "Detectify (json)", "Clair (json)", "Nexus CLI (json)", "Nessus (nessus)"]
+apps = ["DAST", "SAST", "SCA"]
+# apps = ["ZAP (json,xml)", "Burp (json,xml)", "arachni", "AppScan - DAST", "w3af", "acunetix", "appspider",
+#         "AppScan - SAST", "bandit", "brakeman", "checkmarx", "findsecbugs", "gosec",
+#         "hp", "nodejs", "veracode", "xanitizer", "OWASP dep", "snyk", "whitesource", "Retire", "npm", "Anchore(json)",
+#         "Aquasec (json)", "Nexus API (json)", "Detectify (json)", "Clair (json)", "Nexus CLI (json)", "Nessus (nessus)"]
 
 
 @mark.smoke

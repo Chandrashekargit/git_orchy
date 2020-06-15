@@ -62,7 +62,7 @@ fix = "//ul[@x-placement='bottom-end']//li[2]"
 wont_fix = "//ul[@x-placement='bottom-end']//li[1]"
 justification = "//textarea[@placeholder='Enter Justification']"
 evidence = "//input[@accept='image/jpeg, image/png,image/jpg,']"
-fix_submit = "//button[contains(text(),'Submit')]"
+fix_vul_submit = "//button[contains(text(),'Submit')]"
 reopen_btn = "//button[text()='ReOpen']"
 reopen_submit = "//button[contains(text(),'Submit')]"
 
