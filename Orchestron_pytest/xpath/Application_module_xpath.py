@@ -56,6 +56,12 @@ uncategorized_vulnerability = "//a[contains(text(),'Uncategorized')]"
 false_positive = "//a[contains(text(),'False Positive')]"
 dashboard = "//a[contains(text(),'Dashboard')]"
 
+# opened_vul
+basic_info = "//a[text()='Basic Info']"
+vulnerability_info = "//a[text()='Vulnerability Info']"
+affected_instance = "//a[text()='Affected Instances']"
+examples = "//a[text()='Examples']"
+
 # closed
 close_btn = "//div[contains(text(),'Close')]"
 fix = "//ul[@x-placement='bottom-end']//li[2]"

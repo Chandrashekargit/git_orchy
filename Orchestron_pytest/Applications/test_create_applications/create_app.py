@@ -1,11 +1,9 @@
-import time
 from selenium.common.exceptions import *
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
-from wait.Explicit_wait import ExplicitWait
 
 
 # def create_apps(driver, application_name=None, url=None):
@@ -38,9 +36,11 @@ def create_apps(driver, application_name=None, url=None):
     applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
     applicationTab.click()
 
+    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     create_btn = wait.until(EC.presence_of_element_located((By.XPATH, app_create_button)))
     create_btn.click()
-    time.sleep(1)
+
+    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     name = wait.until(EC.presence_of_element_located((By.XPATH, app_name)))
     name.send_keys(application_name)
 
@@ -59,4 +59,8 @@ def create_apps(driver, application_name=None, url=None):
 
     submit_1 = wait.until(EC.element_to_be_clickable((By.XPATH, app_submit)))
     submit_1.click()
-    time.sleep(2)
+
+    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    success_msg = wait.until(EC.visibility_of_element_located((By.XPATH, "//p[text()='Application has been created successfully!']")))
+    if success_msg.is_displayed():
+        print("Application successfully created")

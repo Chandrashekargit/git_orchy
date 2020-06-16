@@ -7,8 +7,9 @@ from xpath.Application_module_xpath import *
 
 
 @mark.check_for_detailed_evd
-def test_if_evidences_have_detailed_evd(driver):
+def test_if_evidences_have_detailed_evd(driver, app_name="//label[contains(text(),'DAST')]"):
     wait = WebDriverWait(driver, 10, poll_frequency=2)
+    wait1 = WebDriverWait(driver, 10)
 
     # Click on Application section
     applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
@@ -18,7 +19,7 @@ def test_if_evidences_have_detailed_evd(driver):
     # search_tab = wait.until(EC.visibility_of_element_located((By.XPATH, "//input[@placeholder='Search']")))
     # search_tab.click()
     # search_tab.send_keys("Enter the app name")
-    select_individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, "//label[contains(text(),'Nexus API (json)')]")))
+    select_individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, app_name)))
     select_individual_app.click()
 
     # Clicks on Open vulnerability of individual application
@@ -26,7 +27,7 @@ def test_if_evidences_have_detailed_evd(driver):
     open_vul.click()
 
     # Clicks Per-page drop-down and selects 'All'.
-    perpage_dp = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Per Page']")))
+    perpage_dp = wait.until(EC.element_to_be_clickable((By.XPATH, PerPageDropdown)))
     perpage_dp.click()
     sel_all_option = wait.until(EC.element_to_be_clickable((By.XPATH, all)))
     sel_all_option.click()
@@ -38,34 +39,34 @@ def test_if_evidences_have_detailed_evd(driver):
 
     for i in range(1, len(vul)+1):
         # Clicks Per-page drop-down and selects 'All'
-        perpage = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Per Page']")))
+        perpage = wait.until(EC.element_to_be_clickable((By.XPATH, PerPageDropdown)))
         perpage.click()
-        time.sleep(1)
         selectAll = wait.until(EC.element_to_be_clickable((By.XPATH, all)))
-        selectAll.click()
+        driver.execute_script("arguments[0].click();", selectAll)
 
         # clicks on individual vul
-        click_on_vul = wait.until(EC.presence_of_element_located((By.XPATH, "//tbody/tr["+str(i)+"]/td[2]//div[@class='col']/p")))
-        print('vulnerability name: ', click_on_vul.text)
-        click_on_vul.click()
-        time.sleep(2)
+        WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        click_on_individual_vul = wait.until(EC.presence_of_element_located((By.XPATH, "//tbody/tr["+str(i)+"]/td[2]//div[@class='col']/p")))
+        print('vulnerability name: ', click_on_individual_vul.text)
+        click_on_individual_vul.click()
 
         # moves to affected instance Section
-        move_to_ai = wait.until(EC.presence_of_element_located((By.XPATH, "//a[text()='Affected Instances']")))
+        WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        move_to_ai = wait.until(EC.presence_of_element_located((By.XPATH, affected_instance)))
         move_to_ai.click()
 
         # Gives the count of total number of affected instances under individual vulnerability.
-        affected_instance = wait.until(EC.presence_of_all_elements_located((By.XPATH,
+        affected_inst = wait.until(EC.presence_of_all_elements_located((By.XPATH,
             "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']//header")))
-        print('Total number of affected_instance: ', len(affected_instance))
+        print('Total number of affected_instance: ', len(affected_inst))
 
-        for j in range(1, len(affected_instance)+1):
-            click_on_individual_affected_instance = wait.until(EC.presence_of_element_located((By.XPATH,
+        for j in range(1, len(affected_inst)+1):
+            click_on_individual_affected_instance = wait1.until(EC.presence_of_element_located((By.XPATH,
                "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']["+str(j)+"]//header")))
             # time.sleep(1)
             click_on_individual_affected_instance.click()
 
-            check_the_value_of_affected_instance = wait.until(EC.presence_of_element_located((By.XPATH,
+            check_the_value_of_affected_instance = wait1.until(EC.presence_of_element_located((By.XPATH,
                 "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']["+str(j)+"]//div[@class='collapse show']//div[@class='list-group-item']")))
             # print(check_the_value_of_affected_instance)
 
