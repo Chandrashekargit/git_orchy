@@ -8,7 +8,7 @@ from xpath.Application_module_xpath import *
 import conftest
 
 
-@mark.check_remediation_info
+
 def test_remediation_info(driver):
     """
     > These function lets us check the remediation info all the vulnerabilities (in app variable,

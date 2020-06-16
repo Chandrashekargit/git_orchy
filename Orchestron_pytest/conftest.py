@@ -19,18 +19,21 @@ def driver():
     # driver = webdriver.Firefox(executable_path='/home/junaid/PycharmProjects/HelloWorld/venv/bin/geckodriver_linux64/geckodriver')
     driver.get(url)
     driver.maximize_window()
-    time.sleep(1)
-    email = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, email_xpath)))
+    wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
+        ElementClickInterceptedException, ElementNotVisibleException, ElementNotInteractableException])
+    # dodge the loading symbol
+    wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    # Enter the credentials
+    email = wait.until(EC.element_to_be_clickable((By.XPATH, email_xpath)))
     email.click()
     email.send_keys("chandrashekar@we45.com")
-    pw = WebDriverWait(driver, 10, poll_frequency=2).until(EC.element_to_be_clickable((By.XPATH, password_xpath)))
+    pw = wait.until(EC.element_to_be_clickable((By.XPATH, password_xpath)))
     pw.click()
     pw.send_keys("Test@1234")
-    login = WebDriverWait(driver, 10, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, login_xpath)))
+    login = wait.until(EC.element_to_be_clickable((By.XPATH, login_xpath)))
     login.click()
-
-    assert driver.current_url == url, "URL isn't matching(Conftest)"
-    time.sleep(2)
+    time.sleep(3)
+    assert driver.current_url == url+'org/dashboard', "URL isn't matching(Conftest)"
     return driver
 
 
