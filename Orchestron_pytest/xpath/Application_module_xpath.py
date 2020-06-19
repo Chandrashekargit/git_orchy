@@ -9,6 +9,8 @@ app_platform_type = "//input[@class='el-select__input is-large']"
 app_team = "//div[3][@class='row my-1']//input"
 app_submit = "//button[contains(text(),'Submit')]"
 app_pop_up_close_btn = "//button[@aria-label='Close']"
+existing_application_warning_msg = "//p[contains(text(),' * Application with this name already exists.')]"
+invalid_url_wrng_msg = "//p[contains(text(),' * Enter a valid URL.')]"
 
 # search field xpath
 search = "//input[@placeholder='Search']"

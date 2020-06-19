@@ -9,7 +9,7 @@ from xpath.Application_module_xpath import *
 
 
 @mark.close_all_vul
-def test_close_all_vulnerable(driver, app_name="//label[contains(text(),'SCA')]"):
+def test_close_all_vulnerable(driver, app_name="//label[contains(text(),'DAST')]"):
     """
     > This function closes all the vulnerabilities of application by entering Justification and Evidence/image.
     :param driver: Initialise the browser
@@ -27,6 +27,8 @@ def test_close_all_vulnerable(driver, app_name="//label[contains(text(),'SCA')]"
     go_to_open_vul_section = wait.until(EC.element_to_be_clickable((By.XPATH, open_vulnerability)))
     go_to_open_vul_section.click()
 
+    WebDriverWait(driver, 10, poll_frequency=1).until(
+        EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     per_page = wait.until(EC.element_to_be_clickable((By.XPATH, PerPageDropdown)))
     per_page.click()
     select_All = wait.until(EC.element_to_be_clickable((By.XPATH, all)))
@@ -39,7 +41,7 @@ def test_close_all_vulnerable(driver, app_name="//label[contains(text(),'SCA')]"
     i = len(number_of_open_vul)
     while i > 0:
         # print(i)
-        WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        WebDriverWait(driver, 10, poll_frequency=1).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
         go_to_open_vul = wait.until(EC.element_to_be_clickable((By.XPATH, open_vulnerability)))
         go_to_open_vul.click()
 
@@ -52,6 +54,12 @@ def test_close_all_vulnerable(driver, app_name="//label[contains(text(),'SCA')]"
         WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
         click_on_individual_vul = wait.until(EC.element_to_be_clickable((By.XPATH, "//tbody/tr["+str(i)+"]/td[2]//div[@class='col']/p")))
         click_on_individual_vul.click()
+
+        try:
+            # Waiting for Time_intro presence on the screen
+            wait.until(EC.visibility_of_element_located((By.XPATH, "//u[text()='Time Intro']")))
+        except:
+            pass
 
         WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
         click_close_vul_btn = wait.until(EC.element_to_be_clickable((By.XPATH, close_btn)))
@@ -73,4 +81,4 @@ def test_close_all_vulnerable(driver, app_name="//label[contains(text(),'SCA')]"
         submit = wait.until(EC.element_to_be_clickable((By.XPATH, fix_vul_submit)))
         submit.click()
         i-=1
-        time.sleep(3)
+        time.sleep(5)

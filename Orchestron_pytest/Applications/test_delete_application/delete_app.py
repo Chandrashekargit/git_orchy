@@ -13,15 +13,18 @@ def delete_app(driver, application=None):
     applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
     applicationTab.click()
 
+    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, application)))
     individual_app.click()
-    time.sleep(2)
+
+    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     action_dp = wait.until(EC.element_to_be_clickable((By.XPATH, action_dropdown)))
     action_dp.click()
 
     delete_btn = wait.until(EC.element_to_be_clickable((By.XPATH, delete_option)))
     delete_btn.click()
 
+    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     delete_pop_up = wait.until(EC.element_to_be_clickable((By.XPATH, yes)))
     time.sleep(1)
     delete_pop_up.click()
