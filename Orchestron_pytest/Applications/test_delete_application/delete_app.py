@@ -34,6 +34,8 @@ def delete_app(driver, application=None):
 
     delete_button = wait.until(EC.element_to_be_clickable((By.XPATH, delete)))
     delete_button.click()
+
+    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    # success_msg = wait.until(EC.presence_of_element_located((By.XPATH, "Application has been deleted successfully!")))
     time.sleep(2)
 
-# these function is used in 'test_delete_application', 'test_warning_msg_while_updating_application'.

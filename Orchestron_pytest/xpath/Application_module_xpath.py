@@ -47,7 +47,7 @@ man_submit = "//button[@class='btn btn-submit pull-right move_right orchy_font_m
 
 # upload results xpath's
 tool = "//div[@class='container-fluid']//input[@placeholder='Select']"
-name = "//input[@class='inline-form-control-count-with-box orchy_font_family orchy_font_md orchy_font_color form-control is-invalid']"
+name = "//input[@maxlength='100']"
 file = "//input[@accept='xml,json']"
 upload_results_submit = "//button[contains(text(),'Submit')]"
 
@@ -63,6 +63,7 @@ basic_info = "//a[text()='Basic Info']"
 vulnerability_info = "//a[text()='Vulnerability Info']"
 affected_instance = "//a[text()='Affected Instances']"
 examples = "//a[text()='Examples']"
+close_evdience = "//ul[@x-placement='bottom-end' or @x-placement='top-end']//li[text()='Close evidence']"
 
 # closed
 close_btn = "//div[contains(text(),'Close')]"

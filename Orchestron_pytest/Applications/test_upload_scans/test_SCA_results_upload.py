@@ -1,12 +1,4 @@
-import time
 from pytest import mark
-from selenium.common.exceptions import *
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium import webdriver
-from xpath.Application_module_xpath import *
 from Applications.test_upload_scans.test_upload_results import upload_res
 
 sca_tools = ["/home/junaid/Downloads/results_supported_by_orchy/OWASP Dependency Checker.xml",
@@ -26,8 +18,7 @@ class UploadScaScansAndCheckAllWarningMessagesTests:
         for (tool3, name3) in zip(sca_tools, sca_names):
             # calling the function 'upload_res' to upload all SCA scan's.
             upload_res(driver, application="//label[contains(text(), 'SCA')]", tool_name=name3, file_loc=tool3)
-            time.sleep(10)
-            driver.refresh()
+            # driver.refresh()
 
     # def test_for_warning_msg_if_we_upload_scans_with_same_name(self, driver):
     #     # calling the function 'upload_res' to upload zap scan

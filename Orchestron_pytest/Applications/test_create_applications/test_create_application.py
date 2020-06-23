@@ -1,10 +1,5 @@
 import time
 from pytest import mark
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from xpath.Application_module_xpath import *
 from Applications.test_create_applications.create_app import create_apps
 
 apps = ["DAST", "SAST", "SCA"]
