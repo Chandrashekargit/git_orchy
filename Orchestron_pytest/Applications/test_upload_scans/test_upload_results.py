@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
+import time
 
 
 def upload_res(driver, application=None, tool_name=None, file_loc=None):
@@ -19,6 +20,7 @@ def upload_res(driver, application=None, tool_name=None, file_loc=None):
 
     # click on action drop down
     WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    time.sleep(2)
     action = wait.until(EC.element_to_be_clickable((By.XPATH, action_dropdown)))
     action.click()
 
@@ -30,6 +32,7 @@ def upload_res(driver, application=None, tool_name=None, file_loc=None):
     WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     selectTool = wait.until(EC.element_to_be_clickable((By.XPATH, tool)))
     selectTool.click()
+    time.sleep(1)
     selectTool.send_keys(tool_name)
     selectTool.send_keys(Keys.ARROW_DOWN)
     selectTool.send_keys(Keys.ENTER)
@@ -47,7 +50,7 @@ def upload_res(driver, application=None, tool_name=None, file_loc=None):
     submit1.click()
 
     # waits until the submit is invisible
-    WebDriverWait(driver, 40).until(EC.invisibility_of_element((By.XPATH, upload_results_submit)))
+    WebDriverWait(driver, 50).until(EC.invisibility_of_element((By.XPATH, upload_results_submit)))
 
     # waits until the Loading symbol is invisible
     WebDriverWait(driver, 40).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))

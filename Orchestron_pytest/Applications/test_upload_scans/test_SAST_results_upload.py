@@ -18,8 +18,8 @@ from Applications.test_upload_scans.test_upload_results import upload_res
 sast_names = [
               "AppScan - SAST", "bandit", "brakeman", "checkmarx", "findsecbugs", "gosec",
               "hp", "nodejs", "veracode", "xanitizer", "zap", "Burp (json,xml)", "arachni",
-              "AppScan - DAST", "w3af", "acunetix", "appspider"
-              "OWASP", "snyk", "whitesource", "Retire", "npm", "snyk"
+              "AppScan - DAST", "w3af", "acunetix", "appspider",
+              "OWASP", "snyk", "whitesource", "Retire", "npm"
             ]
 
 sast_tools = [
