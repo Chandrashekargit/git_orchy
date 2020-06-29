@@ -64,3 +64,4 @@ def create_apps(driver, application_name=None, url=None):
     success_msg = wait.until(EC.visibility_of_element_located((By.XPATH, "//p[text()='Application has been created successfully!']")))
     if success_msg.is_displayed():
         print("Application successfully created")
+    wait.until(EC.invisibility_of_element((By.XPATH, "//p[text()='Application has been created successfully!']")))

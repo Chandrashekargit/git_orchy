@@ -5,7 +5,7 @@ from Applications.test_close_evidence.close_evd import *
 from pytest import mark
 
 
-@mark.close_evidence
+
 class CloseEvdTests:
     def test_create_application(self, driver):
         create_apps(driver, application_name="App_to_check_evd", url="http://demo.com")
@@ -16,7 +16,6 @@ class CloseEvdTests:
                    file_loc="/home/junaid/Downloads/results_supported_by_orchy/NpmAudit.json")
 
     def test_close_evidence(self, driver):
-        close_evd(driver, app_name="//label[contains(text(), 'demo')]")
+        close_evd(driver, app_name="//label[contains(text(), 'App_to_check_evd')]")
 
-    def test_delete_app(self, driver):
-        delete_app(driver, application="//label[contains(text(), 'App_to_check_evd')]")
+

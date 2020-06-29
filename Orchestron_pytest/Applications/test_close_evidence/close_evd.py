@@ -1,4 +1,5 @@
 import time
+from selenium.common.exceptions import *
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -41,7 +42,7 @@ def close_evd(driver, app_name=None):
         # else, it goes to affected instance section.
         WebDriverWait(driver, 5).until(EC.invisibility_of_element((By.XPATH, "//tbody/tr/td[2]//div[@class='col']/p")))
         print("\nNo vulnerabilities are present for this application")
-    except:
+    except TimeoutException:
         vul = wait.until(EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr/td[2]//div[@class='col']/p")))
         print('\nTotal number of vul: ', len(vul))
 
@@ -52,7 +53,7 @@ def close_evd(driver, app_name=None):
 
             # clicks on individual vul
             wait1.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-            click_on_individual_vul = wait.until(EC.presence_of_element_located((By.XPATH, "//tbody/tr/td[2]//div[@class='col']/p")))
+            click_on_individual_vul = wait.until(EC.element_to_be_clickable((By.XPATH, "//tbody/tr/td[2]//div[@class='col']/p")))
             print('vulnerability name: ', click_on_individual_vul.text)
             click_on_individual_vul.click()
 
@@ -62,24 +63,20 @@ def close_evd(driver, app_name=None):
 
             # moves to affected instance Section
             wait1.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-            move_to_ai = wait.until(EC.presence_of_element_located((By.XPATH, affected_instance)))
+            move_to_ai = wait.until(EC.element_to_be_clickable((By.XPATH, affected_instance)))
             move_to_ai.click()
+            time.sleep(2)
 
-        try:
-            # checks if affected instance(s) are present, if not, prints the msg.
-            # else, it goes ahead to close the affected instance.
-            WebDriverWait(driver, 5).until(EC.invisibility_of_element((By.XPATH,
-               "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']//div[contains(text(),'Actions')]")))
-            print("No Affected instance for this vulnerability")
-        except:
+            # try:
             # Gives the count of total number of affected instances under individual vulnerability.
-            affected_inst = wait.until(EC.presence_of_all_elements_located((By.XPATH,
+            wait1.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+            affected_inst = wait1.until(EC.presence_of_all_elements_located((By.XPATH,
                 "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']//div[contains(text(),'Actions')]")))
             print('Total number of affected_instance: ', len(affected_inst))
 
             for j in range(1, len(affected_inst) + 1):
                 click_on_individual_action_dp = wait1.until(EC.element_to_be_clickable((By.XPATH,
-                   "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']["+str(j)+"]//div[contains(text(),'Actions')]")))
+                    "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row'][" +str(j)+"]//div[contains(text(),'Actions')]")))
                 click_on_individual_action_dp.click()
 
                 select_close_evd = wait1.until(EC.presence_of_element_located((By.XPATH, close_evdience)))
@@ -95,3 +92,9 @@ def close_evd(driver, app_name=None):
 
                 if j == len(affected_inst):
                     break
+            # except TimeoutException:
+            #     break
+            # finally:
+            #     wait1.until(EC.invisibility_of_element((By.XPATH,
+            #                                             "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']//div[contains(text(),'Actions')]")))
+            #     print("No affected instances present under this vulnerability")
