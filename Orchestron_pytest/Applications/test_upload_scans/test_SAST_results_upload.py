@@ -17,9 +17,7 @@ from Applications.test_upload_scans.test_upload_results import upload_res
 
 sast_names = [
               "AppScan - SAST", "bandit", "brakeman", "checkmarx", "findsecbugs", "gosec",
-              "hp", "nodejs", "veracode", "xanitizer", "zap", "Burp (json,xml)", "arachni",
-              "AppScan - DAST", "w3af", "acunetix", "appspider",
-              "OWASP", "snyk", "whitesource", "Retire", "npm"
+              "hp", "nodejs", "veracode", "xanitizer"
             ]
 
 sast_tools = [
@@ -33,19 +31,8 @@ sast_tools = [
               "/home/junaid/Downloads/results_supported_by_orchy/nodejsScan.json",
               "/home/junaid/Downloads/results_supported_by_orchy/veracode.xml",
               "/home/junaid/Downloads/results_supported_by_orchy/xanitizer.xml",
-              "/home/junaid/Downloads/results_supported_by_orchy/zap.xml",
-              "/home/junaid/Downloads/results_supported_by_orchy/burp.xml",
-              "/home/junaid/Downloads/results_supported_by_orchy/Arachni.json",
-              "/home/junaid/Downloads/results_supported_by_orchy/AppScan_DAST.xml",
-              "/home/junaid/Downloads/results_supported_by_orchy/w3af.xml",
-              "/home/junaid/Downloads/results_supported_by_orchy/Acunetix.xml",
-              "/home/junaid/Downloads/results_supported_by_orchy/appspider.xml",
-"/home/junaid/Downloads/results_supported_by_orchy/OWASP Dependency Checker.xml",
-             "/home/junaid/Downloads/results_supported_by_orchy/snyk.json",
-             "/home/junaid/Downloads/results_supported_by_orchy/WhiteSource.xml",
-             "/home/junaid/Downloads/results_supported_by_orchy/RetireJS.json",
-             "/home/junaid/Downloads/results_supported_by_orchy/NpmAudit.json"
-              ]
+            ]
+
 
 @mark.smoke1
 @mark.sast

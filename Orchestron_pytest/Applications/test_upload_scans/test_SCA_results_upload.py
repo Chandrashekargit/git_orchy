@@ -8,7 +8,7 @@ sca_tools = ["/home/junaid/Downloads/results_supported_by_orchy/OWASP Dependency
              "/home/junaid/Downloads/results_supported_by_orchy/NpmAudit.json"
              ]
 
-sca_names = ["OWASP", "snyk", "whitesource", "Retire", "npm", "snyk"]
+sca_names = ["OWASP Dependency", "snyk", "whitesource", "Retire", "npm", "snyk"]
 
 
 @mark.smoke1

@@ -50,9 +50,9 @@ def upload_res(driver, application=None, tool_name=None, file_loc=None):
     submit1.click()
 
     # waits until the submit is invisible
-    WebDriverWait(driver, 50).until(EC.invisibility_of_element((By.XPATH, upload_results_submit)))
+    WebDriverWait(driver, 60).until(EC.invisibility_of_element((By.XPATH, upload_results_submit)))
 
     # waits until the Loading symbol is invisible
-    WebDriverWait(driver, 40).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    WebDriverWait(driver, 60).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     # success_msg = wait.until(EC.visibility_of_element_located((By.XPATH, "File has been uploaded successfully!")))
 
