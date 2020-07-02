@@ -1,60 +1,21 @@
-import time
 from pytest import mark
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from xpath.Engagement_module_xpath import *
-from xpath.Application_module_xpath import *
-import conftest
+from Engagements.test_create_eng.create_eng import *
+from Applications.test_create_applications.create_app import *
+from Applications.test_delete_application.delete_app import *
+
+eng_names = ["!@#$%^&*() 1234567890! createapp with alphanum,spl", "1234567890", "D", "0", "@", "ABC", "abc"]
+eng_descs = ["@1q,2/3==0" * 20, "z", "http://DEMO.com", "qwerty"*200, "!@#$%^&*()_+=-", "abc", "abc"]
 
 
 @mark.engagement_boundary_value_analysis_positive
-@mark.parametrize('engagement_name, eng_description', [
-    ('!@#$%^&*() 1234567890! createapp with alphanum,spl', "@1q,2/3==0" * 20),
-    ('1234567890', ' '),
-    ('D', 'http://D.com')
-])
-def test_create_eng(driver, engagement_name, eng_description):
-    eng_tab = WebDriverWait(driver, 10, poll_frequency=1).until(
-        EC.element_to_be_clickable((By.XPATH, Engagement_tab)))
-    eng_tab.click()
+class EngagementBVCTests:
+    def test_create_app(self, driver):
+        create_apps(driver, application_name="Demo y", url="http://demo.com")
 
-    create_btn = WebDriverWait(driver, 10, poll_frequency=3).until(
-        EC.element_to_be_clickable((By.XPATH, eng_create_btn)))
-    create_btn.click()
+    def test_create_eng(self, driver):
+        for (eng_name, eng_desc) in zip(eng_names, eng_descs):
+            create_engagement(driver, engagement_name=eng_name, eng_descrption=eng_desc, which_application="Demo y",
+                              which_scope_type="All")
 
-    name = WebDriverWait(driver, 10, poll_frequency=1).until(
-        EC.presence_of_element_located((By.XPATH, eng_name)))
-    name.send_keys(engagement_name)
-
-    desc = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, eng_desc)))
-    desc.send_keys(eng_description)
-
-    eng_date = WebDriverWait(driver, 10, poll_frequency=1).until(
-        EC.element_to_be_clickable((By.XPATH, eng_date_btn)))
-    eng_date.click()
-    eng_date_popup1 = WebDriverWait(driver, 10, poll_frequency=1).until(
-        EC.element_to_be_clickable((By.XPATH, "//div[@class='mx-calendar'][1]//td[@class='curMonth today']")))
-    eng_date_popup1.click()
-    eng_date_popup2 = WebDriverWait(driver, 10, poll_frequency=1).until(
-        EC.element_to_be_clickable((By.XPATH, "//div[@class='mx-calendar'][2]//td[@title='28/02/2020']")))
-    eng_date_popup2.click()
-
-    bucket_type = WebDriverWait(driver, 10, poll_frequency=1).until(
-        EC.presence_of_element_located((By.XPATH, eng_bucket_type)))
-    bucket_type.send_keys("All")
-    bucket_type.send_keys(Keys.ARROW_DOWN)
-    bucket_type.send_keys(Keys.ENTER)
-
-    app_dropdown = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, eng_app_dropdown)))
-    app_dropdown.send_keys("SCA")
-    app_dropdown.send_keys(Keys.ARROW_DOWN)
-    app_dropdown.send_keys(Keys.ENTER)
-
-    submit = WebDriverWait(driver, 10, poll_frequency=1).until(
-        EC.element_to_be_clickable((By.XPATH, eng_submit)))
-    driver.execute_script("arguments[0].click();", submit)
-    driver.refresh()
+    def test_delete_app(self, driver):
+        delete_app(driver, application="//label[contains(text(),'Demo y')]")

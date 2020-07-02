@@ -10,6 +10,7 @@ def delete_app(driver, application=None):
     wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
         NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
 
+    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
     applicationTab.click()
 

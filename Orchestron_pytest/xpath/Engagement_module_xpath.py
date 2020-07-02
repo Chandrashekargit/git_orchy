@@ -9,6 +9,8 @@ eng_date_btn = "//input[@placeholder='Select Date Range']"
 eng_date1 = "//div[@class='mx-calendar'][1]//td[@class='curMonth today']"
 eng_submit = "//button[contains(text(),'Submit')]"
 eng_success_msg = "//p[text()='Engagement has been created successfully!']"
+wrng_msg_for_same_eng_name = "//p[text()=' * engagement with this name already exists.']"
+create_eng_popup_close = "//button[@aria-label='Close']"
 
 # Engagement heads
 assign_unassign_xpath = "//a[text()='Assign / Unassign Scans']"

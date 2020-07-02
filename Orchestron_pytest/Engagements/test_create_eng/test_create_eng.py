@@ -11,7 +11,7 @@ class CreateEngagementTests:
         create_apps(driver, application_name="Demo X", url="http://demo.com")
 
     def test_create_eng(self, driver):
-        create_engagement(driver, engagement_name="Demo engagement", which_application="Demo X", which_scope_type="All")
+        create_engagement(driver, engagement_name="Demo engagement", eng_descrption="demo", which_application="Demo X", which_scope_type="All")
 
     def test_delete_eng(self, driver):
         delete_eng(driver, engagement_name_xpath="//label[contains(text(), 'Demo engagement')]")
