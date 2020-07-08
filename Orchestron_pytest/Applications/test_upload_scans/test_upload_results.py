@@ -11,10 +11,12 @@ def upload_res(driver, application=None, tool_name=None, file_loc=None):
     wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
         NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
 
+    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
     applicationTab.click()
 
     # select the required app
+    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     app = wait.until(EC.element_to_be_clickable((By.XPATH, application)))
     app.click()
 

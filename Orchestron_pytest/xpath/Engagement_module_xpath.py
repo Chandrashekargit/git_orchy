@@ -23,9 +23,13 @@ unassign_success_msg = "//p[text()='The scans have been unassigned successfully!
 action_dropdown = "//div[contains(text(),'Actions')]"
 eng_update = "//ul[@class='el-dropdown-menu el-popper']//li[1]"
 eng_viewreport = "//ul[@class='el-dropdown-menu el-popper']//li[2]"
-eng_close_eng = "//ul[@class='el-dropdown-menu el-popper']//li[3]"
+eng_close = "//ul[@class='el-dropdown-menu el-popper']//li[3]"
 eng_delete = "//ul[@class='el-dropdown-menu el-popper']//li[4]"
 
 # Delete Engagement
 confirm_delete = "//button[contains(text(),'Delete')]"
 delete_success_msg = "//p[text()='Engagement has been deleted successfully.']"
+
+# close engagement
+confirm_close_eng = "//button[contains(text(),'Close')]"
+close_success_msg = "//p[text()='Engagement has been closed Successfully!']"

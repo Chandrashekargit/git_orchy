@@ -8,7 +8,7 @@ eng_descs = ["@1q,2/3==0" * 20, "z", "http://DEMO.com", "qwerty"*200, "!@#$%^&*(
 
 
 @mark.engagement_boundary_value_analysis_positive
-class EngagementBVCTests:
+class EngagementBVATests:
     def test_create_app(self, driver):
         create_apps(driver, application_name="Demo y", url="http://demo.com")
 

@@ -24,6 +24,7 @@ def create_engagement(driver, engagement_name, eng_descrption, which_application
 
     # Enter the name of the engagement
     WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    wait.until(EC.visibility_of_element_located((By.XPATH, eng_name)))
     name = wait.until(EC.element_to_be_clickable((By.XPATH, eng_name)))
     name.send_keys(engagement_name)
 

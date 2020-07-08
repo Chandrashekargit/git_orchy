@@ -15,7 +15,7 @@ sca_tools = ["/home/junaid/Downloads/results_supported_by_orchy/OWASP Dependency
              "/home/junaid/Downloads/results_supported_by_orchy/NpmAudit.json"
              ]
 
-sca_names = ["OWASP", "snyk", "whitesource", "Retire", "npm", "snyk"]
+sca_names = ["OWASP Dependency", "snyk", "whitesource", "Retire", "npm", "snyk"]
 
 
 @mark.assign_unassign_scans
@@ -25,10 +25,10 @@ class CreateEngagementTests:
 
     def test_upload_scans(self, driver):
         for (tool3, name3) in zip(sca_tools, sca_names):
-            upload_res(driver, application="//label[contxains(text(), 'Demo X')]", tool_name=name3, file_loc=tool3)
+            upload_res(driver, application="//label[contains(text(), 'Demo X')]", tool_name=name3, file_loc=tool3)
 
     def test_create_eng(self, driver):
-        create_engagement(driver, engagement_name="Demo engagement", which_application="Demo X", which_scope_type="All")
+        create_engagement(driver, engagement_name="Demo engagement", eng_descrption="qwerty", which_application="Demo X", which_scope_type="All")
 
     def test_assign_scans(self, driver):
         assign_scans(driver, individual_eng_xpath="//label[contains(text(), 'Demo engagement')]")
