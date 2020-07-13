@@ -1,15 +1,13 @@
 import time
+from selenium.common.exceptions import *
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from xpath.settings_module_xpath import *
-from selenium.common.exceptions import *
 
 
-def create_team(driver, name, desc):
-    """
-    These function lets us create team.
-    """
+def delete_team(driver, team_name):
     wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
         ElementClickInterceptedException, ElementNotVisibleException, ElementNotInteractableException])
 
@@ -21,21 +19,20 @@ def create_team(driver, name, desc):
     team.click()
 
     WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-    create = wait.until(EC.element_to_be_clickable((By.XPATH, create_user_btn)))
-    create.click()
+    search_team = wait.until(EC.element_to_be_clickable((By.XPATH, search_field)))
+    search_team.clear()
+    search_team.send_keys(team_name)
+    search_team.send_keys(Keys.ENTER)
+
+    action_dp = wait.until(EC.element_to_be_clickable((By.XPATH, teams_section_action_dropdown)))
+    action_dp.click()
+
+    select_delete = wait.until(EC.element_to_be_clickable((By.XPATH, delete)))
+    select_delete.click()
+    click_yes = wait.until(EC.element_to_be_clickable((By.XPATH, confirm_delete)))
+    click_yes.click()
 
     WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-    name_field = wait.until(EC.presence_of_element_located((By.XPATH, team_name)))
-    name_field.send_keys(name)
-
-    desc_field = wait.until(EC.presence_of_element_located((By.XPATH, team_desc)))
-    desc_field.send_keys(desc)
-
-    submit = wait.until(EC.element_to_be_clickable((By.XPATH, create_team_submit)))
-    submit.click()
-
-    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-    # wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_team_created)))
-    # wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_team_created)))
-    # back = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Back']")))
-    # back.click()
+    # wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_delete_team)))
+    # wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_delete_team)))
+    time.sleep(2)

@@ -1,5 +1,7 @@
+from pytest import mark
 from Settings.test_users.create_users import *
 from Settings.test_domains.delete_domain import *
+from Settings.test_domains.create_domain import *
 
 """
 > Tests if we can create new domain
@@ -50,7 +52,7 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
         """
         wait = WebDriverWait(driver, 6, poll_frequency=2)
         # calling the function 'create_domain_script'
-        create_domain_script(driver, domain_names="we45.com")
+        create_domain(driver, domain_names="we45.com")
         time.sleep(2)
         warning_msg = wait.until(
             EC.element_to_be_clickable((By.XPATH, warning_msg_for_same_domain_name))).text
