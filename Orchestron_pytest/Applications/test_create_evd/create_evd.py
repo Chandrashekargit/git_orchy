@@ -1,10 +1,8 @@
-import time
 from selenium.common.exceptions import *
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
-from selenium.webdriver.common.action_chains import ActionChains
 
 
 def create_manual_evd(driver, individual_vul_xpath):
@@ -81,9 +79,8 @@ def sast_evd(driver, line_no, line_range, code_snippet_location, path, file_name
     enter_line_range = wait.until(EC.element_to_be_clickable((By.XPATH, line_range_xpath)))
     enter_line_range.send_keys(line_range)
 
-    wait.until(EC.visibility_of_element_located((By.XPATH, code_snippet_xpath)))
     enter_code_snippet = wait.until(EC.presence_of_element_located((By.XPATH, code_snippet_xpath)))
-    ActionChains(driver).move_to_element(enter_code_snippet).send_keys(code_snippet_location).perform()
+    enter_code_snippet.send_keys(code_snippet_location)
 
     enter_path = wait.until(EC.element_to_be_clickable((By.XPATH, path_xpath)))
     enter_path.send_keys(path)
@@ -123,11 +120,10 @@ def dast_evd(driver, enter_url, enter_param, enter_payload, req_file_loc, respon
     payload = wait.until(EC.element_to_be_clickable((By.XPATH, payload_xpath)))
     payload.send_keys(enter_payload)
 
-    request = wait.until(EC.element_to_be_clickable((By.XPATH, request_xpath)))
-    # request.send_keys(req_file_loc)
-    ActionChains(driver).move_to_element(request).send_keys(req_file_loc).perform()
+    request = wait.until(EC.presence_of_element_located((By.XPATH, request_xpath)))
+    request.send_keys(req_file_loc)
 
-    response = wait.until(EC.element_to_be_clickable((By.XPATH, response_xpath)))
+    response = wait.until(EC.presence_of_element_located((By.XPATH, response_xpath)))
     response.send_keys(response_file_loc)
 
     submit = wait.until(EC.element_to_be_clickable((By.XPATH, evd_submit)))

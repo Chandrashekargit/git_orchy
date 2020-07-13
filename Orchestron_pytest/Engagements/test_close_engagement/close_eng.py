@@ -1,3 +1,4 @@
+import time
 from selenium.common.exceptions import *
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -21,7 +22,8 @@ def close_eng(driver, engagement_name_xpath):
 
     # awaits for action dropdown btn to be visible on DOM and clicks on it
     WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-    wait.until(EC.visibility_of_element_located((By.XPATH, action_dropdown)))
+    # wait.until(EC.visibility_of_element_located((By.XPATH, action_dropdown)))
+    time.sleep(2)
     action = wait.until(EC.element_to_be_clickable((By.XPATH, action_dropdown)))
     action.click()
 

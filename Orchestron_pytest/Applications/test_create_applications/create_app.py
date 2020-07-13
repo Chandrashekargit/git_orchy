@@ -41,6 +41,7 @@ def create_apps(driver, application_name=None, url=None):
     create_btn.click()
 
     WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    wait.until(EC.visibility_of_element_located((By.XPATH, app_name)))
     name = wait.until(EC.presence_of_element_located((By.XPATH, app_name)))
     name.send_keys(application_name)
 

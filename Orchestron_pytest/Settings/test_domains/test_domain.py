@@ -1,15 +1,5 @@
-import time
-import pytest
-from pytest import mark
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from xpath.settings_module_xpath import *
-from selenium.common.exceptions import *
-from Settings.test_manageUsersAndTeams.test_domains.domain_script import *
-from Settings.test_manageUsersAndTeams.test_users.create_users_script import *
-from Settings.test_manageUsersAndTeams.test_domains.delete_domain import *
+from Settings.test_users.create_users import *
+from Settings.test_domains.delete_domain import *
 
 """
 > Tests if we can create new domain

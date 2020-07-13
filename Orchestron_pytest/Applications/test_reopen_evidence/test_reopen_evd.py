@@ -5,7 +5,6 @@ from Applications.test_close_evidence.close_evd import *
 from pytest import mark
 
 
-
 class CloseEvdTests:
     def test_create_application(self, driver):
         create_apps(driver, application_name="App_to_check_evd", url="http://demo.com")

@@ -3,16 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="&quot;___&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_upload_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_upload_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engagements/test_assign_and_unassign_scans/test_assign_unassign_scans.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_assign_and_unassign_scans/test_assign_unassign_scans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engagements/test_close_engagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_close_engagement/test_close_engagement.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_create_applications/create_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_applications/create_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_create_evd/create_evd.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_evd/create_evd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_create_evd/test_create_evidence.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_evd/test_create_evidence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engagements/test_close_engagement/close_eng.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_close_engagement/close_eng.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engagements/test_close_engagement/test_close_engagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_close_engagement/test_close_engagement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engagements/test_create_eng/create_eng.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_create_eng/create_eng.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engagements/test_create_eng_boundary_analysis/test_positive_tc_eng_boundary_value_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_create_eng_boundary_analysis/test_positive_tc_eng_boundary_value_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engagements/test_delete_eng/delete_eng.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_delete_eng/delete_eng.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engagements/test_delete_eng/test_delete_eng.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_delete_eng/test_delete_eng.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engagements/test_view_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_view_report/test_view_report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xpath/Engagement_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Engagement_module_xpath.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xpath/Application_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Application_module_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
