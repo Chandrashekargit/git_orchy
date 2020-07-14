@@ -27,10 +27,13 @@ def create_domain(driver, domain_name):
     domain_names = wait.until(EC.element_to_be_clickable((By.XPATH, domain_name_field)))
     domain_names.send_keys(domain_name)
 
-    domain_submit = wait.until(EC.element_to_be_clickable((By.XPATH, domain_name_submit)))
-    domain_submit.click()
+    try:
+        domain_submit = WebDriverWait(driver, 5, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, domain_name_submit)))
+        domain_submit.click()
+    except TimeoutException:
+        print("Submit button not visible")
 
     WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-    wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_domain_created)))
-    wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_domain_created)))
-    driver.refresh()
+    # wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_domain_created)))
+    # wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_domain_created)))
+    # driver.refresh()

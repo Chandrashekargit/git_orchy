@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from xpath.settings_module_xpath import *
 
 
-def create_user(driver, fn=None, ln=None, email_id=None, un=None, privilage=None):
+def create_user(driver, fn, ln, email_id, un, privilage):
     """
     These function lets us create the users.
     """
@@ -44,7 +44,28 @@ def create_user(driver, fn=None, ln=None, email_id=None, un=None, privilage=None
     usertype.send_keys(privilage)
     usertype.send_keys(Keys.ENTER)
 
+    if privilage == "Normal".lower():
+        click_on_create_team = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Create Team']")))
+        click_on_create_team.click()
+
+        WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        name = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@maxlength='50']")))
+        name.send_keys("Demo X team")
+
+        desc = wait.until(EC.presence_of_element_located((By.XPATH, "//textarea[@id]")))
+        desc.send_keys("Demo team")
+
+        submit = wait.until(EC.presence_of_element_located((By.XPATH, "//button[.='Submit']")))
+        submit.click()
+        time.sleep(3)
+
+        click_on_select_team_dp = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Select']")))
+        click_on_select_team_dp.send_keys("Demo X team")
+        click_on_select_team_dp.send_keys(Keys.ARROW_DOWN)
+        click_on_select_team_dp.send_keys(Keys.ENTER)
+
     try:
+        WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
         submit = wait.until(EC.element_to_be_clickable((By.XPATH, create_user_submit)))
         submit.click()
 

@@ -33,3 +33,5 @@ def delete_domain(driver, domain_name):
     WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     # wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_domain_deleted)))
     # wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_domain_deleted)))
+    # back = wait.until(EC.element_to_be_clickable((By.XPATH, back_btn)))
+    # back.click()
