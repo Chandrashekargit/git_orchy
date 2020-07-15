@@ -90,7 +90,9 @@ cancel = "//footer[@class='modal-footer']//button[contains(text(),'Cancel')]"
 
 # Evidence
 create_evidence_btn = "//button[contains(text(), 'Create Evidence')]"
+close_evd_pop_up = "//button[.='×']"
 
+# sast evd
 sast_toggle_btn = "//div[@class='row']//div[@class='col-sm-4 col-md-4 col-4'][1]//span"
 line_no_xpath = "//input[@placeholder='Enter line no']"
 line_range_xpath = "//input[@placeholder='Enter line range']"
@@ -99,17 +101,30 @@ code_snippet_xpath = "/html/body/div[2]/div[1]/div/div/div/div/form/div/div/div/
 path_xpath = "//input[@placeholder='Enter path']"
 file_name_xpath = "//input[@placeholder='Enter file name']"
 param_xpath = "//input[@placeholder='Enter param']"
+wrng_msg_for_empty_line_no = "//p[.=' * A valid integer is required.']"
+code_snippet_wrng_msg_for_empty_field = "//p[.=' * The submitted data was not a file. Check the encoding type on the form.']"
 
+
+# dast evd
 dast_toggle_btn = "//div[@class='row']//div[@class='col-sm-4 col-md-4 col-4'][2]//span"
 url_xpath = "//input[@placeholder='Enter URL']"
 dast_param_xpath = "//input[@placeholder='Enter param']"
 payload_xpath = "//input[@placeholder='Enter payload']"
 request_xpath = "/html/body/div[2]/div[1]/div/div/div/div/form/div/div/div/div[4]/div[4]/div[2]/div/input"
 response_xpath = "/html/body/div[2]/div[1]/div/div/div/div/form/div/div/div/div[4]/div[5]/div[2]/div/input"
+param_payload_reaching_max_char = "//p[.=' * Ensure this field has no more than 12 characters.']"
+req_res_wrng_msg_for_empty_fields = "//p[.=' * The submitted data was not a file. Check the encoding type on the form.']"
+req_res_wrng_msg_for_invalid_files = "//p[.=' * Please upload only text files']"
 
+# sca evd
 sca_toggle_btn = "//div[@class='row']//div[@class='col-sm-4 col-md-4 col-4'][3]//span"
 module_xpath = "//input[@placeholder='Enter module']"
 version_xpath = "//input[@placeholder='Enter version']"
 cve_xpath = "//input[@placeholder='Enter cve']"
 evd_submit = "//button[contains(text(),'Submit')]"
 evd_success_msg = "//p[text()='Evidence successfully created!']"
+version_id_wrng_msg = "//p[.=' * Ensure this field has no more than 12 characters.']"
+cve_id_wrng_msg = "//p[.=' * Ensure this field has no more than 20 characters.']"
+
+wrng_msg_when_fields_are_empty = "//div[@class='row']//p[.=' * This field may not be blank.']"
+empty_file_wrng_msg = "//p[.=' * The submitted file is empty.']"

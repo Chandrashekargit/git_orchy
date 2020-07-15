@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
 
 
-def create_manual_evd(driver, individual_vul_xpath):
+def open_manual_vulnerability(driver, individual_vul_xpath):
     wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
         NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
 
@@ -56,8 +56,8 @@ def sca_evd(driver, module_name, version_id, cve_id):
     submit = wait.until(EC.element_to_be_clickable((By.XPATH, evd_submit)))
     submit.click()
 
-    wait.until(EC.visibility_of_element_located((By.XPATH, evd_success_msg)))
-    wait.until(EC.invisibility_of_element((By.XPATH, evd_success_msg)))
+    # wait.until(EC.visibility_of_element_located((By.XPATH, evd_success_msg)))
+    # wait.until(EC.invisibility_of_element((By.XPATH, evd_success_msg)))
 
 
 def sast_evd(driver, line_no, line_range, code_snippet_location, path, file_name, param):
@@ -94,8 +94,8 @@ def sast_evd(driver, line_no, line_range, code_snippet_location, path, file_name
     submit = wait.until(EC.element_to_be_clickable((By.XPATH, evd_submit)))
     submit.click()
 
-    wait.until(EC.visibility_of_element_located((By.XPATH, evd_success_msg)))
-    wait.until(EC.invisibility_of_element((By.XPATH, evd_success_msg)))
+    # wait.until(EC.visibility_of_element_located((By.XPATH, evd_success_msg)))
+    # wait.until(EC.invisibility_of_element((By.XPATH, evd_success_msg)))
 
 
 def dast_evd(driver, enter_url, enter_param, enter_payload, req_file_loc, response_file_loc):
@@ -129,5 +129,5 @@ def dast_evd(driver, enter_url, enter_param, enter_payload, req_file_loc, respon
     submit = wait.until(EC.element_to_be_clickable((By.XPATH, evd_submit)))
     submit.click()
 
-    wait.until(EC.visibility_of_element_located((By.XPATH, evd_success_msg)))
-    wait.until(EC.invisibility_of_element((By.XPATH, evd_success_msg)))
+    # wait.until(EC.visibility_of_element_located((By.XPATH, evd_success_msg)))
+    # wait.until(EC.invisibility_of_element((By.XPATH, evd_success_msg)))

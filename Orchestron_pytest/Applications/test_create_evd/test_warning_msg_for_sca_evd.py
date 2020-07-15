@@ -18,11 +18,11 @@ class CreateEvidenceTests:
         create_manual_vul(driver, individual_app_xpath="//label[contains(text(), 'test_to_create_manual_evd')]",
                           scan_name="Manual vul", Severity="Low", cwe_num="89:Sql")
 
-    def test_create_manual_evd(self, driver):
+    def test_wrng_msg_of_sca_evd(self, driver):
         wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
             NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
 
-        create_manual_evd(driver, individual_vul_xpath="//tbody/tr/td[2]//div[@class='col']/p")
+        open_manual_vulnerability(driver, individual_vul_xpath="//tbody/tr/td[2]//div[@class='col']/p")
         for (module, version, cve) in zip(module_names, version_ids, cve_ids):
             if module == " " and version == " " and cve == " ":
                 sca_evd(driver, module_name=module, version_id=version, cve_id=cve)
