@@ -1,6 +1,11 @@
 import time
 from pytest import mark
+from selenium.common.exceptions import *
 from Applications.test_create_applications.create_app import create_apps
+from xpath.Application_module_xpath import *
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 apps = ["DAST", "SAST", "SCA"]
 # apps = ["ZAP (json,xml)", "Burp (json,xml)", "arachni", "AppScan - DAST", "w3af", "acunetix", "appspider",
@@ -17,9 +22,15 @@ class ApplicationCreatingTests:
         These function lets us create new applications called sast, dast, sca with platform type as Python
         """
         for app in apps:
-            # calling the function 'create_apps'
             create_apps(driver, application_name=app, url="http://demo.com")
-            time.sleep(2)
+            wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
+                NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
+
+            WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+            success_msg = wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_for_app_created)))
+            assert success_msg.text == "Application has been created successfully!"
+            wait.until(EC.invisibility_of_element((By.XPATH, success_msg_for_app_created)))
+
 
     # def test_if_applications_created(self, driver):
     #     """
@@ -38,5 +49,4 @@ class ApplicationCreatingTests:
     #         # print(application.parent)
     #         # print(application.location)
     #         # print(application.size)
-
 

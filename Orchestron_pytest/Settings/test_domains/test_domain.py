@@ -34,28 +34,28 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
     #
     #         back = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Back']")))
     #         back.click()
-
-#         settingstab = wait.until(EC.element_to_be_clickable((By.XPATH, settings_tab)))
-#         driver.execute_script("arguments[0].click();", settingstab)
-#         time.sleep(1)
-#         domain = wait.until(EC.element_to_be_clickable((By.XPATH, domain_section)))
-#         domain.click()
-#         # driver.execute_script("window.scrollTo(0, 900);")
-#         time.sleep(1)
-#         create = wait.until(EC.element_to_be_clickable((By.XPATH, domain_create)))
-#         create.click()
-#         domain_name = wait.until(EC.element_to_be_clickable((By.XPATH, domain_name_field)))
-#         domain_name.send_keys(domain_names)
-#         try:
-#             domain_submit = WebDriverWait(driver, 3, poll_frequency=1).until(
-#                 EC.element_to_be_clickable((By.XPATH, domain_name_submit)))
-#             domain_submit.click()
-#         except TimeoutException:
-#             print("\n***Domain can't be registered, please check the format***")
-#             close_pop_up = WebDriverWait(driver, 3, poll_frequency=1).until(
-#                 EC.element_to_be_clickable((By.XPATH, domain_create_popup_close)))
-#             close_pop_up.click()
-#             # driver.refresh()
+    #
+    #     settingstab = wait.until(EC.element_to_be_clickable((By.XPATH, settings_tab)))
+    #     driver.execute_script("arguments[0].click();", settingstab)
+    #     time.sleep(1)
+    #     domain = wait.until(EC.element_to_be_clickable((By.XPATH, domain_section)))
+    #     domain.click()
+    #     # driver.execute_script("window.scrollTo(0, 900);")
+    #     time.sleep(1)
+    #     create = wait.until(EC.element_to_be_clickable((By.XPATH, domain_create)))
+    #     create.click()
+    #     domain_name = wait.until(EC.element_to_be_clickable((By.XPATH, domain_name_field)))
+    #     domain_name.send_keys(domain_names)
+    #     try:
+    #         domain_submit = WebDriverWait(driver, 3, poll_frequency=1).until(
+    #             EC.element_to_be_clickable((By.XPATH, domain_name_submit)))
+    #         domain_submit.click()
+    #     except TimeoutException:
+    #         print("\n***Domain can't be registered, please check the format***")
+    #         close_pop_up = WebDriverWait(driver, 3, poll_frequency=1).until(
+    #             EC.element_to_be_clickable((By.XPATH, domain_create_popup_close)))
+    #         close_pop_up.click()
+    #         # driver.refresh()
 
     # def test_warning_message_if_we_create_new_domain_with_existing_domain_name(self, driver):
     #     """
@@ -73,50 +73,50 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
     #     close_popup.click()
     #     driver.refresh()
 
-    # def test_if_we_can_delete_domain_while_users_with_that_domain_exist(self, driver):
-    #     """
-    #     These function lets us test if we can delete domain while users with that domain name exist.
-    #     """
-    #     wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
-    #         ElementClickInterceptedException, ElementNotVisibleException, ElementNotInteractableException])
-    #
-    #     # creates a domain
-    #     create_domain(driver, domain_name="abc.com")
-    #     wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_domain_created)))
-    #     wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_domain_created)))
-    #     back = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Back']")))
-    #     back.click()
-    #
-    #     # creates a user
-    #     create_user(driver, fn="Jose", ln="mourinho", email_id="Josemourinho@abc.com", un="Jose", privilage="admin")
-    #     WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-    #     wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_user_created)))
-    #     wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_user_created)))
-    #     back = wait.until(EC.element_to_be_clickable((By.XPATH, back_btn)))
-    #     back.click()
-    #
-    #     # go to domain section and try to delete the domain and assert the warning message
-    #     delete_domain(driver, domain_name="abc.com")
-    #     warning_msg = wait.until(EC.visibility_of_element_located((By.XPATH, warning_msg_for_delete_domain_while_user_exist))).text
-    #     assert warning_msg == "User(s) with this domain configuration already exists. Please delete users to delete this domain configuration."
-    #     close_popup = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[text()='×']")))
-    #     close_popup.click()
-    #     back = wait.until(EC.element_to_be_clickable((By.XPATH, back_btn)))
-    #     back.click()
-    #
-    #     # delete above user
-    #     delete_users(driver, user_email="Josemourinho@abc.com")
-    #     wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_user_deleted)))
-    #     wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_user_deleted)))
-    #     back = wait.until(EC.element_to_be_clickable((By.XPATH, back_btn)))
-    #     back.click()
-    #
-    #     # delete above domain
-    #     delete_domain(driver, domain_name="abc.com")
-    #     wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_domain_deleted)))
-    #     wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_domain_deleted)))
-    #     back = wait.until(EC.element_to_be_clickable((By.XPATH, back_btn)))
-    #     back.click()
+    def test_if_we_can_delete_domain_while_users_with_that_domain_exist(self, driver):
+        """
+        These function lets us test if we can delete domain while users with that domain name exist.
+        """
+        wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
+            ElementClickInterceptedException, ElementNotVisibleException, ElementNotInteractableException])
+
+        # creates a domain
+        create_domain(driver, domain_name="abc.com")
+        wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_domain_created)))
+        wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_domain_created)))
+        back = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Back']")))
+        back.click()
+
+        # creates a user
+        create_user(driver, fn="Jose", ln="mourinho", email_id="Josemourinho@abc.com", un="Jose", privilage="admin")
+        WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_user_created)))
+        wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_user_created)))
+        back = wait.until(EC.element_to_be_clickable((By.XPATH, back_btn)))
+        back.click()
+
+        # go to domain section and try to delete the domain and assert the warning message
+        delete_domain(driver, domain_name="abc.com")
+        warning_msg = wait.until(EC.visibility_of_element_located((By.XPATH, warning_msg_for_delete_domain_while_user_exist))).text
+        assert warning_msg == "* User(s) with this domain configuration already exists. Please delete users to delete this domain configuration."
+        close_popup = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[text()='×']")))
+        close_popup.click()
+        back = wait.until(EC.element_to_be_clickable((By.XPATH, back_btn)))
+        back.click()
+
+        # delete above user
+        delete_users(driver, user_email="Josemourinho@abc.com")
+        wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_user_deleted)))
+        wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_user_deleted)))
+        back = wait.until(EC.element_to_be_clickable((By.XPATH, back_btn)))
+        back.click()
+
+        # delete above domain
+        delete_domain(driver, domain_name="abc.com")
+        wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_domain_deleted)))
+        wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_domain_deleted)))
+        back = wait.until(EC.element_to_be_clickable((By.XPATH, back_btn)))
+        back.click()
 
     def test_if_we_can_update_domain_name_while_users_exists_with_that_domain_name(self, driver):
         wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
@@ -164,5 +164,4 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
         domain_update_name_submit.click()
 
         warning_msg = wait.until(EC.element_to_be_clickable((By.XPATH, warning_msg_if_we_update_domain_name_while_user_exist))).text
-        assert warning_msg == "* User with this domain configuration alredy exists please delete users " \
-                              "if want to edit this domain configuration"
+        assert warning_msg == "* User(s) with this domain configuration already exists, to edit domain name please delete the users."

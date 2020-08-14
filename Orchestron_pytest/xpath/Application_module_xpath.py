@@ -2,7 +2,7 @@ url = "https://demo.orchestron.dev/"
 
 # Application 'create' button xpath's
 application_tab = "//p[contains(text(),'Applications')]"
-app_create_button = "//button[@id='appCreate']"
+app_create_button = "//button[contains(text(),'Create')]"
 app_name = "//div[@class='modal-content']//div/input[@maxlength='50']"
 app_url = "//div[2][@class='row my-1']//input"
 app_platform_type = "//input[@class='el-select__input is-large']"
@@ -11,6 +11,8 @@ app_submit = "//button[contains(text(),'Submit')]"
 app_pop_up_close_btn = "//button[@aria-label='Close']"
 existing_application_warning_msg = "//p[contains(text(),' * Application with this name already exists.')]"
 invalid_url_wrng_msg = "//p[contains(text(),' * Enter a valid URL.')]"
+success_msg_for_app_created = "//p[text()='Application has been created successfully!']"
+warning_msg_for_existing_app = "//p[.=' * Application with this name already exists.']"
 
 # search field xpath
 search = "//input[@placeholder='Search']"
@@ -40,6 +42,10 @@ severity = "//div[@class='row my-1']//div[@class='col-sm-12'][2]//input"
 man_cwe = "//div[@class='row my-1']//div[@class='col-sm-12'][3]//input"
 man_desc = "//div[@class='row my-1']//div[@class='col-sm-12'][4]//input"
 man_submit = "//button[contains(text(), 'Submit')]"
+success_msg_for_manual_vul_creation = "//p[text()='Manual vulnerability has been created successfully!']"
+empty_field_wrng_msg = "//p[.=' * This field may not be blank.']"
+warning_msg_for_severity_field_empty = "//p[.=' * Please select the severity']"
+close_create_manual_vul_pop_up = "//button[.='×']"
 
 # upload results xpath's
 tool = "//div[@class='container-fluid']//input[@placeholder='Select']"
@@ -103,7 +109,12 @@ file_name_xpath = "//input[@placeholder='Enter file name']"
 param_xpath = "//input[@placeholder='Enter param']"
 wrng_msg_for_empty_line_no = "//p[.=' * A valid integer is required.']"
 code_snippet_wrng_msg_for_empty_field = "//p[.=' * The submitted data was not a file. Check the encoding type on the form.']"
-
+code_snippet_wrng_msg_for_invalid_file = "//p[.=' * Please upload only text files']"
+wrng_msg_when_line_no_reaches_max_char = "//p[.='* Line number cannot exceed more than 5 digits']"
+wrng_msg_when_line_range_reaches_max_char = "//p[.='* Ensure this field has no more than 15 characters.']"
+wrng_msg_when_path_field_reaches_max_char = "//p[.='* Ensure this field has no more than 120 characters.']"
+wrng_msg_when_file_field_reaches_max_char = "//p[.='* Ensure this field has no more than 12 characters.']"
+wrng_msg_when_param_field_reaches_max_char = "//p[.='* Ensure this field has no more than 12 characters.']"
 
 # dast evd
 dast_toggle_btn = "//div[@class='row']//div[@class='col-sm-4 col-md-4 col-4'][2]//span"

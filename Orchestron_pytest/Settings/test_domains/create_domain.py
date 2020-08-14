@@ -25,6 +25,7 @@ def create_domain(driver, domain_name):
 
     WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     domain_names = wait.until(EC.element_to_be_clickable((By.XPATH, domain_name_field)))
+    domain_names.clear()
     domain_names.send_keys(domain_name)
 
     try:
