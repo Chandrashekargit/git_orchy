@@ -6,7 +6,7 @@ from selenium.common.exceptions import *
 from xpath.Application_module_xpath import *
 
 
-def delete_app(driver, application=None):
+def delete_app(driver, application):
     wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
         NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
 
@@ -14,11 +14,11 @@ def delete_app(driver, application=None):
     applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
     applicationTab.click()
 
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    WebDriverWait(driver, 10, poll_frequency=1).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, application)))
     individual_app.click()
 
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    WebDriverWait(driver, 10, poll_frequency=1).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     action_dp = wait.until(EC.element_to_be_clickable((By.XPATH, action_dropdown)))
     action_dp.click()
 
@@ -37,6 +37,5 @@ def delete_app(driver, application=None):
     delete_button.click()
 
     WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-    # success_msg = wait.until(EC.presence_of_element_located((By.XPATH, "Application has been deleted successfully!")))
-    time.sleep(2)
-
+    wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_for_app_delete)))
+    wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_for_app_delete)))

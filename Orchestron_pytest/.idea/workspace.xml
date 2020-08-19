@@ -3,16 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="&quot;___&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_close_evidence/test_close_evd.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_close_evidence/test_close_evd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_create_applications/create_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_applications/create_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_reopen_evidence/test_reopen_evd.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_reopen_evidence/test_reopen_evd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_SAST_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_SAST_results_upload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_SCA_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_SCA_results_upload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_upload_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/upload_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engagements/test_assign_and_unassign_scans/test_assign_unassign_scans.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_assign_and_unassign_scans/test_assign_unassign_scans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engagements/test_view_report/test_view_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_view_report/test_view_report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_delete_application/delete_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_delete_application/delete_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_delete_application/test_delete_applications.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_delete_application/test_delete_applications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_manual_entry_scans/manual_entry.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_manual_entry_scans/manual_entry.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_manual_entry_scans/test_create_manual_vulnerability.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_manual_entry_scans/test_create_manual_vulnerability.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_manual_entry_scans/test_manual_vul_warning_msgs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_manual_entry_scans/test_manual_vul_warning_msgs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_Wrng_msgs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_Wrng_msgs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xpath/Application_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Application_module_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

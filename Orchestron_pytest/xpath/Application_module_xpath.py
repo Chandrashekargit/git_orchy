@@ -13,6 +13,7 @@ existing_application_warning_msg = "//p[contains(text(),' * Application with thi
 invalid_url_wrng_msg = "//p[contains(text(),' * Enter a valid URL.')]"
 success_msg_for_app_created = "//p[text()='Application has been created successfully!']"
 warning_msg_for_existing_app = "//p[.=' * Application with this name already exists.']"
+success_msg_for_app_delete = "//p[.= 'Application has been deleted successfully!"
 
 # search field xpath
 search = "//input[@placeholder='Search']"
@@ -45,6 +46,7 @@ man_submit = "//button[contains(text(), 'Submit')]"
 success_msg_for_manual_vul_creation = "//p[text()='Manual vulnerability has been created successfully!']"
 empty_field_wrng_msg = "//p[.=' * This field may not be blank.']"
 warning_msg_for_severity_field_empty = "//p[.=' * Please select the severity']"
+warning_msg_for_cwe_field_empty = "//p[.=' * A valid integer is required.']"
 close_create_manual_vul_pop_up = "//button[.='×']"
 
 # upload results xpath's

@@ -6,6 +6,11 @@ from Applications.test_delete_application.delete_app import *
 
 @mark.wrng_msg_for_upload_scans
 class warning_msg_of_upload_scan_feature_Tests:
+    """
+    This Testcase lets us assert all the warning messages
+    of upload scans feature.
+
+    """
     def test_create_app(self, driver):
         create_apps(driver, application_name="Demo app", url="http://demo.com")
 
@@ -23,7 +28,7 @@ class warning_msg_of_upload_scan_feature_Tests:
         close_pop_up = wait.until(EC.element_to_be_clickable((By.XPATH, close_upload_results_pop_up)))
         close_pop_up.click()
 
-    def test_wrng_msg_when_we_upload_wrong_file_for_zap_tool(self, driver):
+    def test_wrng_msg_when_we_upload_wrong_file_for_selected_tool(self, driver):
         wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
             NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
 

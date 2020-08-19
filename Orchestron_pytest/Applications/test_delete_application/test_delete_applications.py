@@ -15,9 +15,10 @@ apps = ["//label[contains(text(), 'DAST')]",
 
 @mark.delete_apps
 def test_delete_apps(driver):
+    wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
+        NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
+
     for app in apps:
-        delete_app(driver, application=app)  # calling the function 'delete_app'
-        time.sleep(1)
-        driver.refresh()
-        assert app not in driver.page_source
+        delete_app(driver, application=app)
+
 

@@ -21,11 +21,11 @@ def create_manual_vul(driver, individual_app_xpath, scan_name, Severity, cwe_num
     # search_tab.click()
     # search_tab.send_keys()
 
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    WebDriverWait(driver, 10, poll_frequency=1).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     select_individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, individual_app_xpath)))
     select_individual_app.click()
 
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    WebDriverWait(driver, 10, poll_frequency=1).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     action_dp = wait.until(EC.element_to_be_clickable((By.XPATH, action_dropdown)))
     action_dp.click()
     manual_entry_option = wait.until(EC.element_to_be_clickable((By.XPATH, manual_entry)))
