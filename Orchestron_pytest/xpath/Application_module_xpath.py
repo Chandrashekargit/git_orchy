@@ -52,6 +52,12 @@ tool = "//div[@class='container-fluid']//input[@placeholder='Select']"
 name = "//input[@maxlength='100']"
 file = "//input[@accept='xml,json']"
 upload_results_submit = "//button[contains(text(),'Submit')]"
+warning_msg_for_file_format = "//label[.=' * Supported formats are json']"
+close_upload_results_pop_up = "//button[.='×']"
+wrng_msg_for_same_scan_name = "//p[text()=' * Scan name should be unique']"
+wrng_msg_when_we_upload_wrong_file = "//label[.=' * Not a ZAP 2.9.0 file']"
+wrng_msg_for_existing_scan_name = "//p[text()=' * Scan name should be unique']"
+wrng_msg_for_max_char_in_scanname_field = "//p[.=' * Ensure this field has no more than 100 characters.']"
 
 # heads
 open_vulnerability = "//a[contains(text(),'Opened')]"

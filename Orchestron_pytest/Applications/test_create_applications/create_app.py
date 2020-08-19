@@ -7,14 +7,14 @@ from xpath.Application_module_xpath import *
 
 
 def create_apps(driver, application_name=None, url=None):
-    wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
+    wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
         NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
 
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
     applicationTab.click()
 
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     create_btn = wait.until(EC.presence_of_element_located((By.XPATH, app_create_button)))
     create_btn.click()
 

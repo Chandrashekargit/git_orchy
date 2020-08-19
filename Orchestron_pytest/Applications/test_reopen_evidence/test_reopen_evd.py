@@ -1,5 +1,5 @@
 from Applications.test_create_applications.create_app import create_apps
-from Applications.test_upload_scans.test_upload_results import *
+from Applications.test_upload_scans.upload_results import *
 from Applications.test_delete_application.delete_app import *
 from Applications.test_close_evidence.close_evd import *
 from pytest import mark

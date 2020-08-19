@@ -1,6 +1,6 @@
 from Engagements.test_create_eng.create_eng import *
 from Applications.test_create_applications.create_app import *
-from Applications.test_upload_scans.test_upload_results import *
+from Applications.test_upload_scans.upload_results import *
 from Applications.test_delete_application.delete_app import *
 from Engagements.test_assign_and_unassign_scans.assign_scans import *
 from Engagements.test_view_report.view_report import *
