@@ -21,7 +21,7 @@ def upload_res(driver, application, tool_name, scan_name, file_loc):
     app.click()
 
     # click on action drop down
-    WebDriverWait(driver, 20, poll_frequency=1).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    WebDriverWait(driver, 20, poll_frequency=2).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     time.sleep(2)
     action = wait.until(EC.element_to_be_clickable((By.XPATH, action_dropdown)))
     action.click()

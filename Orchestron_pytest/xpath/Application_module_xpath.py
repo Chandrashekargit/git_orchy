@@ -62,8 +62,8 @@ wrng_msg_for_existing_scan_name = "//p[text()=' * Scan name should be unique']"
 wrng_msg_for_max_char_in_scanname_field = "//p[.=' * Ensure this field has no more than 100 characters.']"
 
 # heads
-open_vulnerability = "//a[contains(text(),'Opened')]"
-closed_vulnerability = "//a[contains(text(),'Closed')]"
+open_vulnerability = "//a[.='Opened']"
+closed_vulnerability = "//a[.='Closed']"
 uncategorized_vulnerability = "//a[contains(text(),'Uncategorized')]"
 false_positive = "//a[contains(text(),'False Positive')]"
 dashboard = "//a[contains(text(),'Dashboard')]"
@@ -77,7 +77,7 @@ close_evdience = "//ul[@x-placement='bottom-end' or @x-placement='top-end']//li[
 
 # closed
 close_btn = "//div[contains(text(),'Close')]"
-fix = "//ul[@x-placement='bottom-end']//li[2]"
+fix = "//ul[@x-placement='bottom-end']//a[2]/li/li"
 wont_fix = "//ul[@x-placement='bottom-end']//li[1]"
 justification = "//textarea[@placeholder='Enter Justification']"
 evidence = "//input[@accept='image/jpeg, image/png,image/jpg,']"
