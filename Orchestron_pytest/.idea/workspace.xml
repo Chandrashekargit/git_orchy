@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="&quot;___&quot;">
-      <change afterPath="$PROJECT_DIR$/Applications/test_close_all_vul_and_check_remediation_info/test_for_visibility_of_remediation_info_for_closed_vuls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_close_all_vul_and_check_remediation_info/test_check_for_remediation_info.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_close_all_vul_and_check_remediation_info/test_close_all_vulnerable.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_close_all_vul_and_check_remediation_info/close_all_vulnerable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_affected_instance/test_for_Detailed_evd.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_affected_instance/test_for_Detailed_evd.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Applications/test_create_applications/create_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_applications/create_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/upload_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/upload_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xpath/Application_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Application_module_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

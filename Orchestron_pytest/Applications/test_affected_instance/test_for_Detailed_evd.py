@@ -8,6 +8,10 @@ from xpath.Application_module_xpath import *
 
 @mark.check_for_detailed_evd
 def test_if_evidences_have_detailed_evd(driver, app_name="//label[contains(text(),'DAST')]"):
+    """
+    This is to check if the affected instances has 'Detailed evd' as their param. If so, report to
+    developer.
+    """
     wait = WebDriverWait(driver, 10, poll_frequency=2)
     wait1 = WebDriverWait(driver, 10)
 

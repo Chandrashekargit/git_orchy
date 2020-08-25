@@ -13,7 +13,7 @@ existing_application_warning_msg = "//p[contains(text(),' * Application with thi
 invalid_url_wrng_msg = "//p[contains(text(),' * Enter a valid URL.')]"
 success_msg_for_app_created = "//p[text()='Application has been created successfully!']"
 warning_msg_for_existing_app = "//p[.=' * Application with this name already exists.']"
-success_msg_for_app_delete = "//p[.= 'Application has been deleted successfully!"
+success_msg_for_app_delete = "//p[.= 'Application has been deleted successfully!']"
 
 # search field xpath
 search = "//input[@placeholder='Search']"
