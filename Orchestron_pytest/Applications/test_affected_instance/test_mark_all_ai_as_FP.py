@@ -31,5 +31,5 @@ class Check_If_All_Evidences_Are_Marked_As_FP_then_Vul_Should_Move_To_FP_Section
     def test_mark_all_evidences_as_FP(self, driver):
         mark_all_evidences_as_FP(driver, app_name="//label[contains(text(),'Manual vul app')]")
 
-    # def test_delete_app(self, driver):
-    #     delete_app(driver, application="//label[contains(text(),'Manual vul app')]")
+    def test_delete_app(self, driver):
+        delete_app(driver, application="//label[contains(text(),'Manual vul app')]")
