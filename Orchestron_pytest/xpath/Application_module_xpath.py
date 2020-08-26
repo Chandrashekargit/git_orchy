@@ -105,6 +105,8 @@ cancel = "//footer[@class='modal-footer']//button[contains(text(),'Cancel')]"
 # Evidence
 create_evidence_btn = "//button[contains(text(), 'Create Evidence')]"
 close_evd_pop_up = "//button[.='×']"
+evd_justification = "//textarea[@placeholder='Enter Justification']"
+evd_submit = "//button[contains(text(),'Submit')]"
 
 # sast evd
 sast_toggle_btn = "//div[@class='row']//div[@class='col-sm-4 col-md-4 col-4'][1]//span"

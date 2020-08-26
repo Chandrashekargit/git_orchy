@@ -28,13 +28,13 @@ def delete_app(driver, application):
     WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     delete_pop_up = wait.until(EC.element_to_be_clickable((By.XPATH, yes)))
     time.sleep(1)
-    delete_pop_up.click()
+    driver.execute_script("arguments[0].click();", delete_pop_up)
 
     enter_del = wait.until(EC.element_to_be_clickable((By.XPATH, enter_delete)))
     enter_del.send_keys("DELETE")
 
     delete_button = wait.until(EC.element_to_be_clickable((By.XPATH, delete)))
-    delete_button.click()
+    driver.execute_script("arguments[0].click();", delete_button)
 
     WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_for_app_delete)))

@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="&quot;___&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_affected_instance/test_for_Detailed_evd.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_affected_instance/test_for_Detailed_evd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_create_applications/create_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_applications/create_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_affected_instance/test_ai_f+.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_affected_instance/test_ai_f+.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_delete_application/delete_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_delete_application/delete_app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xpath/Application_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Application_module_xpath.py" afterDir="false" />
     </list>
