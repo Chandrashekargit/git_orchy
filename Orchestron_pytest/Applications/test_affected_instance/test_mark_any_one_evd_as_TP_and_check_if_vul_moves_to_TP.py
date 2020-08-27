@@ -63,9 +63,6 @@ class Check_If_Any_One_Evidences_Marked_As_TP_then_Vul_Should_Move_To_TP_Section
             selectAll = wait.until(EC.element_to_be_clickable((By.XPATH, all)))
             driver.execute_script("arguments[0].click();", selectAll)
 
-            vul_name = wait.until(EC.element_to_be_clickable((By.XPATH, "//tbody/tr["+str(i)+"]/td[2]//div[@class='col']/p")))
-            a = vul_name.text
-
             wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
             click_on_individual_vul = wait.until(EC.element_to_be_clickable((By.XPATH, "//tbody/tr["+str(i)+"]/td[2]//div[@class='col']/p")))
             click_on_individual_vul.click()
@@ -84,8 +81,7 @@ class Check_If_Any_One_Evidences_Marked_As_TP_then_Vul_Should_Move_To_TP_Section
                 time.sleep(1)
 
                 WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-                click_on_ai_action_dp = wait.until(EC.presence_of_element_located(
-                    (By.XPATH, "//div[@class='row']["+str(j)+"]//div[@class='col-sm-2']//div[@id='right']")))
+                click_on_ai_action_dp = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='row']["+str(j)+"]//div[@class='col-sm-2']//div[@id='right']")))
                 click_on_ai_action_dp.click()
 
                 WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))

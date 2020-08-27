@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="&quot;___&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_affected_instance/test_close_all_ai_of_vuls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_affected_instance/test_close_all_ai_and_check_if_vul_is_moved_to_closed_vul_section.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_affected_instance/test_mark_all_ai_as_FP.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_affected_instance/test_mark_all_ai_as_FP_and_check_if_vul_moves_to_FP_section.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_affected_instance/test_if_any_one_evd_is_reopened_vul_should_move_to_open_vul_section.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_affected_instance/test_if_any_one_evd_is_reopened_vul_should_move_to_open_vul_section.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_affected_instance/test_mark_any_one_evd_as_TP_and_check_if_vul_moves_to_TP.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_affected_instance/test_mark_any_one_evd_as_TP_and_check_if_vul_moves_to_TP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xpath/Application_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Application_module_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
