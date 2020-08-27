@@ -22,25 +22,27 @@ def mark_all_evidences_as_FP(driver, app_name):
     wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     select_individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, app_name)))
     select_individual_app.click()
-    time.sleep(2)
+    # time.sleep(2)
 
     wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-icon' or @class='loading-background']")))
     go_to_open_vul_section = wait.until(EC.element_to_be_clickable((By.XPATH, open_vulnerability)))
     go_to_open_vul_section.click()
 
     WebDriverWait(driver, 20, poll_frequency=1).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    time.sleep(0.5)
     per_page = wait.until(EC.element_to_be_clickable((By.XPATH, PerPageDropdown)))
     per_page.click()
     select_All = wait.until(EC.element_to_be_clickable((By.XPATH, all)))
     select_All.click()
-    time.sleep(2)
 
+    wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
     number_of_open_vul = wait.until(EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr/td[2]//div[@class='col']/p")))
     print('Number of open vulnerabilities: ', len(number_of_open_vul))
 
     i = len(number_of_open_vul)
     while i >= 1:
         wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-icon' or @class='loading-background']")))
+        time.sleep(1)
         go_to_open_vul = wait.until(EC.element_to_be_clickable((By.XPATH, open_vulnerability)))
         go_to_open_vul.click()
 
@@ -58,11 +60,10 @@ def mark_all_evidences_as_FP(driver, app_name):
         time.sleep(1)
         move_to_ai_section = wait.until(EC.element_to_be_clickable((By.XPATH, affected_instance)))
         move_to_ai_section.click()
-        time.sleep(2)  # This time.sleep helps to calculate the num of affected instance under individual vul
 
+        wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
         give_total_num_of_ai = wait.until(EC.presence_of_all_elements_located(
             (By.XPATH, "//div[@class='container-fluid' and @style]//div[@class='row']//div[@class='col-sm-10']")))
-        # print("Number of Affected instances: ", len(give_total_num_of_ai))
 
         j = len(give_total_num_of_ai)
         while j >= 1:
@@ -83,9 +84,9 @@ def mark_all_evidences_as_FP(driver, app_name):
                 mark_ai_as_fp.click()
 
                 wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-                success_msg = wait.until(EC.visibility_of_element_located((By.XPATH, "//p[.='Vulnerability successfully marked as False Positive!']")))
+                success_msg = wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_when_vul_marked_as_FP)))
                 assert success_msg.text == "Vulnerability successfully marked as False Positive!"
-                # wait.until(EC.invisibility_of_element_located((By.XPATH, "//p[.='Vulnerability successfully marked as False Positive!']")))
+                # wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_when_vul_marked_as_FP)))
                 break
             else:
                 wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
@@ -103,7 +104,7 @@ def mark_all_evidences_as_FP(driver, app_name):
                 mark_ai_as_fp.click()
 
                 wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-                success_msg = wait.until(EC.visibility_of_element_located((By.XPATH, "//p[.='Evidence successfully marked as False Positive!']")))
+                success_msg = wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_when_evd_marked_as_FP)))
                 assert success_msg.text == "Evidence successfully marked as False Positive!"
                 wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
             j -= 1

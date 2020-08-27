@@ -107,6 +107,9 @@ create_evidence_btn = "//button[contains(text(), 'Create Evidence')]"
 close_evd_pop_up = "//button[.='×']"
 evd_justification = "//textarea[@placeholder='Enter Justification']"
 evd_submit = "//button[contains(text(),'Submit')]"
+success_msg_when_evd_marked_as_TP = "//p[.='Evidence successfully marked as True Positive!']"
+success_msg_when_vul_marked_as_FP = "//p[.='Vulnerability successfully marked as False Positive!']"
+success_msg_when_evd_marked_as_FP = "//p[.='Evidence successfully marked as False Positive!']"
 
 # sast evd
 sast_toggle_btn = "//div[@class='row']//div[@class='col-sm-4 col-md-4 col-4'][1]//span"

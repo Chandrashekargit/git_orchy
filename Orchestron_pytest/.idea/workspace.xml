@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="&quot;___&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_affected_instance/test_ai_f+.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_affected_instance/test_mark_all_ai_as_FP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_affected_instance/test_close_all_ai_of_vuls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_affected_instance/test_close_all_ai_of_vuls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_affected_instance/test_close_all_ai_of_vuls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_affected_instance/test_close_all_ai_and_check_if_vul_is_moved_to_closed_vul_section.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_affected_instance/test_mark_all_ai_as_FP.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_affected_instance/test_mark_all_ai_as_FP_and_check_if_vul_moves_to_FP_section.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
