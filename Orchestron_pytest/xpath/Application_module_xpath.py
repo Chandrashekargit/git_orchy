@@ -155,3 +155,6 @@ cve_id_wrng_msg = "//p[.=' * Ensure this field has no more than 20 characters.']
 
 wrng_msg_when_fields_are_empty = "//div[@class='row']//p[.=' * This field may not be blank.']"
 empty_file_wrng_msg = "//p[.=' * The submitted file is empty.']"
+
+# Bulk actions
+succes_msg_when_vuls_marked_as_FP_via_BA = "//p[.='The vulnerabilities have been marked as False positive successfully!']"

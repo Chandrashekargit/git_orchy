@@ -19,6 +19,13 @@ unassign_scan_submit = "//i[@class='el-icon-arrow-left']"
 assign_success_msg = "//p[text()='The scans have been assigned successfully!']"
 unassign_success_msg = "//p[text()='The scans have been unassigned successfully!']"
 
+# severity section
+severity_section = "//a[.='Severity']"
+high_severity = "//span[@class='high_badge']"
+medium_severity = "//span[@class='medium_badge']"
+low_severity = "//span[@class='low_badge']"
+info_severity = "//span[@class='info_badge']"
+
 # Engagement action dropdown options xpath's
 action_dropdown = "//div[contains(text(),'Actions')]"
 eng_update = "//ul[@class='el-dropdown-menu el-popper']//li[1]"
