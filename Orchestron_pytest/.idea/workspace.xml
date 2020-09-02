@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="&quot;___&quot;">
+      <change afterPath="$PROJECT_DIR$/Applications/test_bulk_actions/test_mark_FP.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_affected_instance/test_if_any_one_evd_is_reopened_vul_should_move_to_open_vul_section.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_affected_instance/test_if_any_one_evd_is_reopened_vul_should_move_to_open_vul_section.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_affected_instance/test_mark_any_one_evd_as_TP_and_check_if_vul_moves_to_TP.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_affected_instance/test_mark_any_one_evd_as_TP_and_check_if_vul_moves_to_TP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_reopen_evidence/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_bulk_actions/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_reopen_evidence/test_reopen_evd.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_upload_scans/test_DAST_results_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engagements/test_create_eng/create_eng.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_create_eng/create_eng.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xpath/Application_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Application_module_xpath.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xpath/Engagement_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Engagement_module_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
