@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from xpath.Engagement_module_xpath import *
 import time
+from spinner.spinner import *
 
 
 def create_engagement(driver, engagement_name, eng_descrption, which_application, which_scope_type):
@@ -12,18 +13,18 @@ def create_engagement(driver, engagement_name, eng_descrption, which_application
         ElementClickInterceptedException, ElementNotVisibleException, ElementNotInteractableException])
 
     # clicks on Engagement section
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     eng_tab = wait.until(EC.element_to_be_clickable((By.XPATH, engagement_tab)))
     eng_tab.click()
 
     # clicks on create button
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     time.sleep(3)
     create = wait.until(EC.element_to_be_clickable((By.XPATH, eng_create_btn)))
     create.click()
 
     # Enter the name of the engagement
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     time.sleep(2)
     name = wait.until(EC.element_to_be_clickable((By.XPATH, eng_name)))
     name.send_keys(engagement_name)
@@ -58,9 +59,9 @@ def create_engagement(driver, engagement_name, eng_descrption, which_application
         submit = WebDriverWait(driver, 5, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, eng_submit)))
         submit.click()
         # assert the success message
-        WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-        wait.until(EC.visibility_of_element_located((By.XPATH, eng_success_msg)))
-        wait.until(EC.invisibility_of_element((By.XPATH, eng_success_msg)))
+        # stop_till_spinner_is_invisible(driver)
+        # wait.until(EC.visibility_of_element_located((By.XPATH, eng_success_msg)))
+        # wait.until(EC.invisibility_of_element((By.XPATH, eng_success_msg)))
     except (ElementClickInterceptedException, TimeoutException):
         print('submit button not visible')
 

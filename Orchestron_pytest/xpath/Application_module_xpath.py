@@ -149,7 +149,7 @@ module_xpath = "//input[@placeholder='Enter module']"
 version_xpath = "//input[@placeholder='Enter version']"
 cve_xpath = "//input[@placeholder='Enter cve']"
 evd_submit = "//button[contains(text(),'Submit')]"
-evd_success_msg = "//p[text()='Evidence successfully created!']"
+evd_success_msg = "//p[text()='Evidence created successfully.']"
 version_id_wrng_msg = "//p[.=' * Ensure this field has no more than 12 characters.']"
 cve_id_wrng_msg = "//p[.=' * Ensure this field has no more than 20 characters.']"
 

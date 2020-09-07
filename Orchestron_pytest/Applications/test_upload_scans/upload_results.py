@@ -5,23 +5,24 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
 import time
+from spinner.spinner import *
 
 
 def upload_res(driver, application, tool_name, scan_name, file_loc):
     wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
         NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
 
-    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
     applicationTab.click()
 
     # select the required app
-    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     app = wait.until(EC.element_to_be_clickable((By.XPATH, application)))
     app.click()
 
     # click on action drop down
-    WebDriverWait(driver, 20, poll_frequency=2).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     time.sleep(2)
     action = wait.until(EC.element_to_be_clickable((By.XPATH, action_dropdown)))
     action.click()
@@ -31,7 +32,7 @@ def upload_res(driver, application, tool_name, scan_name, file_loc):
     upload_result.click()
 
     # select required tool from tool dropdown
-    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     selectTool = wait.until(EC.element_to_be_clickable((By.XPATH, tool)))
     selectTool.click()
     selectTool.send_keys(tool_name)

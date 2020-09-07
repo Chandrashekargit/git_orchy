@@ -1,17 +1,14 @@
 import time
-from selenium.common.exceptions import *
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
+from spinner.spinner import *
 
 
 def create_manual_vul(driver, individual_app_xpath, scan_name, Severity, cwe_num, Descrption):
     wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
         NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
 
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
     applicationTab.click()
 
@@ -21,17 +18,18 @@ def create_manual_vul(driver, individual_app_xpath, scan_name, Severity, cwe_num
     # search_tab.click()
     # search_tab.send_keys()
 
-    WebDriverWait(driver, 10, poll_frequency=1).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     select_individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, individual_app_xpath)))
     select_individual_app.click()
 
-    WebDriverWait(driver, 10, poll_frequency=1).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
+    stop_till_spinner_is_invisible(driver)
     action_dp = wait.until(EC.element_to_be_clickable((By.XPATH, action_dropdown)))
     action_dp.click()
     manual_entry_option = wait.until(EC.element_to_be_clickable((By.XPATH, manual_entry)))
     manual_entry_option.click()
 
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     scanName = wait.until(EC.element_to_be_clickable((By.XPATH, man_scan_name)))
     scanName.send_keys(scan_name)
 
@@ -53,6 +51,6 @@ def create_manual_vul(driver, individual_app_xpath, scan_name, Severity, cwe_num
     submit = wait.until(EC.element_to_be_clickable((By.XPATH, man_submit)))
     submit.click()
 
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     # wait.until(EC.visibility_of_element_located((By.XPATH, "//p[text()='Manual vulnerability has been created successfully!']")))
     # wait.until(EC.invisibility_of_element_located((By.XPATH, "//p[text()='Manual vulnerability has been created successfully!']")))

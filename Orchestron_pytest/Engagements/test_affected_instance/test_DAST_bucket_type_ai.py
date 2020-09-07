@@ -4,6 +4,7 @@ from Engagements.test_create_eng.create_eng import *
 from xpath.Engagement_module_xpath import *
 from pytest import mark
 from spinner.spinner import *
+from Applications.test_delete_application.delete_app import *
 
 dast_tools = [("/home/junaid/Downloads/results_supported_by_orchy/zap.xml", "ZAP (json,xml)"),
               ("/home/junaid/Downloads/results_supported_by_orchy/burp.xml", "Burp (json,xml)"),
@@ -61,6 +62,7 @@ class CheckBucketTypeAffectedInstancesTests:
         eng_tab.click()
 
         stop_till_spinner_is_invisible(driver)
+        stop_till_spinner_is_invisible(driver)
         time.sleep(2)
         click_on_individual_eng = wait.until(EC.element_to_be_clickable((By.XPATH, engagement_name_xpath)))
         click_on_individual_eng.click()
@@ -73,7 +75,9 @@ class CheckBucketTypeAffectedInstancesTests:
         # # print("The number of scans: ", len(scans))
 
         stop_till_spinner_is_invisible(driver)
-        select_all_scans = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@titles='Unassigned Scans,Assigned Scans'][1]//label[@class='el-checkbox']")))
+        stop_till_spinner_is_invisible(driver)
+        select_all_scans = wait.until(EC.element_to_be_clickable(
+            (By.XPATH, "//div[@titles='Unassigned Scans,Assigned Scans'][1]//label[@class='el-checkbox']")))
         select_all_scans.click()
         assign_scan = wait.until(EC.element_to_be_clickable((By.XPATH, assign_scan_submit)))
         assign_scan.click()
@@ -140,3 +144,6 @@ class CheckBucketTypeAffectedInstancesTests:
 
                 go_back_to_vul_page = wait.until(EC.element_to_be_clickable((By.XPATH, "//label[contains(text(),'Open')]")))
                 go_back_to_vul_page.click()
+
+    def test_delete_app(self, driver):
+        delete_app(driver, application="//label[contains(text(),'check ai')]")
