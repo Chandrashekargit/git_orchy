@@ -16,6 +16,7 @@ def create_apps(driver, application_name=None, url=None):
     applicationTab.click()
 
     stop_till_spinner_is_invisible(driver)
+    stop_till_spinner_is_invisible(driver)
     create_btn = wait.until(EC.presence_of_element_located((By.XPATH, app_create_button)))
     create_btn.click()
 
