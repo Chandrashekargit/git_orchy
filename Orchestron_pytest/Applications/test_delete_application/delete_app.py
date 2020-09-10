@@ -1,31 +1,29 @@
 import time
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import *
 from xpath.Application_module_xpath import *
+from spinner.spinner import *
 
 
 def delete_app(driver, application):
     wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
         NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
 
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
     applicationTab.click()
 
-    WebDriverWait(driver, 10, poll_frequency=1).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, application)))
     individual_app.click()
 
-    WebDriverWait(driver, 10, poll_frequency=1).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
+    stop_till_spinner_is_invisible(driver)
     action_dp = wait.until(EC.element_to_be_clickable((By.XPATH, action_dropdown)))
     action_dp.click()
 
     delete_btn = wait.until(EC.element_to_be_clickable((By.XPATH, delete_option)))
     delete_btn.click()
 
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     delete_pop_up = wait.until(EC.element_to_be_clickable((By.XPATH, yes)))
     time.sleep(1)
     driver.execute_script("arguments[0].click();", delete_pop_up)
@@ -36,6 +34,6 @@ def delete_app(driver, application):
     delete_button = wait.until(EC.element_to_be_clickable((By.XPATH, delete)))
     driver.execute_script("arguments[0].click();", delete_button)
 
-    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_for_app_delete)))
     wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_for_app_delete)))
