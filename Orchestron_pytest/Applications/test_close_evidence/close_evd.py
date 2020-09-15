@@ -1,9 +1,6 @@
 import time
-from selenium.common.exceptions import *
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
+from spinner.spinner import *
 
 
 def close_evd(driver, app_name=None):
@@ -16,20 +13,22 @@ def close_evd(driver, app_name=None):
     wait1 = WebDriverWait(driver, 10)
 
     # Click on Application section
+    stop_till_spinner_is_invisible(driver)
     applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
     applicationTab.click()
 
     # select the required application
+    stop_till_spinner_is_invisible(driver)
     select_individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, app_name)))
     select_individual_app.click()
 
     # Clicks on Open vulnerability of individual application
-    wait1.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     open_vul = wait.until(EC.element_to_be_clickable((By.XPATH, open_vulnerability)))
     open_vul.click()
 
     # Clicks Per-page drop-down and selects 'All'.
-    wait1.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     time.sleep(1)
     perpage_dp = wait.until(EC.element_to_be_clickable((By.XPATH, PerPageDropdown)))
     perpage_dp.click()
@@ -43,40 +42,40 @@ def close_evd(driver, app_name=None):
         WebDriverWait(driver, 5).until(EC.invisibility_of_element((By.XPATH, "//tbody/tr/td[2]//div[@class='col']/p")))
         print("\nNo vulnerabilities are present for this application")
     except TimeoutException:
-        vul = wait.until(EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr/td[2]//div[@class='col']/p")))
-        print('\nTotal number of vul: ', len(vul))
+        vuls = wait.until(EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr/td[2]//div[@class='col']/p")))
+        print('\nTotal number of vul: ', len(vuls))
 
-        for i in range(1, len(vul) + 1):
-            wait1.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        for i in range(1, len(vuls)+1):
+            stop_till_spinner_is_invisible(driver)
+            time.sleep(2)
             open_vul = wait.until(EC.element_to_be_clickable((By.XPATH, open_vulnerability)))
             open_vul.click()
 
             # clicks on individual vul
-            wait1.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-            click_on_individual_vul = wait.until(EC.element_to_be_clickable((By.XPATH, "//tbody/tr/td[2]//div[@class='col']/p")))
-            print('vulnerability name: ', click_on_individual_vul.text)
+            stop_till_spinner_is_invisible(driver)
+            click_on_individual_vul = wait.until(EC.element_to_be_clickable((By.XPATH, "//tbody/tr["+str(i)+"]/td[2]//div[@class='col']/p")))
+            # print('vulnerability name: ', click_on_individual_vul.text)
             click_on_individual_vul.click()
 
             # wait till affected instance section is visible
-            wait1.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+            stop_till_spinner_is_invisible(driver)
             wait.until(EC.visibility_of_element_located((By.XPATH, affected_instance)))
 
             # moves to affected instance Section
-            wait1.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+            stop_till_spinner_is_invisible(driver)
             move_to_ai = wait.until(EC.element_to_be_clickable((By.XPATH, affected_instance)))
             move_to_ai.click()
             time.sleep(2)
 
-            # try:
-            # Gives the count of total number of affected instances under individual vulnerability.
-            wait1.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+            stop_till_spinner_is_invisible(driver)
             affected_inst = wait1.until(EC.presence_of_all_elements_located((By.XPATH,
                 "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']//div[contains(text(),'Actions')]")))
             print('Total number of affected_instance: ', len(affected_inst))
 
             for j in range(1, len(affected_inst) + 1):
+                stop_till_spinner_is_invisible(driver)
                 click_on_individual_action_dp = wait1.until(EC.element_to_be_clickable((By.XPATH,
-                    "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row'][" +str(j)+"]//div[contains(text(),'Actions')]")))
+                    "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']["+str(j)+"]//div[contains(text(),'Actions')]")))
                 click_on_individual_action_dp.click()
 
                 select_close_evd = wait1.until(EC.presence_of_element_located((By.XPATH, close_evdience)))
@@ -88,13 +87,7 @@ def close_evd(driver, app_name=None):
                 submit = wait1.until(EC.element_to_be_clickable((By.XPATH, app_submit)))
                 submit.click()
                 wait1.until(EC.invisibility_of_element((By.XPATH, app_submit)))
-                wait1.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+                stop_till_spinner_is_invisible(driver)
 
                 if j == len(affected_inst):
                     break
-            # except TimeoutException:
-            #     break
-            # finally:
-            #     wait1.until(EC.invisibility_of_element((By.XPATH,
-            #                                             "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']//div[contains(text(),'Actions')]")))
-            #     print("No affected instances present under this vulnerability")
