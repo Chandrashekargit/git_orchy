@@ -3,6 +3,7 @@ from Settings.test_users.create_users import *
 from Settings.test_domains.delete_domain import *
 from Settings.test_domains.create_domain import *
 from Settings.test_users.delete_user import *
+from spinner.spinner import *
 
 """
 > Tests if we can create new domain
@@ -57,21 +58,21 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
     #         close_pop_up.click()
     #         # driver.refresh()
 
-    # def test_warning_message_if_we_create_new_domain_with_existing_domain_name(self, driver):
-    #     """
-    #     These function lets us test the warning message if we try to create existing domain name(s).
-    #     """
-    #     wait = WebDriverWait(driver, 10, poll_frequency=2)
-    #     # calling the function 'create_domain_script'
-    #     create_domain(driver, domain_name="we45.com")
-    #
-    #     WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-    #     warning_msg = wait.until(EC.element_to_be_clickable((By.XPATH, warning_msg_for_same_domain_name))).text
-    #     assert warning_msg == "* organization email domain configuration with this domain name already exists."
-    #
-    #     close_popup = wait.until(EC.element_to_be_clickable((By.XPATH, domain_create_popup_close)))
-    #     close_popup.click()
-    #     driver.refresh()
+    def test_warning_message_if_we_create_new_domain_with_existing_domain_name(self, driver):
+        """
+        These function lets us test the warning message if we try to create existing domain name(s).
+        """
+        wait = WebDriverWait(driver, 10, poll_frequency=2)
+        # calling the function 'create_domain_script'
+        create_domain(driver, domain_name="we45.com")
+
+        WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        warning_msg = wait.until(EC.element_to_be_clickable((By.XPATH, warning_msg_for_same_domain_name))).text
+        assert warning_msg == "* organization email domain configuration with this domain name already exists."
+
+        close_popup = wait.until(EC.element_to_be_clickable((By.XPATH, domain_create_popup_close)))
+        close_popup.click()
+        driver.refresh()
 
     def test_if_we_can_delete_domain_while_users_with_that_domain_exist(self, driver):
         """
@@ -131,7 +132,7 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
 
         # creates a user
         create_user(driver, fn="Jose", ln="mourinho", email_id="Josemourinho@abc.com", un="Jose", privilage="admin")
-        WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        stop_till_spinner_is_invisible(driver)
         wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_user_created)))
         wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_user_created)))
         back = wait.until(EC.element_to_be_clickable((By.XPATH, back_btn)))
@@ -142,15 +143,16 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
         driver.execute_script("arguments[0].click();", settingstab)
 
         # click on domain
-        WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        stop_till_spinner_is_invisible(driver)
         domain = wait.until(EC.element_to_be_clickable((By.XPATH, domain_section)))
         domain.click()
 
+        stop_till_spinner_is_invisible(driver)
         search = wait.until(EC.element_to_be_clickable((By.XPATH, domain_search_field)))
         search.clear()
         search.send_keys('abc.com')
 
-        WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        stop_till_spinner_is_invisible(driver)
         action_dp = wait.until(EC.element_to_be_clickable((By.XPATH, doamin_action_dropdown)))
         action_dp.click()
         update = wait.until(EC.element_to_be_clickable((By.XPATH, domain_actiondp_update)))

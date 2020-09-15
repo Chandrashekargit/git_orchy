@@ -3,6 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from xpath.settings_module_xpath import *
 from selenium.common.exceptions import *
+from spinner.spinner import *
 
 
 def delete_domain(driver, domain_name):
@@ -12,16 +13,17 @@ def delete_domain(driver, domain_name):
     settingstab = wait.until(EC.element_to_be_clickable((By.XPATH, settings_tab)))
     driver.execute_script("arguments[0].click();", settingstab)
 
-    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     domain = wait.until(EC.element_to_be_clickable((By.XPATH, domain_section)))
     domain.click()
 
-    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
+    stop_till_spinner_is_invisible(driver)
     search = wait.until(EC.presence_of_element_located((By.XPATH, domain_search_field)))
     search.clear()
     search.send_keys(domain_name)
 
-    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     action_dp = wait.until(EC.element_to_be_clickable((By.XPATH, doamin_action_dropdown)))
     action_dp.click()
 
@@ -30,7 +32,7 @@ def delete_domain(driver, domain_name):
     delete_domain_pop_up = wait.until(EC.element_to_be_clickable((By.XPATH, domain_delete_yes)))
     delete_domain_pop_up.click()
 
-    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     # wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_domain_deleted)))
     # wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_domain_deleted)))
     # back = wait.until(EC.element_to_be_clickable((By.XPATH, back_btn)))
