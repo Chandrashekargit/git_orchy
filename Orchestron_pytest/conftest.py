@@ -2,15 +2,12 @@ from pytest import mark
 from selenium import webdriver
 import pytest
 import time
-from selenium.common.exceptions import *
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from xpath.login_xpath import *
 from xpath.Application_module_xpath import *
 from xpath.Engagement_module_xpath import *
 from xpath.settings_module_xpath import *
 from selenium.webdriver.common.keys import Keys
+from spinner.spinner import *
 
 
 @pytest.fixture(scope="session")
@@ -21,9 +18,8 @@ def driver():
     driver.maximize_window()
     wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
         ElementClickInterceptedException, ElementNotVisibleException, ElementNotInteractableException])
-    # dodge the loading symbol
-    wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-    # Enter the credentials
+
+    stop_till_spinner_is_invisible(driver)
     email = wait.until(EC.element_to_be_clickable((By.XPATH, email_xpath)))
     email.click()
     email.send_keys("chandrashekar@we45.com")
@@ -32,10 +28,42 @@ def driver():
     pw.send_keys("Test@1234")
     login = wait.until(EC.element_to_be_clickable((By.XPATH, login_xpath)))
     login.click()
-    time.sleep(3)
+
     assert driver.current_url == url+'org/dashboard', "URL isn't matching(Conftest)"
     return driver
 
+
+# @pytest.fixture(scope="session")
+# def driver():
+#     driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
+#     # driver = webdriver.Firefox(executable_path='/home/junaid/PycharmProjects/HelloWorld/venv/bin/geckodriver_linux64/geckodriver')
+#     driver.get(url)
+#     driver.maximize_window()
+#     wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
+#         ElementClickInterceptedException, ElementNotVisibleException, ElementNotInteractableException])
+#     stop_till_spinner_is_invisible(driver)
+#     # login with Microsoft
+#     login_via_ms = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[.='Login with Microsoft']")))
+#     login_via_ms.click()
+#     time.sleep(2)
+#     print(driver.window_handles)
+#     driver.switch_to.window(driver.window_handles[1])
+#     stop_till_spinner_is_invisible(driver)
+#
+#     email = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@name='loginfmt']")))
+#     email.send_keys("chandrashekar@we45.com")
+#
+#     wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+#     next = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@type='submit']")))
+#     next.click()
+#
+#     pswd = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@name='passwd']")))
+#     pswd.send_keys("Ceramicwhite@2")
+#
+#     signin = wait.until(EC.element_to_be_clickable((By.ID, "idSIButton9")))
+#     signin.click()
+#     assert driver.current_url == url+'org/dashboard', "URL isn't matching(Conftest)"
+#     return driver
 
 @pytest.fixture(scope="function")
 def create_app(driver, app='DemoApplication'):
