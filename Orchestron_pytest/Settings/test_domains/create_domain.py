@@ -1,8 +1,6 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from xpath.settings_module_xpath import *
 from selenium.common.exceptions import *
+from spinner.spinner import *
 
 
 def create_domain(driver, domain_name):
@@ -15,15 +13,15 @@ def create_domain(driver, domain_name):
     settingstab = wait.until(EC.element_to_be_clickable((By.XPATH, settings_tab)))
     driver.execute_script("arguments[0].click();", settingstab)
 
-    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     domain = wait.until(EC.element_to_be_clickable((By.XPATH, domain_section)))
     domain.click()
 
-    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     create = wait.until(EC.element_to_be_clickable((By.XPATH, domain_create)))
     create.click()
 
-    WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     domain_names = wait.until(EC.element_to_be_clickable((By.XPATH, domain_name_field)))
     domain_names.clear()
     domain_names.send_keys(domain_name)
@@ -34,7 +32,7 @@ def create_domain(driver, domain_name):
     except TimeoutException:
         print("Submit button not visible")
 
-    WebDriverWait(driver, 20).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    stop_till_spinner_is_invisible(driver)
     # wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_domain_created)))
     # wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_domain_created)))
     # driver.refresh()

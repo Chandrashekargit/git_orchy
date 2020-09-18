@@ -19,44 +19,44 @@ domain_names = ['@gmail.com', 'demo!@.com', 'demo.com ', ' demo.com']
 
 @mark.test_domain
 class CheckForAllTheWarningMessagesUnderDomainSectionTests:
-    # def test_invalid_domain_names(self, driver):
-    #     """
-    #     These function lets us test positive and negative domain names.
-    #     """
-    #     wait = WebDriverWait(driver, 6, poll_frequency=2, ignored_exceptions=[
-    #         NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
-    #
-    #     for domain in domain_names:
-    #         create_domain(driver, domain_name=domain)
-    #         warning_msg = wait.until(EC.visibility_of_element_located((By.XPATH, wrng_msg_for_invalid_domain_name)))
-    #         assert warning_msg.text == "* Please provide valid Domain."
-    #         close_pop_up = WebDriverWait(driver, 3, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, domain_create_popup_close)))
-    #         close_pop_up.click()
-    #
-    #         back = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Back']")))
-    #         back.click()
-    #
-    #     settingstab = wait.until(EC.element_to_be_clickable((By.XPATH, settings_tab)))
-    #     driver.execute_script("arguments[0].click();", settingstab)
-    #     time.sleep(1)
-    #     domain = wait.until(EC.element_to_be_clickable((By.XPATH, domain_section)))
-    #     domain.click()
-    #     # driver.execute_script("window.scrollTo(0, 900);")
-    #     time.sleep(1)
-    #     create = wait.until(EC.element_to_be_clickable((By.XPATH, domain_create)))
-    #     create.click()
-    #     domain_name = wait.until(EC.element_to_be_clickable((By.XPATH, domain_name_field)))
-    #     domain_name.send_keys(domain_names)
-    #     try:
-    #         domain_submit = WebDriverWait(driver, 3, poll_frequency=1).until(
-    #             EC.element_to_be_clickable((By.XPATH, domain_name_submit)))
-    #         domain_submit.click()
-    #     except TimeoutException:
-    #         print("\n***Domain can't be registered, please check the format***")
-    #         close_pop_up = WebDriverWait(driver, 3, poll_frequency=1).until(
-    #             EC.element_to_be_clickable((By.XPATH, domain_create_popup_close)))
-    #         close_pop_up.click()
-    #         # driver.refresh()
+    def test_invalid_domain_names(self, driver):
+        """
+        These function lets us test positive and negative domain names.
+        """
+        wait = WebDriverWait(driver, 6, poll_frequency=2, ignored_exceptions=[
+            NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
+
+        for domain in domain_names:
+            create_domain(driver, domain_name=domain)
+            warning_msg = wait.until(EC.visibility_of_element_located((By.XPATH, wrng_msg_for_invalid_domain_name)))
+            assert warning_msg.text == "* Please provide valid Domain."
+            close_pop_up = WebDriverWait(driver, 3, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, domain_create_popup_close)))
+            close_pop_up.click()
+
+            back = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Back']")))
+            back.click()
+
+        settingstab = wait.until(EC.element_to_be_clickable((By.XPATH, settings_tab)))
+        driver.execute_script("arguments[0].click();", settingstab)
+        time.sleep(1)
+        domain = wait.until(EC.element_to_be_clickable((By.XPATH, domain_section)))
+        domain.click()
+        # driver.execute_script("window.scrollTo(0, 900);")
+        time.sleep(1)
+        create = wait.until(EC.element_to_be_clickable((By.XPATH, domain_create)))
+        create.click()
+        domain_name = wait.until(EC.element_to_be_clickable((By.XPATH, domain_name_field)))
+        domain_name.send_keys(domain_names)
+        try:
+            domain_submit = WebDriverWait(driver, 3, poll_frequency=1).until(
+                EC.element_to_be_clickable((By.XPATH, domain_name_submit)))
+            domain_submit.click()
+        except TimeoutException:
+            print("\n***Domain can't be registered, please check the format***")
+            close_pop_up = WebDriverWait(driver, 3, poll_frequency=1).until(
+                EC.element_to_be_clickable((By.XPATH, domain_create_popup_close)))
+            close_pop_up.click()
+            # driver.refresh()
 
     def test_warning_message_if_we_create_new_domain_with_existing_domain_name(self, driver):
         """
@@ -158,6 +158,7 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
         update = wait.until(EC.element_to_be_clickable((By.XPATH, domain_actiondp_update)))
         update.click()
 
+        stop_till_spinner_is_invisible(driver)
         update_domain_name = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Enter Domain']")))
         update_domain_name.clear()
         update_domain_name.send_keys('abcd.com')
@@ -165,5 +166,7 @@ class CheckForAllTheWarningMessagesUnderDomainSectionTests:
         domain_update_name_submit = wait.until(EC.element_to_be_clickable((By.XPATH, domain_name_submit)))
         domain_update_name_submit.click()
 
-        warning_msg = wait.until(EC.element_to_be_clickable((By.XPATH, warning_msg_if_we_update_domain_name_while_user_exist))).text
+        stop_till_spinner_is_invisible(driver)
+        time.sleep(2)
+        warning_msg = wait.until(EC.visibility_of_element_located((By.XPATH, warning_msg_if_we_update_domain_name_while_user_exist))).text
         assert warning_msg == "* User(s) with this domain configuration already exists, to edit domain name please delete the users."
