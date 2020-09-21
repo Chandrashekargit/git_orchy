@@ -28,7 +28,8 @@ def driver():
     pw.send_keys("Test@1234")
     login = wait.until(EC.element_to_be_clickable((By.XPATH, login_xpath)))
     login.click()
-
+    stop_till_spinner_is_invisible(driver)
+    stop_till_spinner_is_invisible(driver)
     assert driver.current_url == url+'org/dashboard', "URL isn't matching(Conftest)"
     return driver
 

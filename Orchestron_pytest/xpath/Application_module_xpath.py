@@ -20,7 +20,7 @@ search = "//input[@placeholder='Search']"
 
 # update application pop up
 update_app_name = "//input[@class='inline-form-control-count-with-box orchy_font_family orchy_font_md orchy_font_color form-control is-valid' and @maxlength]"
-update_url = "/html/body/div[2]/div[1]/div/div/div/div/form/div[2]/div[1]/div/input"
+update_url = "//div[@class='modal-content']//div[@class='modal-body']//div[@class='row my-1'][2]/div[1]//input"
 update_name_warning_msg = "//p[text()=' * Ensure this field has no more than 50 characters.']"
 update_url_warning_msg = "//p[text()=' * Enter a valid URL.']"
 update_submit_btn = "//button[contains(text(),'Submit')]"

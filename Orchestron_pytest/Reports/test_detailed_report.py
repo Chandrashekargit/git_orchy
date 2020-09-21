@@ -22,29 +22,29 @@ class reports_severity_count_Tests:
     This Testcase checks the workflow of severity filter.
     """
 
-    # def test_create_app(self, driver):
-    #     wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
-    #         NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
-    #
-    #     create_apps(driver, application_name="check detailed reports", url="http://demo.com")
-    #
-    #     WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-    #     success_msg = wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_for_app_created)))
-    #     assert success_msg.text == "Application has been created successfully!"
-    #     wait.until(EC.invisibility_of_element((By.XPATH, success_msg_for_app_created)))
-    #
-    # def test_upload_sca_results(self, driver):
-    #     for (tool3, name3) in zip(sca_tools, sca_names):
-    #         # calling the function 'upload_res' to upload all SCA scan's.
-    #         upload_res(driver, application="//label[contains(text(), 'check detailed reports')]", tool_name=name3,
-    #                    scan_name=name3, file_loc=tool3)
-    #
-    #         # waits until the submit is invisible
-    #         WebDriverWait(driver, 60).until(EC.invisibility_of_element((By.XPATH, upload_results_submit)))
-    #         # waits until the Loading symbol is invisible
-    #         WebDriverWait(driver, 60).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+    def test_create_app(self, driver):
+        wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
+            NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
 
-    def test_goto_reports_section(self, driver, app_name="//label[contains(text(), 'check detailed ..')]/../..//span[@class='el-checkbox__inner']"):
+        create_apps(driver, application_name="check detailed reports", url="http://demo.com")
+
+        WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        success_msg = wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_for_app_created)))
+        assert success_msg.text == "Application has been created successfully!"
+        wait.until(EC.invisibility_of_element((By.XPATH, success_msg_for_app_created)))
+
+    def test_upload_sca_results(self, driver):
+        for (tool3, name3) in zip(sca_tools, sca_names):
+            # calling the function 'upload_res' to upload all SCA scan's.
+            upload_res(driver, application="//label[contains(text(), 'check detailed reports')]", tool_name=name3,
+                       scan_name=name3, file_loc=tool3)
+
+            # waits until the submit is invisible
+            WebDriverWait(driver, 60).until(EC.invisibility_of_element((By.XPATH, upload_results_submit)))
+            # waits until the Loading symbol is invisible
+            WebDriverWait(driver, 60).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+
+    def test_reports_section_severity_filter(self, driver, app_name="//label[contains(text(), 'check detailed ..')]/../..//span[@class='el-checkbox__inner']"):
         wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
             NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
 
@@ -105,9 +105,28 @@ class reports_severity_count_Tests:
                 unselect_info_sev = wait.until(EC.presence_of_element_located((By.XPATH, info_sev)))
                 unselect_info_sev.click()
 
-    def test_affected_instance_sev(self, driver):
+    def test_affected_instance_severity_with_severity_filter_option_selected(self, driver, app_name="//label[contains(text(), 'check detailed ..')]/../..//span[@class='el-checkbox__inner']"):
+        """
+        Checks: affected instances severity == severity filter option selected
+        """
         wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
             NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
+
+        go_to_reports_section = wait.until(EC.element_to_be_clickable((By.XPATH, reports_section)))
+        go_to_reports_section.click()
+
+        stop_till_spinner_is_invisible(driver)
+        select_the_detailed_report = wait.until(EC.element_to_be_clickable((By.XPATH, detailed_report)))
+        select_the_detailed_report.click()
+
+        stop_till_spinner_is_invisible(driver)
+        select_the_required_app = wait.until(EC.element_to_be_clickable((By.XPATH, app_name)))
+        select_the_required_app.click()
+
+        stop_till_spinner_is_invisible(driver)
+        time.sleep(2)
+        unselect_all_severities = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@style='min-height: 100%;']//div[@class='col-6']//span[@class='el-checkbox__inner']")))
+        unselect_all_severities.click()
 
         for (a, b) in zip([high_sev, med_sev, low_sev, info_sev], [1, 2, 3, 4]):
             stop_till_spinner_is_invisible(driver)
@@ -142,18 +161,15 @@ class reports_severity_count_Tests:
                                       "or @class='badge medium move_right orchy_font_family  orchy_font_sm badge-secondary' "
                                       "or @class='badge low move_right orchy_font_family  orchy_font_sm badge-secondary' "
                                       "or @class='badge info move_right orchy_font_family  orchy_font_sm badge-secondary']")))
-                        print(severity_of_vul.text)
+                        # print(severity_of_vul.text)
                         assert severity_of_vul.text == severity_selected.text
 
                         click_on_individual_vul = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@class='list-group']/button["+str(k)+"]")))
                         click_on_individual_vul.click()
 
-                        assert_app_name = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@style='padding-top: 3px;']["+str(k)+"]//span[@class='orchy_value_headers_reports orchy_font_family orchy_font_color orchy_font_sm']")))
-                        print(assert_app_name.text)
-                        assert assert_app_name.text == "check detailed reports"
-                        time.sleep(1)
-                        check_ai_section = wait.until(EC.presence_of_element_located((By.XPATH, "//div[.='Affected Instances']/text()"))).text
-                        assert check_ai_section == "Affected Instances"
+                        stop_till_spinner_is_invisible(driver)
+                        # check_ai_section = wait.until(EC.presence_of_element_located((By.XPATH, "//div[.='Affected Instances']/text()"))).text
+                        # assert check_ai_section == "Affected Instances"
 
             except TimeoutException:
                 stop_till_spinner_is_invisible(driver)
@@ -176,13 +192,8 @@ class reports_severity_count_Tests:
                         click_on_individual_vul.click()
 
                         stop_till_spinner_is_invisible(driver)
-                        assert_app_name = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@style='padding-top: 3px;']["+str(l)+"]//span[@class='orchy_value_headers_reports orchy_font_family orchy_font_color orchy_font_sm']")))
-                        print(assert_app_name.text)
-                        assert assert_app_name.text == "check detailed reports"
-                        time.sleep(1)
-                        stop_till_spinner_is_invisible(driver)
-                        check_ai_section = wait.until(EC.presence_of_element_located((By.XPATH, "//div[.='Affected Instances']/text()"))).text
-                        assert check_ai_section == "Affected Instances"
+                        # check_ai_section = wait.until(EC.presence_of_element_located((By.XPATH, "//div[.='Affected Instances']/text()"))).text
+                        # assert check_ai_section == "Affected Instances"
 
                 except TimeoutException:
                     print("No vulnerabilities present under: ", severity_selected.text)
@@ -191,5 +202,5 @@ class reports_severity_count_Tests:
             unselect_severity = wait.until(EC.element_to_be_clickable((By.XPATH, a)))
             unselect_severity.click()
 
-    # def test_delete_app(self, driver):
-    #     delete_app(driver, application="//label[contains(text(),'check reports')]")
+    def test_delete_app(self, driver):
+        delete_app(driver, application="//label[contains(text(),'check reports')]")

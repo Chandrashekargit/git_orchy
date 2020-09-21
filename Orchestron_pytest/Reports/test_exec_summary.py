@@ -27,7 +27,7 @@ class reports_severity_count_Tests:
 
         create_apps(driver, application_name="check reports", url="http://demo.com")
 
-        WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        stop_till_spinner_is_invisible(driver)
         success_msg = wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_for_app_created)))
         assert success_msg.text == "Application has been created successfully!"
         wait.until(EC.invisibility_of_element((By.XPATH, success_msg_for_app_created)))
@@ -94,9 +94,25 @@ class reports_severity_count_Tests:
                 unselect_info_sev = wait.until(EC.presence_of_element_located((By.XPATH, info_sev)))
                 unselect_info_sev.click()
 
-    def test_affected_instance_sev(self, driver):
+    def test_affected_instance_sev(self, driver, app_name="//label[contains(text(), 'check reports')]/../..//span[@class='el-checkbox__inner']"):
         wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
             NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
+
+        go_to_reports_section = wait.until(EC.element_to_be_clickable((By.XPATH, reports_section)))
+        go_to_reports_section.click()
+
+        stop_till_spinner_is_invisible(driver)
+        select_the_detailed_report = wait.until(EC.element_to_be_clickable((By.XPATH, detailed_report)))
+        select_the_detailed_report.click()
+
+        stop_till_spinner_is_invisible(driver)
+        select_the_required_app = wait.until(EC.element_to_be_clickable((By.XPATH, app_name)))
+        select_the_required_app.click()
+
+        stop_till_spinner_is_invisible(driver)
+        time.sleep(2)
+        unselect_all_severities = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@style='min-height: 100%;']//div[@class='col-6']//span[@class='el-checkbox__inner']")))
+        unselect_all_severities.click()
 
         for (a, b) in zip([high_sev, med_sev, low_sev, info_sev], [1, 2, 3, 4]):
             stop_till_spinner_is_invisible(driver)
@@ -133,6 +149,7 @@ class reports_severity_count_Tests:
                                          "or @class='badge info move_right orchy_font_family  orchy_font_sm badge-secondary']")))
                         print(severity_of_vul.text)
                         assert severity_of_vul.text == severity_selected.text
+
             except TimeoutException:
                 stop_till_spinner_is_invisible(driver)
                 severity_selected = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@role='group']/div[@class='row']//div[@class='col-sm-6']["+str(b)+"]/label//span[2]/label")))
