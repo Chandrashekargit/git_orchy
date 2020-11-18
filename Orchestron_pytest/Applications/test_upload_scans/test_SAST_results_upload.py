@@ -42,7 +42,7 @@ sast_tools = [
 @mark.sast
 def test_sast_results(driver):
     for (tool1, name1) in zip(sast_tools, sast_names):
-        upload_res(driver, application="//label[contains(text(), 'SAST')]", tool_name=name1, file_loc=tool1)
+        upload_res(driver, application="//label[contains(text(), 'all results')]", tool_name=name1, scan_name=name1, file_loc=tool1)
 
         # waits until the submit is invisible
         WebDriverWait(driver, 60).until(EC.invisibility_of_element((By.XPATH, upload_results_submit)))

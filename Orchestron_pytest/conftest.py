@@ -30,6 +30,7 @@ def driver():
     login.click()
     stop_till_spinner_is_invisible(driver)
     stop_till_spinner_is_invisible(driver)
+    # time.sleep(3)
     assert driver.current_url == url+'org/dashboard', "URL isn't matching(Conftest)"
     return driver
 

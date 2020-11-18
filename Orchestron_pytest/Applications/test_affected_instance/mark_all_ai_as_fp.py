@@ -90,7 +90,7 @@ def mark_all_evidences_as_FP(driver, app_name):
                 break
             else:
                 wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-                click_on_individual_affected_instance = wait.until(EC.presence_of_element_located((By.XPATH,
+                click_on_individual_affected_instance = wait.until(EC.element_to_be_clickable((By.XPATH,
                    "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']["+str(j)+"]//header")))
                 click_on_individual_affected_instance.click()
                 time.sleep(1)

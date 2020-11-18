@@ -1,4 +1,4 @@
-url = "https://demo.orchestron.dev/"
+url = "https://graphs.orchestron.dev/"
 
 # Application 'create' button xpath's
 application_tab = "//p[contains(text(),'Applications')]"
@@ -19,18 +19,19 @@ success_msg_for_app_delete = "//p[.= 'Application has been deleted successfully!
 search = "//input[@placeholder='Search']"
 
 # update application pop up
-update_app_name = "//input[@class='inline-form-control-count-with-box orchy_font_family orchy_font_md orchy_font_color form-control is-valid' and @maxlength]"
+update_app_name = "//input[@class='inline-form-control-count-with-box orchy_font_family orchy_font_md orchy_font_color form-control' and @maxlength]"
 update_url = "//div[@class='modal-content']//div[@class='modal-body']//div[@class='row my-1'][2]/div[1]//input"
 update_name_warning_msg = "//p[text()=' * Ensure this field has no more than 50 characters.']"
 update_url_warning_msg = "//p[text()=' * Enter a valid URL.']"
 update_submit_btn = "//button[contains(text(),'Submit')]"
+update_success_msg = "//p[.='Application has been updated successfully!']"
 
 # Application action dropdown options xpath's
 action_dropdown = "//div[contains(text(),'Actions')]"
 update = "//ul[@class='el-dropdown-menu el-popper']//li[1]"
 upload_results = "//ul[@class='el-dropdown-menu el-popper']//li[2]"
 manual_entry = "//ul[@class='el-dropdown-menu el-popper']//li[3]"
-create_view_scans = "//ul[@class='el-dropdown-menu el-popper']//li[4]"
+view_scans = "//ul[@class='el-dropdown-menu el-popper']//li[4]"
 bulk_action = "//ul[@class='el-dropdown-menu el-popper']//li[5]"
 copy_webhook = "//ul[@class='el-dropdown-menu el-popper']//li[6]"
 bug_tracker = "//ul[@class='el-dropdown-menu el-popper']//li[8]"
@@ -112,7 +113,6 @@ success_msg_when_vul_marked_as_FP = "//p[.='Vulnerability successfully marked as
 success_msg_when_evd_marked_as_FP = "//p[.='Evidence successfully marked as False Positive!']"
 reopen_evd = "//ul[@x-placement]//a//li[.='Reopen']"
 success_msg_when_evd_reopened = "//p[.='Evidence successfully reopened!']"
-
 
 # sast evd
 sast_toggle_btn = "//div[@class='row']//div[@class='col-sm-4 col-md-4 col-4'][1]//span"

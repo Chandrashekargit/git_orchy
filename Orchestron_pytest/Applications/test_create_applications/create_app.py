@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
 from spinner.spinner import *
-
+import time
 
 def create_apps(driver, application_name=None, url=None):
     wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
@@ -16,10 +16,11 @@ def create_apps(driver, application_name=None, url=None):
     applicationTab.click()
 
     stop_till_spinner_is_invisible(driver)
-    stop_till_spinner_is_invisible(driver)
+    time.sleep(2)
     create_btn = wait.until(EC.presence_of_element_located((By.XPATH, app_create_button)))
     create_btn.click()
 
+    stop_till_spinner_is_invisible(driver)
     stop_till_spinner_is_invisible(driver)
     wait.until(EC.visibility_of_element_located((By.XPATH, app_name)))
     name = wait.until(EC.presence_of_element_located((By.XPATH, app_name)))

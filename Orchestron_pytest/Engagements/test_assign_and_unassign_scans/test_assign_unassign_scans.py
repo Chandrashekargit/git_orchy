@@ -25,7 +25,7 @@ class CreateEngagementTests:
 
     def test_upload_scans(self, driver):
         for (tool3, name3) in zip(sca_tools, sca_names):
-            upload_res(driver, application="//label[contains(text(), 'Demo X')]", tool_name=name3, file_loc=tool3)
+            upload_res(driver, application="//label[contains(text(), 'Demo X')]", tool_name=name3, scan_name=name3, file_loc=tool3)
 
     def test_create_eng(self, driver):
         create_engagement(driver, engagement_name="Demo engagement", eng_descrption="qwerty", which_application="Demo X", which_scope_type="All")

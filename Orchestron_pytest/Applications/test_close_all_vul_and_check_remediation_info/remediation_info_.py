@@ -67,6 +67,7 @@ def checks_visibility_of_remediation_info_of_closed_vuls(driver, app_name):
         close_image.click()
 
         wait1.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        wait.until(EC.visibility_of_element_located((By.XPATH, "//label[contains(text(),'Closed')]")))
         go_to_closed_vul_section = wait.until(EC.element_to_be_clickable((By.XPATH, "//label[contains(text(),'Closed')]")))
         go_to_closed_vul_section.click()
         i -= 1

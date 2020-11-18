@@ -21,7 +21,7 @@ class UploadScaScansAndCheckAllWarningMessagesTests:
     def test_sca_results(self, driver):
         for (tool3, name3) in zip(sca_tools, sca_names):
             # calling the function 'upload_res' to upload all SCA scan's.
-            upload_res(driver, application="//label[contains(text(), 'Demo app')]", tool_name=name3, file_loc=tool3, scan_name=name3)
+            upload_res(driver, application="//label[contains(text(), 'all results')]", tool_name=name3, file_loc=tool3, scan_name=name3)
 
             # waits until the submit is invisible
             WebDriverWait(driver, 60).until(EC.invisibility_of_element((By.XPATH, upload_results_submit)))
