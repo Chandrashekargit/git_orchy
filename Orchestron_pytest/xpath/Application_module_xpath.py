@@ -73,6 +73,7 @@ dashboard = "//a[contains(text(),'Dashboard')]"
 basic_info = "//a[text()='Basic Info']"
 vulnerability_info = "//a[text()='Vulnerability Info']"
 affected_instance = "//a[text()='Affected Instances']"
+vul_info = "//a[.='Vulnerability Info']"
 examples = "//a[text()='Examples']"
 close_evdience = "//ul[@x-placement='bottom-end' or @x-placement='top-end']//li[text()='Close evidence']"
 

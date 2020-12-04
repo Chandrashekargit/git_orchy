@@ -29,8 +29,11 @@ team_desc = "//textarea[@id='textarea1']"
 create_team_submit = "//button[contains(text(), 'Submit')]"
 search_field = "//input[@placeholder='Search']"
 teams_section_action_dropdown = "//span[@class='el-dropdown-link el-dropdown-selfdefine']//div[2]"
+warning_msg_when_we_create_existing_team = "//p[contains(text(),'Team with this name already exists.')]"
+warning_msg_for_max_char_in_name_field = "//p[contains(text(),'Ensure this field has no more than 50 characters.')]"
+
 # users_section_action_dropdown = "//div[contains(text(),'Actions')]"
-update = "//ul[@x-placement='top-end']//li[1]"
+update = "//ul[@class='el-dropdown-menu el-popper' and @x-placement]//a//li[.='Update']"
 delete = "//ul[@x-placement]//li[2]"
 confirm_delete = "//button[.='Yes']"
 add_users = "//ul[@x-placement]//li[text()='Add Users']"
@@ -59,7 +62,7 @@ warning_msg_for_delete_domain_while_user_exist = "//p[contains(text(),'User(s) w
 warning_msg_if_we_update_domain_name_while_user_exist = "//p[@class='align_left error align_left orchy_font_sm orchy_font_family']/text()"
 success_msg_domain_created = "//p[text()='Domain has been created Successfully']"
 success_msg_domain_deleted = "//p[text()='Domain has been deleted Successfully!']"
-wrng_msg_for_invalid_domain_name = "//p[contains(text(),'* Please provide valid Domain.')]"
+wrng_msg_for_invalid_domain_name = "//p[contains(text(),'organization email domain configuration with this domain name already exists.')]"
 
 # vul_label_modification_and_notification
 vul_label_modification_and_notification = "//a[text()='Vulnerability Label Modification and Notifications']"
