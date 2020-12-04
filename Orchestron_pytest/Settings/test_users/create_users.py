@@ -42,9 +42,10 @@ def create_user(driver, fn, ln, email_id, un, privilage):
 
     usertype = wait.until(EC.presence_of_element_located((By.XPATH, user_type)))
     usertype.send_keys(privilage)
+    usertype.send_keys(Keys.ARROW_DOWN)
     usertype.send_keys(Keys.ENTER)
 
-    if privilage == "Normal".lower():
+    if privilage == "Normal User":
         click_on_create_team = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Create Team']")))
         click_on_create_team.click()
 

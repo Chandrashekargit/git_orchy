@@ -37,15 +37,10 @@ def close_evd(driver, app_name=None):
     time.sleep(2)
 
     try:
-        # checks if vulnerabilities are present, if not, it prints out the msg.
-        # else, it goes to affected instance section.
-        WebDriverWait(driver, 5).until(EC.invisibility_of_element((By.XPATH, "//tbody/tr/td[2]//div[@class='col']/p")))
-        print("\nNo vulnerabilities are present for this application")
-    except TimeoutException:
         vuls = wait.until(EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr/td[2]//div[@class='col']/p")))
         print('\nTotal number of vul: ', len(vuls))
 
-        for i in range(1, len(vuls)+1):
+        for i in range(1, len(vuls) + 1):
             stop_till_spinner_is_invisible(driver)
             time.sleep(2)
             open_vul = wait.until(EC.element_to_be_clickable((By.XPATH, open_vulnerability)))
@@ -61,21 +56,24 @@ def close_evd(driver, app_name=None):
             stop_till_spinner_is_invisible(driver)
             wait.until(EC.visibility_of_element_located((By.XPATH, affected_instance)))
 
+            # wait till Vulnerability info section is visible
+            stop_till_spinner_is_invisible(driver)
+            wait.until(EC.visibility_of_element_located((By.XPATH, vul_info)))
+
             # moves to affected instance Section
             stop_till_spinner_is_invisible(driver)
+            time.sleep(2)
             move_to_ai = wait.until(EC.element_to_be_clickable((By.XPATH, affected_instance)))
             move_to_ai.click()
             time.sleep(2)
 
             stop_till_spinner_is_invisible(driver)
-            affected_inst = wait1.until(EC.presence_of_all_elements_located((By.XPATH,
-                "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']//div[contains(text(),'Actions')]")))
+            affected_inst = wait1.until(EC.presence_of_all_elements_located((By.XPATH, "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']//div[contains(text(),'Actions')]")))
             print('Total number of affected_instance: ', len(affected_inst))
 
             for j in range(1, len(affected_inst) + 1):
                 stop_till_spinner_is_invisible(driver)
-                click_on_individual_action_dp = wait1.until(EC.element_to_be_clickable((By.XPATH,
-                    "//div[@class='tab-content']//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']["+str(j)+"]//div[contains(text(),'Actions')]")))
+                click_on_individual_action_dp = wait1.until(EC.element_to_be_clickable((By.XPATH, "//div[@class='tab-pane active card-body']//div[@class='container-fluid']//div[@class='row']["+str(j)+"]//div[contains(text(),'Actions')]")))
                 click_on_individual_action_dp.click()
 
                 select_close_evd = wait1.until(EC.presence_of_element_located((By.XPATH, close_evdience)))
@@ -89,5 +87,11 @@ def close_evd(driver, app_name=None):
                 wait1.until(EC.invisibility_of_element((By.XPATH, app_submit)))
                 stop_till_spinner_is_invisible(driver)
 
-                if j == len(affected_inst):
-                    break
+                # if j == len(affected_inst):
+                #     break
+
+    except TimeoutException:
+        # checks if vulnerabilities are present, if not, it prints out the msg.
+        # else, it goes to affected instance section.
+        WebDriverWait(driver, 5).until(EC.invisibility_of_element((By.XPATH, "//tbody/tr/td[2]//div[@class='col']/p")))
+        print("\nNo vulnerabilities are present for this application")

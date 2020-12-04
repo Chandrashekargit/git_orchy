@@ -27,7 +27,7 @@ def create_domain(driver, domain_name):
     domain_names.send_keys(domain_name)
 
     try:
-        domain_submit = WebDriverWait(driver, 5, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, domain_name_submit)))
+        domain_submit = WebDriverWait(driver, 3, poll_frequency=1).until(EC.element_to_be_clickable((By.XPATH, domain_name_submit)))
         domain_submit.click()
     except TimeoutException:
         print("Submit button not visible")
