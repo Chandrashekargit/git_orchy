@@ -3,6 +3,7 @@ from Applications.test_create_applications.create_app import *
 from Applications.test_manual_entry_scans.manual_entry import *
 from Applications.test_delete_application.delete_app import *
 from pytest import mark
+from spinner.spinner import *
 
 module_names = [" ", "abc.jar", " ", " ", "abc.jar"]
 version_ids = [" ", " ", "1.75.2", " ", "2.325.356.366"]
@@ -16,13 +17,14 @@ class CreateEvidenceTests:
 
     def test_create_manual_vul(self, driver):
         create_manual_vul(driver, individual_app_xpath="//label[contains(text(), 'test_to_create_manual_evd')]",
-                          scan_name="Manual vul", Severity="Low", cwe_num="89:Sql")
+                          scan_name="Manual vul", Severity="Low", cwe_num="89:Sql", Descrption="This is manual vul")
 
     def test_wrng_msg_of_sca_evd(self, driver):
         wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
             NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
 
-        open_manual_vulnerability(driver, individual_vul_xpath="//tbody/tr/td[2]//div[@class='col']/p")
+        open_manual_vulnerability(driver, individual_vul_xpath="//tbody/tr/td[2]//div[@class='col']/p",
+                                  application_name_xpath="//label[contains(text(), 'test_to_create_manual_evd')]")
         for (module, version, cve) in zip(module_names, version_ids, cve_ids):
             if module == " " and version == " " and cve == " ":
                 sca_evd(driver, module_name=module, version_id=version, cve_id=cve)

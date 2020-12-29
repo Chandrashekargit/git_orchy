@@ -3,6 +3,7 @@ from Applications.test_create_applications.create_app import *
 from Applications.test_manual_entry_scans.manual_entry import *
 from Applications.test_delete_application.delete_app import *
 from pytest import mark
+from spinner.spinner import *
 
 urls = [" ", "http://deo.com", " ", " ", "http://demo!2.com", " ", " ", " "]
 params = [" ", " ", "arg1", " ", "argument12345", "!@#$", "123456", " "]
@@ -26,22 +27,23 @@ class CreateEvidenceTests:
 
     def test_create_manual_vul(self, driver):
         create_manual_vul(driver, individual_app_xpath="//label[contains(text(), 'test_to_create_manual_evd')]",
-                          scan_name="Manual vul", Severity="Low", cwe_num="89:Sql")
+                          scan_name="Manual vul", Severity="Low", cwe_num="89:Sql", Descrption="This is manual vul")
 
     def test_create_manual_evd_and_assert_wrng_msgs_for_empty_fields(self, driver):
         wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
             NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
 
-        open_manual_vulnerability(driver, individual_vul_xpath="//tbody/tr/td[2]//div[@class='col']/p")
-        wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        open_manual_vulnerability(driver, individual_vul_xpath="//tbody/tr/td[2]//div[@class='col']/p",
+                                  application_name_xpath="//label[contains(text(), 'test_to_create_manual_evd')]")
+        stop_till_spinner_is_invisible(driver)
         click_on_create_evd_btn = wait.until(EC.element_to_be_clickable((By.XPATH, create_evidence_btn)))
         click_on_create_evd_btn.click()
 
-        WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        stop_till_spinner_is_invisible(driver)
         dast_evd_enable = wait.until(EC.element_to_be_clickable((By.XPATH, dast_toggle_btn)))
         dast_evd_enable.click()
 
-        WebDriverWait(driver, 10).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        stop_till_spinner_is_invisible(driver)
         submit = wait.until(EC.element_to_be_clickable((By.XPATH, evd_submit)))
         driver.execute_script("arguments[0].click();", submit)
 
@@ -58,7 +60,8 @@ class CreateEvidenceTests:
         wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
             NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
 
-        open_manual_vulnerability(driver, individual_vul_xpath="//tbody/tr/td[2]//div[@class='col']/p")
+        open_manual_vulnerability(driver, individual_vul_xpath="//tbody/tr/td[2]//div[@class='col']/p",
+                                  application_name_xpath="//label[contains(text(), 'test_to_create_manual_evd')]")
 
         for (url, param, payload, request, response) in zip(urls, params, payloads, requests, responses):
             if request and response == "/home/junaid/Pictures/we45.png":

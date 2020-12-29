@@ -3,6 +3,7 @@ from Applications.test_create_applications.create_app import *
 from Applications.test_manual_entry_scans.manual_entry import *
 from Applications.test_delete_application.delete_app import *
 from pytest import mark
+from spinner.spinner import *
 
 line_nos = [" ", "12345", "abc@!", " ", " ", "1"*6, "1"]
 line_ranges = [" ", " ", "125-369", " ", " ", "6"*16, "1"]
@@ -21,19 +22,20 @@ class CreateEvidenceTests:
 
     def test_create_manual_vul(self, driver):
         create_manual_vul(driver, individual_app_xpath="//label[contains(text(), 'test_to_create_manual_evd')]",
-                          scan_name="Manual vul", Severity="Low", cwe_num="89:Sql")
+                          scan_name="Manual vul", Severity="Low", cwe_num="89:Sql", Descrption="This is manual vul")
 
     def test_create_manual_evd_and_assert_wrng_msgs_for_empty_fields(self, driver):
         wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
             NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
 
-        open_manual_vulnerability(driver, individual_vul_xpath="//tbody/tr/td[2]//div[@class='col']/p")
+        open_manual_vulnerability(driver, individual_vul_xpath="//tbody/tr/td[2]//div[@class='col']/p",
+                                  application_name_xpath="//label[contains(text(), 'test_to_create_manual_evd')]")
 
-        wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        stop_till_spinner_is_invisible(driver)
         click_on_create_evd_btn = wait.until(EC.element_to_be_clickable((By.XPATH, create_evidence_btn)))
         click_on_create_evd_btn.click()
 
-        wait.until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        stop_till_spinner_is_invisible(driver)
         sast_evd_enable = wait.until(EC.element_to_be_clickable((By.XPATH, sast_toggle_btn)))
         sast_evd_enable.click()
 
@@ -54,7 +56,8 @@ class CreateEvidenceTests:
         wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
             NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
 
-        open_manual_vulnerability(driver, individual_vul_xpath="//tbody/tr/td[2]//div[@class='col']/p")
+        open_manual_vulnerability(driver, individual_vul_xpath="//tbody/tr/td[2]//div[@class='col']/p",
+                                  application_name_xpath="//label[contains(text(), 'test_to_create_manual_evd')]")
 
         for (line_num, line_Range, Code_snippet, Path, File, Param) in zip(line_nos, line_ranges, code_snippets, paths, files, params):
             if Code_snippet == "/home/junaid/Pictures/we45.png":
