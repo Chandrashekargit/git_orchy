@@ -1,11 +1,8 @@
-from selenium.common.exceptions import *
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
 from spinner.spinner import *
 import time
+
 
 def create_apps(driver, application_name=None, url=None):
     wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
