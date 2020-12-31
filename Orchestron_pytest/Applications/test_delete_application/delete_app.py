@@ -3,7 +3,7 @@ from xpath.Application_module_xpath import *
 from spinner.spinner import *
 
 
-def delete_app(driver, application):
+def delete_app(driver, application_xpath):
     wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
         NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
 
@@ -12,7 +12,7 @@ def delete_app(driver, application):
     applicationTab.click()
 
     stop_till_spinner_is_invisible(driver)
-    individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, application)))
+    individual_app = wait.until(EC.element_to_be_clickable((By.XPATH, application_xpath)))
     individual_app.click()
 
     stop_till_spinner_is_invisible(driver)
