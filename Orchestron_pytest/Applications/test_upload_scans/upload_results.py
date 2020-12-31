@@ -1,8 +1,4 @@
-from selenium.common.exceptions import *
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
 import time
 from spinner.spinner import *
@@ -13,6 +9,7 @@ def upload_res(driver, application, tool_name, scan_name, file_loc):
         NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
 
     stop_till_spinner_is_invisible(driver)
+    time.sleep(2)
     applicationTab = wait.until(EC.element_to_be_clickable((By.XPATH, application_tab)))
     applicationTab.click()
 
@@ -49,15 +46,16 @@ def upload_res(driver, application, tool_name, scan_name, file_loc):
 
     try:
         # click on submit to upload result
-        submit1 = wait.until(EC.element_to_be_clickable((By.XPATH, upload_results_submit)))
+        submit1 = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, upload_results_submit)))
         submit1.click()
+        stop_till_spinner_is_invisible(driver)
     except TimeoutException:
         print("Submit button not visible")
 
     # waits until the submit is invisible
     # WebDriverWait(driver, 60).until(EC.invisibility_of_element((By.XPATH, upload_results_submit)))
 
-    # waits until the Loading symbol is invisible
-    # WebDriverWait(driver, 60).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
-    # success_msg = wait.until(EC.visibility_of_element_located((By.XPATH, "File has been uploaded successfully!")))
-
+    # stop_till_spinner_is_invisible(driver)
+    # wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_for_scan_uploaded)))
+    # wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_for_scan_uploaded)))
+    # stop_till_spinner_is_invisible(driver)

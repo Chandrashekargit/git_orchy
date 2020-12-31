@@ -1,9 +1,8 @@
 from pytest import mark
 from Applications.test_upload_scans.upload_results import upload_res
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
+from spinner.spinner import *
+import time
 
 sca_tools = ["/home/junaid/Downloads/results_supported_by_orchy/OWASP Dependency Checker.xml",
              "/home/junaid/Downloads/results_supported_by_orchy/snyk.json",
@@ -12,18 +11,20 @@ sca_tools = ["/home/junaid/Downloads/results_supported_by_orchy/OWASP Dependency
              "/home/junaid/Downloads/results_supported_by_orchy/NpmAudit.json"
              ]
 
-sca_names = ["OWASP Dependency", "snyk", "whitesource", "Retire", "npm", "snyk"]
+sca_names = ["OWASP Dependency", "snyk", "whitesource", "Retire", "npm"]
 
 
-@mark.smoke1
 @mark.sca
 class UploadScaScansAndCheckAllWarningMessagesTests:
     def test_sca_results(self, driver):
-        for (tool3, name3) in zip(sca_tools, sca_names):
-            # calling the function 'upload_res' to upload all SCA scan's.
-            upload_res(driver, application="//label[contains(text(), 'all results')]", tool_name=name3, file_loc=tool3, scan_name=name3)
+        wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
+            NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
 
-            # waits until the submit is invisible
-            WebDriverWait(driver, 60).until(EC.invisibility_of_element((By.XPATH, upload_results_submit)))
-            # waits until the Loading symbol is invisible
-            WebDriverWait(driver, 60).until(EC.invisibility_of_element((By.XPATH, "//div[@class='loading-background']")))
+        for (tool, name) in zip(sca_tools, sca_names):
+
+            # calling the function 'upload_res' to upload all SCA scan's.
+            upload_res(driver, application="//label[contains(text(), 'SCA')]", tool_name=name, file_loc=tool, scan_name=name)
+            stop_till_spinner_is_invisible(driver)
+            wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_for_scan_uploaded)))
+            wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_for_scan_uploaded)))
+            stop_till_spinner_is_invisible(driver)

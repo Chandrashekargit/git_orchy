@@ -17,11 +17,13 @@ dast_tools = [("/home/junaid/Downloads/results_supported_by_orchy/zap.xml", "ZAP
 
 @mark.dast
 def test_dast_results(driver):
-    for (tool2, name2) in dast_tools:
-        # calling the function 'upload_res' to upload all the DAST scans.
-        upload_res(driver, application="//label[contains(text(), 'all results')]", scan_name=name2,tool_name=name2, file_loc=tool2)
+    wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[
+        NoSuchElementException, ElementNotVisibleException, ElementClickInterceptedException])
 
-        # waits until the submit is invisible
-        WebDriverWait(driver, 60).until(EC.invisibility_of_element((By.XPATH, upload_results_submit)))
-        # waits until the Loading symbol is invisible
+    for (tool, name) in dast_tools:
+        # calling the function 'upload_res' to upload all the DAST scans.
+        upload_res(driver, application="//label[contains(text(), 'all results')]", scan_name=name, tool_name=name, file_loc=tool)
+        stop_till_spinner_is_invisible(driver)
+        wait.until(EC.visibility_of_element_located((By.XPATH, success_msg_for_scan_uploaded)))
+        wait.until(EC.invisibility_of_element_located((By.XPATH, success_msg_for_scan_uploaded)))
         stop_till_spinner_is_invisible(driver)
