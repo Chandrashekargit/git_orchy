@@ -1,4 +1,7 @@
 url = "https://graphs.orchestron.dev/"
+# url = "https://webinar.orchestron.dev/"
+
+# ============================================================================================
 
 # Application 'create' button xpath's
 application_tab = "//p[contains(text(),'Applications')]"
@@ -15,8 +18,23 @@ success_msg_for_app_created = "//p[text()='Application has been created successf
 warning_msg_for_existing_app = "//p[.=' * Application with this name already exists.']"
 success_msg_for_app_delete = "//p[.= 'Application has been deleted successfully!']"
 
+# ============================================================================================
+
+# Application details xapth
+app_name_label = "//div[@class='row']//div[@class='col-5'][1]//tr//td[.='Application']"
+app_url_label = "//div[@class='row']//div[@class='col-5'][1]//tr//td[.='URL']"
+app_platform_label = "//div[@class='row']//div[@class='col-5'][1]//tr//td[.='Platform']"
+app_team_label = "//div[@class='row']//div[@class='col-5'][1]//tr//td[.='Team']"
+app_hard_mark_false_postive_label = "//div[@class='row']//div[@class='col-5'][2]//tr//td[.='Hard Mark False Positive']"
+app_BT_label = "//div[@class='row']//div[@class='col-5'][2]//tr//td[.=' Bug Tracker']"
+app_BT_project_label = "//div[@class='row']//div[@class='col-5'][2]//tr//td[.='Bug Tracker Project']"
+
+# ============================================================================================
+
 # search field xpath
 search = "//input[@placeholder='Search']"
+
+# ============================================================================================
 
 # update application pop up
 update_app_name = "//input[@class='inline-form-control-count-with-box orchy_font_family orchy_font_md orchy_font_color form-control' and @maxlength]"
@@ -26,17 +44,24 @@ update_url_warning_msg = "//p[text()=' * Enter a valid URL.']"
 update_submit_btn = "//button[contains(text(),'Submit')]"
 update_success_msg = "//p[.='Application has been updated successfully!']"
 
+# ============================================================================================
+
 # Application action dropdown options xpath's
 action_dropdown = "//div[contains(text(),'Actions')]"
-update = "//ul[@class='el-dropdown-menu el-popper']//li[1]"
-upload_results = "//ul[@class='el-dropdown-menu el-popper']//li[2]"
-manual_entry = "//ul[@class='el-dropdown-menu el-popper']//li[3]"
-view_scans = "//ul[@class='el-dropdown-menu el-popper']//li[4]"
-bulk_action = "//ul[@class='el-dropdown-menu el-popper']//li[5]"
-copy_webhook = "//ul[@class='el-dropdown-menu el-popper']//li[6]"
-bug_tracker = "//ul[@class='el-dropdown-menu el-popper']//li[8]"
-hard_mark_false_positive = "//ul[@class='el-dropdown-menu el-popper']//li[9]"
-view_report = "//ul[@class='el-dropdown-menu el-popper']//li[10]"
+update = "//ul[@class='el-dropdown-menu el-popper']//li[1]/a/li"
+upload_results = "//ul[@class='el-dropdown-menu el-popper']//li[2]/a/li"
+manual_entry = "//ul[@class='el-dropdown-menu el-popper']//li[3]/a/li"
+view_scans = "//ul[@class='el-dropdown-menu el-popper']//li[4]/a/li"
+bulk_action = "//ul[@class='el-dropdown-menu el-popper']//li[5]/a/li"
+copy_webhook = "//ul[@class='el-dropdown-menu el-popper']//li[6]/a/li"
+show_webhook = "//ul[@class='el-dropdown-menu el-popper']//li[7]/a/li"
+bug_tracker = "//ul[@class='el-dropdown-menu el-popper']//li[8]/a/li"
+hard_mark_false_positive = "//ul[@class='el-dropdown-menu el-popper']//li[9]/a/li"
+view_report = "//ul[@class='el-dropdown-menu el-popper']//li[10]/a/li"
+vul_profile = "//ul[@class='el-dropdown-menu el-popper']//li[11]/a/li"
+delete = "//ul[@class='el-dropdown-menu el-popper']//li[12]/a/li"
+
+# ============================================================================================
 
 # Manual entry pop up xpath's
 man_scan_name = "//div[@class='row my-1']//div[@class='col-sm-12'][1]//input"
@@ -50,6 +75,8 @@ warning_msg_for_severity_field_empty = "//p[.=' * Please select the severity']"
 warning_msg_for_cwe_field_empty = "//p[.=' * A valid integer is required.']"
 close_create_manual_vul_pop_up = "//button[.='×']"
 
+# ============================================================================================
+
 # upload results xpath's
 tool = "//div[@class='container-fluid']//input[@placeholder='Select']"
 name = "//input[@maxlength='100']"
@@ -61,6 +88,9 @@ wrng_msg_for_same_scan_name = "//p[text()=' * Scan name should be unique']"
 wrng_msg_when_we_upload_wrong_file = "//label[.=' * Not a ZAP 2.9.0 file']"
 wrng_msg_for_existing_scan_name = "//p[text()=' * Scan name should be unique']"
 wrng_msg_for_max_char_in_scanname_field = "//p[.=' * Ensure this field has no more than 100 characters.']"
+success_msg_for_scan_uploaded = "//p[.='File has been uploaded successfully!']"
+
+# ============================================================================================
 
 # heads
 open_vulnerability = "//a[.='Opened']"
@@ -69,6 +99,8 @@ uncategorized_vulnerability = "//a[contains(text(),'Uncategorized')]"
 false_positive = "//a[contains(text(),'False Positive')]"
 dashboard = "//a[contains(text(),'Dashboard')]"
 
+# ============================================================================================
+
 # opened_vul
 basic_info = "//a[text()='Basic Info']"
 vulnerability_info = "//a[text()='Vulnerability Info']"
@@ -76,6 +108,8 @@ affected_instance = "//a[text()='Affected Instances']"
 vul_info = "//a[.='Vulnerability Info']"
 examples = "//a[text()='Examples']"
 close_evdience = "//ul[@x-placement='bottom-end' or @x-placement='top-end']//li[text()='Close evidence']"
+
+# ============================================================================================
 
 # closed
 close_btn = "//div[contains(text(),'Close')]"
@@ -86,6 +120,12 @@ evidence = "//input[@accept='image/jpeg, image/png,image/jpg,']"
 fix_vul_submit = "//button[contains(text(),'Submit')]"
 reopen_btn = "//button[text()='ReOpen']"
 reopen_submit = "//button[contains(text(),'Submit')]"
+dropdown = "//input[@placeholder='Select']"
+default_view_xpath = "//div[@x-placement]/div//li[1]"
+fix_xpath = "//div[@x-placement]/div//li[2]"
+wont_fix_xpath = "//div[@x-placement]/div//li[3]"
+
+# ============================================================================================
 
 # PerPage drop-down xpath's
 PerPageDropdown = "//input[@placeholder='Per Page']"
@@ -96,19 +136,22 @@ fifty = "//ul[@class='el-scrollbar__view el-select-dropdown__list']//li[4]//span
 hundered = "//ul[@class='el-scrollbar__view el-select-dropdown__list']//li[5]//span[text()='100']"
 all = "//ul[@class='el-scrollbar__view el-select-dropdown__list']//li[6]//span[text()='All']"
 
+# ============================================================================================
+
 # Delete application
-delete_option = "//ul[@class='el-dropdown-menu el-popper']//li[11]"
+delete_option = "//ul[@class='el-dropdown-menu el-popper']//li[12]"
 yes = "//button[contains(text(),'Yes')]"
 no = "//button[contains(text(),'No')]"
 enter_delete = "//input[@placeholder='Type DELETE']"
 delete = "//footer[@class='modal-footer']//button[contains(text(),'Delete')]"
 cancel = "//footer[@class='modal-footer']//button[contains(text(),'Cancel')]"
 
+# ============================================================================================
+
 # Evidence
 create_evidence_btn = "//button[contains(text(), 'Create Evidence')]"
 close_evd_pop_up = "//button[.='×']"
 evd_justification = "//textarea[@placeholder='Enter Justification']"
-evd_submit = "//button[contains(text(),'Submit')]"
 success_msg_when_evd_marked_as_TP = "//p[.='Evidence successfully marked as True Positive!']"
 success_msg_when_vul_marked_as_FP = "//p[.='Vulnerability successfully marked as False Positive!']"
 success_msg_when_evd_marked_as_FP = "//p[.='Evidence successfully marked as False Positive!']"
@@ -116,7 +159,7 @@ reopen_evd = "//ul[@x-placement]//a//li[.='Reopen']"
 success_msg_when_evd_reopened = "//p[.='Evidence successfully reopened!']"
 
 # sast evd
-sast_toggle_btn = "//div[@class='row']//div[@class='col-sm-4 col-md-4 col-4'][1]//span"
+sast_toggle_btn = "//label[@id='org_sast']//div[@class='v-switch-button']"
 line_no_xpath = "//input[@placeholder='Enter line no']"
 line_range_xpath = "//input[@placeholder='Enter line range']"
 # code_snippet_xpath = "//label[@class='custom-file-label']"
@@ -134,7 +177,7 @@ wrng_msg_when_file_field_reaches_max_char = "//p[.='* Ensure this field has no m
 wrng_msg_when_param_field_reaches_max_char = "//p[.='* Ensure this field has no more than 12 characters.']"
 
 # dast evd
-dast_toggle_btn = "//div[@class='row']//div[@class='col-sm-4 col-md-4 col-4'][2]//span"
+dast_toggle_btn = "//label[@id='org_dast']//div[@class='v-switch-button']"
 url_xpath = "//input[@placeholder='Enter URL']"
 dast_param_xpath = "//input[@placeholder='Enter param']"
 payload_xpath = "//input[@placeholder='Enter payload']"
@@ -145,17 +188,68 @@ req_res_wrng_msg_for_empty_fields = "//p[.=' * The submitted data was not a file
 req_res_wrng_msg_for_invalid_files = "//p[.=' * Please upload only text files']"
 
 # sca evd
-sca_toggle_btn = "//div[@class='row']//div[@class='col-sm-4 col-md-4 col-4'][3]//span"
+sca_toggle_btn = "//label[@id='org_sca']//div[@class='v-switch-button']"
 module_xpath = "//input[@placeholder='Enter module']"
 version_xpath = "//input[@placeholder='Enter version']"
 cve_xpath = "//input[@placeholder='Enter cve']"
-evd_submit = "//button[contains(text(),'Submit')]"
 evd_success_msg = "//p[text()='Evidence created successfully.']"
 version_id_wrng_msg = "//p[.=' * Ensure this field has no more than 12 characters.']"
-cve_id_wrng_msg = "//p[.=' * Ensure this field has no more than 20 characters.']"
-
-wrng_msg_when_fields_are_empty = "//div[@class='row']//p[.=' * This field may not be blank.']"
 empty_file_wrng_msg = "//p[.=' * The submitted file is empty.']"
 
+# Container evd
+container_toggle_btn = "//label[@id='org_container']//div[@class='v-switch-button']"
+# module xpath is taken from 'sca evd' section
+cpe_xpath = "//input[@placeholder='Enter cpe']"
+image_digest_xpath = "//input[@placeholder='Enter image digest']"
+registry_container_xpath = "//input[@placeholder='Enter Registry container']"
+image_name_xpath = "//input[@placeholder='Enter image name']"
+image_repository_xath = "//input[@placeholder='Enter Image Repository']"
+# cve_xpath is take from 'sca evd' section
+wrng_msg_when_cpe_field_reaches_max_char = "//p[.='* Ensure this field has no more than 200 characters.']"
+wrng_msg_when_module_field_reaches_max_char = "//p[.='* Ensure this field has no more than 200 characters.']"
+wrng_msg_when_image_digest_field_reaches_max_char = "//p[.='* Ensure this field has no more than 200 characters.']"
+wrng_msg_when_register_container_field_reaches_max_char = "//p[.='* Ensure this field has no more than 200 characters.']"
+wrng_msg_when_image_name_field_reaches_max_char = "//p[.='* Ensure this field has no more than 200 characters.']"
+wrng_msg_when_image_repository_field_reaches_max_char = "//p[.='* Ensure this field has no more than 200 characters.']"
+
+# common xpath's for all evidence's
+wrng_msg_when_fields_are_empty = "//p[.='* This field may not be blank.']"
+evd_submit = "//button[contains(text(),'Submit')]"
+cve_id_wrng_msg = "//p[.=' * Ensure this field has no more than 20 characters.']"
+
+# ============================================================================================
 # Bulk actions
 succes_msg_when_vuls_marked_as_FP_via_BA = "//p[.='The vulnerabilities have been marked as False positive successfully!']"
+
+# Affected instance filter
+select_all_filter = "//span[contains(text(), 'Select All')]"
+sca_filter = "//span[contains(text(), 'SCA')]"
+sast_filter = "//span[contains(text(), 'SAST')]"
+dast_filter = "//span[contains(text(), 'DAST')]"
+container_filter = "//span[contains(text(), 'Container')]"
+infra_filter = "//span[contains(text(), 'Infra')]"
+cloud_filter = "//span[contains(text(), 'Cloud')]"
+
+# =============================================================================================
+
+# Filter
+filter_option_btn = "//div[@class='col-2']/button[contains(text(),'Filter')]"
+cwe_tag = "//div[@class='row bg_white']//div[@class='col-2']//p[.='CWE']"
+severity_tag = "//div[@class='row bg_white']//div[@class='col-2']//p[.='Severity']"
+ageing_tag = "//div[@class='row bg_white']//div[@class='col-2']//p[.='Ageing']"
+tool_tag = "//div[@class='row bg_white']//div[@class='col-2']//p[.='Tool']"
+filter_severity_high = "//label[contains(text(),'High')]"
+filter_severity_medium = "//label[contains(text(),'Medium')]"
+filter_severity_low = "//label[contains(text(),'Low')]"
+filter_severity_info = "//label[contains(text(),'Info')]"
+filter_sev_high_checkmark = "//div[@role='group'][1]//div[@class='col-sm-12'][1]//span[@class='el-checkbox__input']"
+filter_sev_med_checkmark = "//div[@role='group'][1]//div[@class='col-sm-12'][2]//span[@class='el-checkbox__input']"
+filter_sev_low_checkmark = "//div[@role='group'][1]//div[@class='col-sm-12'][3]//span[@class='el-checkbox__input']"
+filter_sev_info_checkmark = "//div[@role='group'][1]//div[@class='col-sm-12'][4]//span[@class='el-checkbox__input']"
+filter_ageing1 = "//div[@role='group'][2]//span/label[contains(text(),'0-5 days')]"
+filter_ageing2 = "//div[@role='group'][2]//span/label[contains(text(),'6-10 days')]"
+filter_ageing3 = "//div[@role='group'][2]//span/label[contains(text(),'11-20 days')]"
+filter_ageing4 = "//div[@role='group'][2]//span/label[contains(text(),'21-40 days')]"
+filter_ageing5 = "//div[@role='group'][2]//span/label[contains(text(),'41-80 days')]"
+filter_ageing6 = "//div[@role='group'][2]//span/label[contains(text(),'81-100 days')]"
+filter_ageing7 = "//div[@role='group'][2]//span/label[contains(text(),'More than 100 days')]"
