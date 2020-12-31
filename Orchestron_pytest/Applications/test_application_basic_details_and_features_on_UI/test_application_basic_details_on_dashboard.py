@@ -66,5 +66,13 @@ class CheckBasicDetailsOfApplicationDashboardTests:
         list_of_app_tag = wait.until(EC.presence_of_element_located((By.XPATH, "//p[.=' List of Applications ']")))
         assert list_of_app_tag.text == "List of Applications"
 
+        # checks if the vulnerability count == zero after application is created
+        for vul_count in range(1, 5):
+            assert wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='none_spacing col-sm-3 col-md-3 col-lg-3 col-3']["+str(vul_count)+"]//span[2]"))).text == "0"
+
+        # checks if 'Severity chart' vul count == zero after application is created
+        for sev_vul_count in range(1, 5):
+            assert wait.until(EC.presence_of_element_located((By.XPATH, "//div[@xs='3']/div["+str(sev_vul_count)+"]//span"))).text == "0"
+
     def test_delete_above_app(self, driver):
-        delete_app(driver, application="//label[contains(text(), 'All options')]")
+        delete_app(driver, application_xpath="//label[contains(text(), 'All options')]")

@@ -13,7 +13,7 @@ filter_ageing_options = [filter_ageing1, filter_ageing2, filter_ageing3, filter_
 filter_ageing_texts = ['0-5 days', '6-10 days', '11-20 days', '21-40 days', '41-80 days', '81-100 days', 'More than 100 days']
 
 
-@mark.app_ui_open_vul
+@mark.app_ui_open_sec
 class CheckBasicDetailsAndFeaturesOfApplicationOpenVulSectionTests:
     def basic_func(self, driver):
         wait = WebDriverWait(driver, 20, poll_frequency=3, ignored_exceptions=[
@@ -27,6 +27,8 @@ class CheckBasicDetailsAndFeaturesOfApplicationOpenVulSectionTests:
         time.sleep(2)
         go_to_open_vul_section = wait.until(EC.element_to_be_clickable((By.XPATH, open_vulnerability)))
         go_to_open_vul_section.click()
+
+        assert wait.until(EC.presence_of_element_located((By.XPATH, "//label[contains(text(),'Opened')]"))).text == "Opened"
 
     def test_for_all_options_and_features_under_open_vul_section(self, driver):
         wait = WebDriverWait(driver, 20, poll_frequency=3, ignored_exceptions=[
@@ -128,4 +130,4 @@ class CheckBasicDetailsAndFeaturesOfApplicationOpenVulSectionTests:
         assert wait.until(EC.invisibility_of_element((By.XPATH, "//div[@role='group'][2]//div[@class='col-sm-12']//span[@class='el-checkbox__input is-checked']")))
 
     def test_delete_above_app(self, driver):
-        delete_app(driver, application="//label[contains(text(), 'All options')]")
+        delete_app(driver, application_xpath="//label[contains(text(), 'All options')]")
