@@ -5,4 +5,5 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 def stop_till_spinner_is_invisible(driver):
-    WebDriverWait(driver, 100, poll_frequency=3).until(EC.invisibility_of_element((By.XPATH, "//div[@class='vld-background']")))
+    WebDriverWait(driver, 100, poll_frequency=3, ignored_exceptions=[ElementClickInterceptedException, ElementNotInteractableException]).until(
+        EC.invisibility_of_element((By.XPATH, "//div[@class='vld-background']")))
