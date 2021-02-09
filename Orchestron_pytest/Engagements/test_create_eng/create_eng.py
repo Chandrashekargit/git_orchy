@@ -38,7 +38,7 @@ def create_engagement(driver, engagement_name, eng_descrption, which_application
     eng_date.click()
     eng_date_popup1 = wait.until(EC.element_to_be_clickable((By.XPATH, eng_date1)))
     eng_date_popup1.click()
-    eng_date_popup2 = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@class='mx-calendar'][2]//td[@title='30/09/2020']")))
+    eng_date_popup2 = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@class='mx-calendar'][2]//td[@title='30/01/2021']")))
     eng_date_popup2.click()
 
     # selects the scope/bucket type

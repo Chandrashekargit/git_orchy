@@ -1,7 +1,3 @@
-from selenium.common.exceptions import *
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from xpath.Application_module_xpath import *
 from spinner.spinner import *
 import time
@@ -21,12 +17,13 @@ def open_manual_vulnerability(driver, individual_vul_xpath, application_name_xpa
     click_on_individual_eng.click()
 
     # Clicks on Open vulnerability section.
-    WebDriverWait(driver, 20).until(EC.invisibility_of_element_located((By.XPATH, "//div[@class='loading-background' or @class='loading-icon']")))
+    stop_till_spinner_is_invisible(driver)
     open_vul = wait.until(EC.element_to_be_clickable((By.XPATH, open_vulnerability)))
     open_vul.click()
 
     # clicks on individual vul
     stop_till_spinner_is_invisible(driver)
+    time.sleep(2)
     click_on_individual_vul = wait.until(EC.element_to_be_clickable((By.XPATH, individual_vul_xpath)))
     click_on_individual_vul.click()
 
@@ -34,10 +31,15 @@ def open_manual_vulnerability(driver, individual_vul_xpath, application_name_xpa
     stop_till_spinner_is_invisible(driver)
     wait.until(EC.visibility_of_element_located((By.XPATH, affected_instance)))
 
+    # wait till vul info section is visible
+    stop_till_spinner_is_invisible(driver)
+    wait.until(EC.visibility_of_element_located((By.XPATH, vulnerability_info)))
+
     # moves to affected instance Section
     stop_till_spinner_is_invisible(driver)
     move_to_ai = wait.until(EC.element_to_be_clickable((By.XPATH, affected_instance)))
     move_to_ai.click()
+    stop_till_spinner_is_invisible(driver)
 
 
 def sca_evd(driver, module_name, version_id, cve_id):
@@ -66,8 +68,8 @@ def sca_evd(driver, module_name, version_id, cve_id):
     submit.click()
 
     stop_till_spinner_is_invisible(driver)
-    wait.until(EC.visibility_of_element_located((By.XPATH, evd_success_msg)))
-    wait.until(EC.invisibility_of_element((By.XPATH, evd_success_msg)))
+    # wait.until(EC.visibility_of_element_located((By.XPATH, evd_success_msg)))
+    # wait.until(EC.invisibility_of_element((By.XPATH, evd_success_msg)))
 
 
 def sast_evd(driver, line_no, line_range, code_snippet_location, path, file_name, param):
@@ -105,8 +107,8 @@ def sast_evd(driver, line_no, line_range, code_snippet_location, path, file_name
     submit.click()
 
     stop_till_spinner_is_invisible(driver)
-    wait.until(EC.visibility_of_element_located((By.XPATH, evd_success_msg)))
-    wait.until(EC.invisibility_of_element((By.XPATH, evd_success_msg)))
+    # wait.until(EC.visibility_of_element_located((By.XPATH, evd_success_msg)))
+    # wait.until(EC.invisibility_of_element((By.XPATH, evd_success_msg)))
 
 
 def dast_evd(driver, enter_url, enter_param, enter_payload, req_file_loc, response_file_loc):
@@ -141,5 +143,50 @@ def dast_evd(driver, enter_url, enter_param, enter_payload, req_file_loc, respon
     submit.click()
 
     stop_till_spinner_is_invisible(driver)
-    wait.until(EC.visibility_of_element_located((By.XPATH, evd_success_msg)))
-    wait.until(EC.invisibility_of_element((By.XPATH, evd_success_msg)))
+    # wait.until(EC.visibility_of_element_located((By.XPATH, evd_success_msg)))
+    # wait.until(EC.invisibility_of_element((By.XPATH, evd_success_msg)))
+
+
+def container_evd(driver, enter_module, enter_version, enter_cpe, enter_image_digest, enter_registry_container, enter_image_name, enter_image_repository, enter_cve):
+    wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[
+        NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
+
+    stop_till_spinner_is_invisible(driver)
+    click_on_create_evd_btn = wait.until(EC.element_to_be_clickable((By.XPATH, create_evidence_btn)))
+    click_on_create_evd_btn.click()
+
+    stop_till_spinner_is_invisible(driver)
+    container_evd_enable = wait.until(EC.element_to_be_clickable((By.XPATH, dast_toggle_btn)))
+    container_evd_enable.click()
+
+    stop_till_spinner_is_invisible(driver)
+    module = wait.until(EC.element_to_be_clickable((By.XPATH, module_xpath)))
+    module.send_keys(enter_module)
+
+    version = wait.until(EC.element_to_be_clickable((By.XPATH, version_xpath)))
+    version.send_keys(enter_version)
+
+    cpe = wait.until(EC.presence_of_element_located((By.XPATH, cpe_xpath)))
+    cpe.send_keys(enter_cpe)
+
+    image_digest = wait.until(EC.presence_of_element_located((By.XPATH, image_digest_xpath)))
+    image_digest.send_keys(enter_image_digest)
+
+    registry_container = wait.until(EC.presence_of_element_located((By.XPATH, registry_container_xpath)))
+    registry_container.send_keys(enter_registry_container)
+
+    image_name = wait.until(EC.presence_of_element_located((By.XPATH, image_digest_xpath)))
+    image_name.send_keys(enter_image_name)
+
+    image_repository = wait.until(EC.presence_of_element_located((By.XPATH, image_repository_xath)))
+    image_repository.send_keys(enter_image_repository)
+
+    cve = wait.until(EC.presence_of_element_located((By.XPATH, cve_xpath)))
+    cve.send_keys(enter_cve)
+
+    submit = wait.until(EC.element_to_be_clickable((By.XPATH, evd_submit)))
+    submit.click()
+
+    stop_till_spinner_is_invisible(driver)
+    # wait.until(EC.visibility_of_element_located((By.XPATH, evd_success_msg)))
+    # wait.until(EC.invisibility_of_element((By.XPATH, evd_success_msg)))

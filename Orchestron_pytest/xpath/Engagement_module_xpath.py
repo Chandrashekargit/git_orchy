@@ -1,6 +1,7 @@
 # Engagement 'create' button xpath's
 engagement_tab = "//a[@href='/engagements/']//p"
 eng_create_btn = "//button[contains(text(), 'Create')]"
+eng_create_btn2 = "//u[contains(text(),'Click here to create an Engagement or click on Create button.')]"
 eng_name = "//input[@maxlength='50']"
 eng_desc = "//div[@class='col-sm-12']//textarea"
 eng_app_dropdown = "//input[@placeholder='Select']"
@@ -11,6 +12,7 @@ eng_submit = "//button[contains(text(),'Submit')]"
 eng_success_msg = "//p[text()='Engagement has been created successfully!']"
 wrng_msg_for_same_eng_name = "//p[text()=' * engagement with this name already exists.']"
 create_eng_popup_close = "//button[@aria-label='Close']"
+create_eng_popup_close2 = "//button[contains(text(),'Close')]"
 
 # Engagement heads
 assign_unassign_xpath = "//a[text()='Assign / Unassign Scans']"
@@ -40,3 +42,9 @@ delete_success_msg = "//p[text()='Engagement has been deleted successfully.']"
 # close engagement
 confirm_close_eng = "//button[contains(text(),'Close')]"
 close_success_msg = "//p[text()='Engagement has been closed Successfully!']"
+
+# sections
+dashboard_section = "//a[.='Dashboard']"
+scans_section = "//a[.='Scans']"
+vulnerabilities_section = "//a[.='Vulnerabilities']"
+assign_unassign_section = "//a[.='Assign / Unassign Scans']"

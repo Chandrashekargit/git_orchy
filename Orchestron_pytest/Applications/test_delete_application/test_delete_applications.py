@@ -19,6 +19,4 @@ def test_delete_apps(driver):
         NoSuchElementException, ElementNotVisibleException, TimeoutException, ElementClickInterceptedException])
 
     for app in apps:
-        delete_app(driver, application=app)
-
-
+        delete_app(driver, application_xpath=app)
