@@ -1,5 +1,3 @@
-.pytest_cache
-assets
 geckodriver.log
 venv
 *.idea
