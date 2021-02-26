@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b177626a-454f-4b1e-8975-9ddab519256f" name="Default Changelist" comment="&quot;___&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_create_evd/create_evd.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_create_evd/create_evd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applications/test_delete_application/test_delete_applications.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applications/test_delete_application/test_delete_applications.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engagements/test_create_eng/create_eng.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_create_eng/create_eng.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engagements/test_delete_eng/delete_eng.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engagements/test_delete_eng/delete_eng.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xpath/Engagement_module_xpath.py" beforeDir="false" afterPath="$PROJECT_DIR$/xpath/Engagement_module_xpath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +29,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/git_AppSec" />
+    <property name="last_opened_file_path" value="$USER_HOME$/git_ASE" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
@@ -251,19 +245,5 @@
     <MESSAGE value="&quot;added new functions&quot;" />
     <MESSAGE value="&quot;___&quot;" />
     <option name="LAST_COMMIT_MESSAGE" value="&quot;___&quot;" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="381" y="178" width="588" height="384" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597386110590">
-      <screen x="0" y="27" width="1360" height="688" />
-    </state>
-    <state x="381" y="178" width="588" height="384" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1360.688@0.27.1360.688" timestamp="1597386110590" />
-    <state x="413" y="122" width="524" height="496" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599111062271">
-      <screen x="0" y="27" width="1360" height="688" />
-    </state>
-    <state x="413" y="122" width="524" height="496" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1360.688@0.27.1360.688" timestamp="1599111062271" />
-    <state x="463" y="128" width="424" height="484" key="FileChooserDialogImpl" timestamp="1602651170610">
-      <screen x="0" y="27" width="1360" height="688" />
-    </state>
-    <state x="463" y="128" width="424" height="484" key="FileChooserDialogImpl/0.27.1360.688@0.27.1360.688" timestamp="1602651170610" />
   </component>
 </project>
