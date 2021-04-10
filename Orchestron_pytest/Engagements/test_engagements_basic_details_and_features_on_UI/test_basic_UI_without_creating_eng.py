@@ -4,16 +4,8 @@ from spinner.spinner import *
 from Engagements.test_create_eng.create_eng import *
 
 
-bucket_type_options_xpath = ["//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='DAST']",
-                             "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='SAST']",
-                             "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='SCA']",
-                             "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='Manual']",
-                             "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='Script']",
-                             "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='Orchestron JSON']",
-                             "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='INFRA']",
-                             "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='Container']",
-                             "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='Cloud']",
-                             "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='All']"]
+bucket_type_options_xpath = [dast_bucket_type, sast_bucket_type, sca_bucket_type, manual_bucket_type, script_bucket_type,
+                             orchy_json_bucket_type, infra_bucket_type, container_bucket_type, cloud_bucket_type, all_bucket_type]
 
 bucket_type_options_text = ["DAST", "SAST", "SCA", "Manual", "Script", "Orchestron JSON", "INFRA", "Container", "Cloud", "All"]
 

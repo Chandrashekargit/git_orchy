@@ -24,7 +24,7 @@ def test_login_warning_msg_for_invalid_credentials():
     These function lets us test the warning message if we enter the invalid credentials, if we leave any fields empty.
     """
     for (username, password) in zip(usernames, passwords):
-        driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
+        driver = webdriver.Chrome(executable_path='/home/junaid/git_orchy/Orchestron_pytest/orchy_venv/bin/chromedriver_linux64/chromedriver')
         driver.get(url)
         driver.maximize_window()
         time.sleep(1)

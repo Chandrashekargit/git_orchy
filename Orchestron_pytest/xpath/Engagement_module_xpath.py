@@ -6,6 +6,16 @@ eng_name = "//input[@maxlength='50']"
 eng_desc = "//div[@class='col-sm-12']//textarea"
 eng_app_dropdown = "//input[@placeholder='Select']"
 eng_bucket_type = "/html/body/div[2]/div[1]/div/div/div/div/form/div/div[2]/div[1]/div/div/div[1]/input"
+dast_bucket_type = "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='DAST']",
+sast_bucket_type = "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='SAST']",
+sca_bucket_type = "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='SCA']",
+manual_bucket_type = "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='Manual']",
+script_bucket_type = "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='Script']",
+orchy_json_bucket_type = "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='Orchestron JSON']",
+infra_bucket_type = "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='INFRA']",
+container_bucket_type = "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='Container']",
+cloud_bucket_type = "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='Cloud']",
+all_bucket_type = "//ul[@class='el-scrollbar__view el-select-dropdown__list']/li/span[.='All']"
 eng_date_btn = "//input[@placeholder='Select Date Range']"
 eng_date1 = "//div[@class='mx-calendar'][1]//td[@class='curMonth today']"
 eng_submit = "//button[contains(text(),'Submit')]"

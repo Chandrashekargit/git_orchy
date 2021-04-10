@@ -18,7 +18,7 @@ passwords = ['Test@134', 'test@134', 'Test@1234', 'Test@1234', 'welcome@1234', '
 @mark.login
 def test_login_feature():
     for (e, p) in zip(emails, passwords):
-        browser = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
+        browser = webdriver.Chrome(executable_path='/home/junaid/git_orchy/Orchestron_pytest/orchy_venv/bin/chromedriver_linux64/chromedriver')
         lg = PageObjectForLoginPage(driver=browser)
         lg.go()
         time.sleep(2)

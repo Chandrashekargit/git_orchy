@@ -12,7 +12,7 @@ from spinner.spinner import *
 
 @pytest.fixture(scope="session")
 def driver():
-    driver = webdriver.Chrome('/home/junaid/PycharmProjects/HelloWorld/venv/bin/chromedriver_linux64/chromedriver')
+    driver = webdriver.Chrome(executable_path='/home/junaid/git_orchy/Orchestron_pytest/orchy_venv/bin/chromedriver_linux64/chromedriver')
     # driver = webdriver.Firefox(executable_path='/home/junaid/PycharmProjects/HelloWorld/venv/bin/geckodriver_linux64/geckodriver')
     driver.get(url)
     driver.maximize_window()
