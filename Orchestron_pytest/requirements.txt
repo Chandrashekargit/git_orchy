@@ -17,6 +17,6 @@ pytest-xdist==1.30.0
 selenium==3.141.0
 self==2019.4.13
 six==1.13.0
-urllib3==1.25.7
+urllib3==1.26.5
 wcwidth==0.1.7
 zipp==0.6.0
